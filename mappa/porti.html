@@ -1,0 +1,60 @@
+<html>
+
+<body>
+    <div id="mapdiv"></div>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script>
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+
+        var CTlonLat = new OpenLayers.LonLat(15.09161280053336, 37.5005965078802)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            );
+        var PAlonLat = new OpenLayers.LonLat(13.36615645463058, 38.12720969808311)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            );
+        var NAlonLat = new OpenLayers.LonLat(14.26089139781879, 40.840982661805484)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            );
+        var GElonLat = new OpenLayers.LonLat(8.920904772819934, 44.41216249797755)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            );
+        var CAlonLat = new OpenLayers.LonLat(9.110418879736674, 39.207872753379654)
+            .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+            );
+
+        var zoom = 10;
+
+
+        var CTmarkers = new OpenLayers.Layer.Markers("CTMarkers");
+        var PAmarkers = new OpenLayers.Layer.Markers("PAMarkers");
+        var NAmarkers = new OpenLayers.Layer.Markers("NAMarkers");
+        var GEmarkers = new OpenLayers.Layer.Markers("GEMarkers");
+        var CAmarkers = new OpenLayers.Layer.Markers("CAMarkers");
+        map.addLayer(CTmarkers);
+        map.addLayer(PAmarkers);
+        map.addLayer(NAmarkers);
+        map.addLayer(GEmarkers);
+        map.addLayer(CAmarkers);
+
+        CTmarkers.addMarker(new OpenLayers.Marker(CTlonLat));
+        PAmarkers.addMarker(new OpenLayers.Marker(PAlonLat));
+        NAmarkers.addMarker(new OpenLayers.Marker(NAlonLat));
+        GEmarkers.addMarker(new OpenLayers.Marker(GElonLat));
+        CAmarkers.addMarker(new OpenLayers.Marker(CAlonLat));
+
+        map.setCenter(CTlonLat, zoom);
+    </script>
+</body>
+
+</html>
