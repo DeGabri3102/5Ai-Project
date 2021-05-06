@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ProvaEleborato</title>
+  <link href="Style.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
+  <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
+</head>
+
+<body>
+  <header>
+    <div class="Navbar">
+      <div class="Logo">
+        <img src="Contenuti/logoTavola disegno 1@3x.png" />
+        <p class="Sito">Schettino Boat</p>
+      </div>
+      <div class="Allineamneto">
+        <ul id="menu">
+          <li class="active">
+            <a href="#" style="color: rgba(172, 20, 20, 1)">Home</a>
+          </li>
+          <li><a href="#">Chi Siamo</a></li>
+          <li><a href="#">Noleggio</a></li>
+          <li><a href="#">Meteo</a></li>
+          <li><a href="#" onclick="Login()">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="Sfondo"></div>
+    <div class="Sedi">
+      <h1 class="Titolo">Le nostre sedi</h1>
+      <div class="Slide">
+        <img class="Myslides" src="Contenuti/porto_catania.jpg" />
+        <h1 class="City">Catania</h1>
+
+        <img class="Myslides" src="Contenuti/porto_palermo.jpg" />
+        <h1 class="City">Palermo</h1>
+
+        <img class="Myslides" src="Contenuti/porto_Napoli.jpg" />
+        <h1 class="City">Napoli</h1>
+
+        <img class="Myslides" src="Contenuti/porto_Genova.jpg" />
+        <h1 class="City">Genova</h1>
+
+        <img class="Myslides" src="Contenuti/porto_venezia.jpg" />
+        <h1 class="City">Venezia</h1>
+
+        <img class="Myslides" src="Contenuti/porto_Cervo_Sardegna.jpg" />
+        <h1 class="City">Sardegna</h1>
+      </div>
+    </div>
+    <p></p>
+    <div class="Mappa">
+      <div id="map"></div>
+    </div>
+    <!-- popup per il login -->
+    <div id="logincon" class="logcont">
+      <div class="log">
+        <span class="close">&times;</span>
+        <h1>Accedi</h1>
+        <label for="nomeUtente" class="loglab">Nome utente</label><br />
+        <input type="text" id="nomeUtente" class="Inslog" /><br />
+        <label for="passwordUtente" class="loglab">Password utente</label><br />
+        <input type="text" id="passwordUtente" class="Inslog" /><br /><br />
+        <button id="confermaLog" class="Inslog">Accedi</button><br />
+        <a href="#" onclick="Registrazione()">Non hai un account ? Creane uno subito!</a>
+      </div>
+    </div>
+    <!--popUp per la registrazione-->
+    <div id="registrazione" class="logcont">
+      <div class="log">
+        <span class="close">&times;</span>
+        <h1>Registrati</h1>
+        <label for="nomeUtente" class="loglab">Nome </label><br />
+        <input type="text" id="NomeUtente" class="Inslog" /><br />
+        <label for="cognomeUtente" class="loglab">Cognome</label><br />
+        <input type="text" id="CognomeUtente" class="Inslog" /><br />
+        <label for="emailUtente" class="loglab">Email </label><br />
+        <input type="text" id="emailUtente" class="Inslog" /><br />
+        <label for="nickUtente" class="loglab">Username</label><br />
+        <input type="text" id="nickUtente" class="Inslog" /><br />
+        <label for="passwordUtente" class="loglab">Password </label><br />
+        <input type="text" id="PasswordUtente" class="Inslog" /><br />
+        <label for="checkPUtente" class="loglab">Conferma password</label><br />
+        <input type="text" id="checkPUtente" class="Inslog" /><br /><br />
+        <button id="ConfermaLog" class="Inslog">Crea</button><br />
+        <a href="#" onclick="Login()">Hai un account ? Accedi subito!</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="Contenuti/mappa.js"></script>
+  <script src="Contenuti/login.js"></script>
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("Myslides");
+      var y = document.getElementsByClassName("City");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+        y[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {
+        myIndex = 1;
+      }
+      x[myIndex - 1].style.display = "block";
+      y[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 3000);
+    }
+  </script>
+</body>
+
+</html>
