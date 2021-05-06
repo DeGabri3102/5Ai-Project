@@ -140,3 +140,12 @@ ul#menu a:hover {
 .loglab {
   font-weight: bold;
 }
+.chisiamo{
+  display: inline-block;
+  margin-left: 10mm;
+  margin-right: 10mm;
+  margin-top: 3.7vw;
+  font-size: 20px;
+  font-family: Verdana, sans-serif;
+  color: rgb(7, 1, 1);
+}
