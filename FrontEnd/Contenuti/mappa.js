@@ -105,4 +105,5 @@ pNA.on("mouseout", function (e) {
 pNA.on("click", function (e) {
   window.open("https://adsptirrenocentrale.it/"); //quando clicco sul marker apre un'altra pagina html
 });
+
 //#endregion funzioni markers
