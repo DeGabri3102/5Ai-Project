@@ -6,6 +6,13 @@
     <title>Meteo</title>
     <link href="Style.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Mappa-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+    <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
+
 </head>
 
 <body>
@@ -49,43 +56,68 @@
             <div class="log">
                 <span class="close">&times;</span>
                 <h1>Accedi</h1>
-                <label for="nomeUtente" class="loglab">Nome utente</label><br>
-                <input type="text" id="nomeUtente" class="Inslog"><br>
-                <label for="passwordUtente" class="loglab">Password utente</label><br>
-                <input type="password" id="passwordUtente" class="Inslog"><br><br>
-                <button id="confermaLog" class="Inslog"> Accedi</button><br>
+
+                <!--Inserimento nome utente-->
+                <label for="nomeUtente" class="loglab">Nome utente</label><br />
+                <input type="text" id="nomeUtente" class="Inslog" placeholder="Inserisci nome utente" /><br />
+
+                <!--Inserimento password utente-->
+                <label for="passwordUtente" class="loglab">Password utente</label><br />
+                <input type="password" id="passwordUtente" class="Inslog" placeholder="Inserisci password" /><br /><br />
+
+                <button id="confermaLog" class="Inslog">Accedi</button><br />
                 <a href="#" onclick="Registrazione()">Non hai un account? Creane uno subito!</a>
             </div>
         </div>
+
         <!--popUp per la registrazione-->
         <div id="registrazione" class="logcont">
             <div class="log">
                 <span class="close">&times;</span>
                 <h1>Registrati</h1>
-                <label for="nomeUtente" class="loglab">Nome </label><br>
-                <input type="text" id="NomeUtente" class="Inslog"><br>
-                <label for="cognomeUtente" class="loglab">Cognome</label><br>
-                <input type="text" id="CognomeUtente" class="Inslog"><br>
-                <label for="emailUtente" class="loglab">Email </label><br>
-                <input type="text" id="emailUtente" class="Inslog"><br>
-                <label for="nickUtente" class="loglab">Username</label><br>
-                <input type="text" id="nickUtente" class="Inslog"><br>
-                <label for="passwordUtente" class="loglab">Password </label><br>
-                <input type="password" id="PasswordUtente" class="Inslog"><br>
-                <label for="checkPUtente" class="loglab">Conferma password</label><br>
-                <input type="password" id="checkPUtente" class="Inslog"><br><br>
-                <button id="ConfermaLog" class="Inslog"> Crea</button><br>
+
+                <!--Inserimento nome utente-->
+                <label for="nomeUtente" class="loglab">Nome </label><br />
+                <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br />
+
+                <!--Inserimento cognome utente-->
+                <label for="cognomeUtente" class="loglab">Cognome</label><br />
+                <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
+
+                <!--Inserimento email utente-->
+                <label for="emailUtente" class="loglab">Email </label><br />
+                <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email" /><br />
+
+                <!--Inserimento nickname utente-->
+                <label for="nickUtente" class="loglab">Username</label><br />
+                <input type="text" id="nickUtente" class="Inslog" placeholder="Inserisci nickname" /><br />
+
+                <!--Inserimento password utente-->
+                <label for="passwordUtente" class="loglab">Password </label><br />
+                <input type="password" id="PasswordUtente" class="Inslog" placeholder="Inserisci password" /><br />
+
+                <!--Reinserimento password utente-->
+                <label for="checkPUtente" class="loglab">Conferma password</label><br />
+                <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" />
+                <br /><br />
+
+                <button id="ConfermaLog" class="Inslog">Crea</button><br />
                 <a href="#" onclick="Login()">Hai un account? Accedi subito!</a>
+                
             </div>
         </div>
     </section>
-
+    <br><br><br><br>
+    <div class="Mappa">
+        <div id="map"></div>
+    </div>
 
 
 
 
 
     <script src="Contenuti/login.js">  </script>
+    <script src="Contenuti/mappa.js"></script>
 </body>
 
 </html>

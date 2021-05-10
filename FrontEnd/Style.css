@@ -86,13 +86,13 @@ ul#menu a:hover {
 .City {
   text-align: center;
 }
-/*mappa*/
+/*mappa */
 #map {
-  height: 350px;
+  height: 600px;
   width: 100%;
 }
 .Mappa {
-  max-width: 500px;
+  max-width: 1500px;
   margin: auto;
   border: groove;
   border-radius: 12px;
