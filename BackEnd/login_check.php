@@ -7,7 +7,7 @@ mysql_connect("localhost", "root", "") or die("Connessione impossibile");
 mysql_select_db("utenti") or die("Impossibile aprire database");
 
 // Definizione di $myusername e $mypassword
-$myusername = $_POST["username"];
+$myusername = $_POST["email"];
 $mypassword = $_POST["password"];
 
 $sql = "SELECT * FROM login WHERE username='" . $myusername . "' and password='" . $mypassword . "'";

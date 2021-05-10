@@ -1,148 +1,186 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="UTF-8" />
-  <title>Blue Horizon</title>
-  <link href="Style.css" rel="stylesheet" type="text/css" />
-	<!--Mappa-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blue Horizon</title>
+    <link href="Style.css" rel="stylesheet" type="text/css" />
+    <!--Mappa-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
     <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
     <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
-    <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
-<body>
-  <header>
-    <div class="Navbar">
-      <div class="Logo">
-        <img src="Contenuti/logoTavola disegno 1@3x.png" />
-        <p class="Sito">Blue Horizon</p>
+  <body>
+    <header>
+      <div class="Navbar">
+        <div class="Logo">
+          <img src="Contenuti/logoTavola disegno 1@3x.png" />
+          <p class="Sito">Blue Horizon</p>
+        </div>
+        <div class="Allineamneto">
+          <ul id="menu">
+            <li class="active">
+              <a href="index.html" style="color: rgba(172, 20, 20, 1)">Home</a>
+            </li>
+            <li><a href="ChiSiamo.html">Chi Siamo</a></li>
+            <li><a href="Noleggio.html">Noleggio</a></li>
+            <li><a href="Meteo.html">Meteo</a></li>
+            <li><a href="#" onclick="Login()">Login</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="Allineamneto">
-        <ul id="menu">
-          <li class="active">
-            <a href="index.html" style="color: rgba(172, 20, 20, 1)">Home</a>
-          </li>
-          <li><a href="ChiSiamo.html">Chi Siamo</a></li>
-          <li><a href="Noleggio.html">Noleggio</a></li>
-          <li><a href="Meteo.html">Meteo</a></li>
-          <li><a href="#" onclick="Login()">Login</a></li>
-        </ul>
+    </header>
+    <section>
+      <div class="Sfondo"></div>
+      <div class="Sedi">
+        <h1 class="Titolo">Le nostre sedi</h1>
+        <div class="Slide">
+          <img class="Myslides" src="Contenuti/porto_catania.jpg" />
+          <h1 class="City">Catania</h1>
+
+          <img class="Myslides" src="Contenuti/porto_palermo.jpg" />
+          <h1 class="City">Palermo</h1>
+
+          <img class="Myslides" src="Contenuti/porto_Napoli.jpg" />
+          <h1 class="City">Napoli</h1>
+
+          <img class="Myslides" src="Contenuti/porto_Genova.jpg" />
+          <h1 class="City">Genova</h1>
+
+          <img class="Myslides" src="Contenuti/porto_venezia.jpg" />
+          <h1 class="City">Venezia</h1>
+
+          <img class="Myslides" src="Contenuti/porto_Cervo_Sardegna.jpg" />
+          <h1 class="City">Porto Cervo</h1>
+        </div>
+        <div class="Mappa">
+          <div id="map"></div>
+        </div>
       </div>
-    </div>
-  </header>
-  <section>
-    <div class="Sfondo"></div>
-    <div class="Sedi">
-      <h1 class="Titolo">Le nostre sedi</h1>
-      <div class="Slide">
-        <img class="Myslides" src="Contenuti/porto_catania.jpg" />
-        <h1 class="City">Catania</h1>
 
-        <img class="Myslides" src="Contenuti/porto_palermo.jpg" />
-        <h1 class="City">Palermo</h1>
+      <!--popup per il login-->
+      <div id="logincon" class="logcont">
+        <div class="log">
+          <span class="close">&times;</span>
+          <h1>Accedi</h1>
 
-        <img class="Myslides" src="Contenuti/porto_Napoli.jpg" />
-        <h1 class="City">Napoli</h1>
+          <!--Inserimento nome utente-->
+          <label for="emailUtente" class="loglab">Email utente</label><br />
+          <input
+            type="text"
+            id="emailUtente"
+            class="Inslog"
+            placeholder="Inserisci email utente"
+          /><br />
 
-        <img class="Myslides" src="Contenuti/porto_Genova.jpg" />
-        <h1 class="City">Genova</h1>
+          <!--Inserimento password utente-->
+          <label for="passwordUtente" class="loglab">Password utente</label
+          ><br />
+          <input
+            type="password"
+            id="passwordUtente"
+            class="Inslog"
+            placeholder="Inserisci password"
+          /><br /><br />
 
-        <img class="Myslides" src="Contenuti/porto_venezia.jpg" />
-        <h1 class="City">Venezia</h1>
-
-        <img class="Myslides" src="Contenuti/porto_Cervo_Sardegna.jpg" />
-        <h1 class="City">Porto Cervo</h1>
+          <button id="confermaLog" class="Inslog">Accedi</button><br />
+          <a href="#" onclick="Registrazione()"
+            >Non hai un account? Creane uno subito!</a
+          >
+        </div>
       </div>
-		<div class="Mappa">
-        <div id="map"></div>
-    </div>
-    </div>
-	   
 
+      <!--popUp per la registrazione-->
+      <div id="registrazione" class="logcont">
+        <div class="log">
+          <span class="close">&times;</span>
+          <h1>Registrati</h1>
 
-    <!--popup per il login-->
-    <div id="logincon" class="logcont">
-      <div class="log">
-        <span class="close">&times;</span>
-        <h1>Accedi</h1>
+          <!--Inserimento nome utente-->
+          <label for="nomeUtente" class="loglab">Nome </label><br />
+          <input
+            type="text"
+            id="NomeUtente"
+            class="Inslog"
+            placeholder="Inserisci nome"
+          /><br />
 
-        <!--Inserimento nome utente-->
-        <label for="nomeUtente" class="loglab">Nome utente</label><br />
-        <input type="text" id="nomeUtente" class="Inslog" placeholder="Inserisci nome utente" /><br />
+          <!--Inserimento cognome utente-->
+          <label for="cognomeUtente" class="loglab">Cognome</label><br />
+          <input
+            type="text"
+            id="CognomeUtente"
+            class="Inslog"
+            placeholder="Inserisci cognome"
+          /><br />
 
-        <!--Inserimento password utente-->
-        <label for="passwordUtente" class="loglab">Password utente</label><br />
-        <input type="password" id="passwordUtente" class="Inslog" placeholder="Inserisci password" /><br /><br />
+          <!--Inserimento email utente-->
+          <label for="emailUtente" class="loglab">Email </label><br />
+          <input
+            type="text"
+            id="emailUtente"
+            class="Inslog"
+            placeholder="Inserisci email"
+          /><br />
 
-        <button id="confermaLog" class="Inslog">Accedi</button><br />
-        <a href="#" onclick="Registrazione()">Non hai un account? Creane uno subito!</a>
+          <!--Inserimento password utente-->
+          <label for="passwordUtente" class="loglab">Password </label><br />
+          <input
+            type="password"
+            id="PasswordUtente"
+            class="Inslog"
+            placeholder="Inserisci password"
+          /><br />
+
+          <!--Reinserimento password utente-->
+          <label for="checkPUtente" class="loglab">Conferma password</label
+          ><br />
+          <input
+            type="password"
+            id="checkPUtente"
+            class="Inslog"
+            placeholder="Reinserisci password"
+          />
+          <br /><br />
+
+          <button id="ConfermaLog" class="Inslog">Crea</button><br />
+          <a href="#" onclick="Login()">Hai un account? Accedi subito!</a>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!--popUp per la registrazione-->
-    <div id="registrazione" class="logcont">
-      <div class="log">
-        <span class="close">&times;</span>
-        <h1>Registrati</h1>
+    <script src="Contenuti/mappa.js"></script>
+    <script src="Contenuti/login.js"></script>
 
-        <!--Inserimento nome utente-->
-        <label for="nomeUtente" class="loglab">Nome </label><br />
-        <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br />
+    <script>
+      var myIndex = 0;
+      carousel();
 
-        <!--Inserimento cognome utente-->
-        <label for="cognomeUtente" class="loglab">Cognome</label><br />
-        <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
-
-        <!--Inserimento email utente-->
-        <label for="emailUtente" class="loglab">Email </label><br />
-        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email" /><br />
-
-        <!--Inserimento nickname utente-->
-        <label for="nickUtente" class="loglab">Username</label><br />
-        <input type="text" id="nickUtente" class="Inslog" placeholder="Inserisci nickname" /><br />
-
-        <!--Inserimento password utente-->
-        <label for="passwordUtente" class="loglab">Password </label><br />
-        <input type="password" id="PasswordUtente" class="Inslog" placeholder="Inserisci password" /><br />
-
-        <!--Reinserimento password utente-->
-        <label for="checkPUtente" class="loglab">Conferma password</label><br />
-        <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" /> <br /><br />
-
-        <button id="ConfermaLog" class="Inslog">Crea</button><br />
-        <a href="#" onclick="Login()">Hai un account? Accedi subito!</a>
-      </div>
-    </div>
-  </section>
-
-  <script src="Contenuti/mappa.js"></script>
-  <script src="Contenuti/login.js"></script>
-  
-  <script>
-    var myIndex = 0;
-    carousel();
-
-    function carousel() {
-      var i;
-      var x = document.getElementsByClassName("Myslides");
-      var y = document.getElementsByClassName("City");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-        y[i].style.display = "none";
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("Myslides");
+        var y = document.getElementsByClassName("City");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+          y[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {
+          myIndex = 1;
+        }
+        x[myIndex - 1].style.display = "block";
+        y[myIndex - 1].style.display = "block";
+        setTimeout(carousel, 3000);
       }
-      myIndex++;
-      if (myIndex > x.length) {
-        myIndex = 1;
-      }
-      x[myIndex - 1].style.display = "block";
-      y[myIndex - 1].style.display = "block";
-      setTimeout(carousel, 3000);
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
