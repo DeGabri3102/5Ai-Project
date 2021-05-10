@@ -88,11 +88,12 @@ ul#menu a:hover {
 }
 /*mappa */
 #map {
-  height: 600px;
   width: 100%;
+	margin: 0;
 }
 .Mappa {
-  max-width: 100%;
+  width: 500px;
+	height: 400px;
   margin: auto;
   border: groove;
   border-radius: 12px;

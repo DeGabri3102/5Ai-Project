@@ -5,6 +5,12 @@
   <meta charset="UTF-8" />
   <title>Blue Horizon</title>
   <link href="Style.css" rel="stylesheet" type="text/css" />
+	<!--Mappa-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+    <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
@@ -53,6 +59,9 @@
       </div>
     </div>
     <p></p>
+	   <div class="Mappa">
+        <div id="map"></div>
+    </div>
 
 
     <!--popup per il login-->
@@ -110,7 +119,7 @@
     </div>
   </section>
 
-
+  <script src="Contenuti/mappa.js"></script>
   <script src="Contenuti/login.js"></script>
   
   <script>
