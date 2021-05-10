@@ -92,7 +92,7 @@ ul#menu a:hover {
   width: 100%;
 }
 .Mappa {
-  max-width: 1500px;
+  max-width: 100%;
   margin: auto;
   border: groove;
   border-radius: 12px;
