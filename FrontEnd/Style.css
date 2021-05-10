@@ -142,17 +142,16 @@ ul#menu a:hover {
 }
 .container{
   display: inline-block;
-  margin-left: 50mm;
-  margin-right: 50mm;
   margin-top: 3.7vw;
   font-size: 15px;
   font-family: Verdana, sans-serif;
   color: rgb(7, 1, 1);
-  border-style:groove;
+	width: 70%;
+	text-align: left;
 }
 .desc {
-  margin: auto;
-  width: 80%;
-  height: 300px;
+	margin: auto;
+  width: 70%;
+  height: auto;
   border: groove;
 }
