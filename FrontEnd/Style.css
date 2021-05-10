@@ -141,13 +141,13 @@ ul#menu a:hover {
   font-weight: bold;
 }
 .container{
-  display: inline-block;
   margin-top: 3.7vw;
   font-size: 15px;
   font-family: Verdana, sans-serif;
   color: rgb(7, 1, 1);
 	width: 70%;
 	text-align: left;
+	margin: auto;
 }
 .desc {
 	margin: auto;
