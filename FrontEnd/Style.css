@@ -156,3 +156,31 @@ ul#menu a:hover {
   height: auto;
   border: groove;
 }
+/*Div noleggio*/
+.noleggio{
+  background-color: rgb(211, 29, 29);
+}
+#nolCatania
+{
+  display: none;
+}
+#nolPalermo
+{
+  display: none;
+}
+#nolPortoCervo
+{
+  display: none;
+}
+#nolVenezia
+{
+  display: none;
+}
+#nolGenova
+{
+  display: none;
+}
+#nolNapoli
+{
+  display: none;
+}

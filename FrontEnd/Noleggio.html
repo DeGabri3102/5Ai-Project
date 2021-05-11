@@ -5,6 +5,19 @@
     <title>Noleggio</title>
     <link href="Style.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Mappa-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
@@ -119,6 +132,106 @@
         </div>
       </section>
 
+      <h3 style="text-align: center;">Scegli il porto dove noleggiare</h3>
+      <div class="MNoleggio">
+        <div id = "map"></div>
+      </div>
+
+      <div class = "noleggio">
+        <!--Noleggio Catania-->
+        <div id = "nolCatania">
+          Noleggio catania<br>
+          <label for="documento">Inserire il codice del documento</label><br>
+          <input type="text" id = "documento" placeholder="codice documento">
+          <br>
+          <label for="dataInizio">Inserire la data di inizio</label><br>
+          <input type="date"id="dataInizio" placeholder="data inizio">
+          <br>
+          <label for="dataFine">Inserire la data di fine </label><br>
+          <input type="date" id= "dataFine" placeholder="data fine">
+          <br>
+          <label for="caparra">Inserire la caparra da versare</label><br>
+          <input type="number" id= "caparra" min = "100" placeholder="caparra">
+        </div>
+        <!--Noleggio Palermo-->
+        <div id = "nolPalermo">
+          Noleggio Palermo<br>
+          <label for="documento">Inserire il codice del documento</label><br>
+          <input type="text" id = "documento" placeholder="codice documento">
+          <br>
+          <label for="dataInizio">Inserire la data di inizio</label><br>
+          <input type="date"id="dataInizio" placeholder="data inizio">
+          <br>
+          <label for="dataFine">Inserire la data di fine </label><br>
+          <input type="date" id= "dataFine" placeholder="data fine">
+          <br>
+          <label for="caparra">Inserire la caparra da versare</label><br>
+          <input type="number" id= "caparra" min = "100" placeholder="caparra">
+        </div>
+        <!--Noleggio Genova-->
+        <div id = "nolGenova">
+          Noleggio Genova<br>
+          <label for="documento">Inserire il codice del documento</label><br>
+          <input type="text" id = "documento" placeholder="codice documento">
+          <br>
+          <label for="dataInizio">Inserire la data di inizio</label><br>
+          <input type="date"id="dataInizio" placeholder="data inizio">
+          <br>
+          <label for="dataFine">Inserire la data di fine </label><br>
+          <input type="date" id= "dataFine" placeholder="data fine">
+          <br>
+          <label for="caparra">Inserire la caparra da versare</label><br>
+          <input type="number" id= "caparra" min = "100" placeholder="caparra">
+        </div>
+        <!--Noleggio Porto Cervo-->
+        <div id = "nolPortoCervo">
+          Noleggio Porto Cervo<br>
+          <label for="documento">Inserire il codice del documento</label><br>
+          <input type="text" id = "documento" placeholder="codice documento">
+          <br>
+          <label for="dataInizio">Inserire la data di inizio</label><br>
+          <input type="date"id="dataInizio" placeholder="data inizio">
+          <br>
+          <label for="dataFine">Inserire la data di fine </label><br>
+          <input type="date" id= "dataFine" placeholder="data fine">
+          <br>
+          <label for="caparra">Inserire la caparra da versare</label><br>
+          <input type="number" id= "caparra" min = "100" placeholder="caparra">
+        </div>
+        <!--Noleggio Venezia-->
+        <div id = "nolVenezia">
+          Noleggio Venezia<br>
+          <label for="documento">Inserire il codice del documento</label><br>
+          <input type="text" id = "documento" placeholder="codice documento">
+          <br>
+          <label for="dataInizio">Inserire la data di inizio</label><br>
+          <input type="date"id="dataInizio" placeholder="data inizio">
+          <br>
+          <label for="dataFine">Inserire la data di fine </label><br>
+          <input type="date" id= "dataFine" placeholder="data fine">
+          <br>
+          <label for="caparra">Inserire la caparra da versare</label><br>
+          <input type="number" id= "caparra" min = "100" placeholder="caparra">
+        </div>
+        <!--Noleggio Napoli-->
+        <div id = "nolNapoli">
+          Noleggio Napoli<br>
+          <label for="documento">Inserire il codice del documento</label><br>
+          <input type="text" id = "documento" placeholder="codice documento">
+          <br>
+          <label for="dataInizio">Inserire la data di inizio</label><br>
+          <input type="date"id="dataInizio" placeholder="data inizio">
+          <br>
+          <label for="dataFine">Inserire la data di fine </label><br>
+          <input type="date" id= "dataFine" placeholder="data fine">
+          <br>
+          <label for="caparra">Inserire la caparra da versare</label><br>
+          <input type="number" id= "caparra" min = "100" placeholder="caparra">
+        </div>
+      </div>
+
+
     <script src="Contenuti/login.js"></script>
+    <script src="Contenuti/mappa.js"></script>
   </body>
 </html>

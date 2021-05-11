@@ -1,6 +1,7 @@
 //leaflet e maptiler cloud per la mappa ed il layout
+var titolo = document.getElementsByTagName("title")[0].innerHTML;
 //creazione mappa
-var map = L.map("map").setView([41.32, 12.43], 5);
+var map = L.map("map").setView([41.32, 12.43], 4);
 map.options.minZoom = 3; //zoom minimo della mappa
 //layout della mappa
 var gl = L.mapboxGL({
@@ -53,7 +54,7 @@ pCT.on("mouseout", function (e) {
   pCT.closePopup();
 });
 pCT.on("click", function (e) {
-  window.open("https://www.adspmaresiciliaorientale.it/porto-di-catania/"); //quando clicco sul marker apre un'altra pagina html
+  NolCatania(); //quando clicco sul marker apre un'altra pagina html
 });
 //Palermo
 pPA.on("mouseover", function (e) {
@@ -63,7 +64,7 @@ pPA.on("mouseout", function (e) {
   pPA.closePopup();
 });
 pPA.on("click", function (e) {
-  window.open("http://www.portotrapani.it/"); //quando clicco sul marker apre un'altra pagina html
+  NolPalermo(); //quando clicco sul marker apre un'altra pagina html
 });
 //Genova
 pGE.on("mouseover", function (e) {
@@ -73,7 +74,7 @@ pGE.on("mouseout", function (e) {
   pGE.closePopup();
 });
 pGE.on("click", function (e) {
-  window.open("https://www.portsofgenoa.com/it/"); //quando clicco sul marker apre un'altra pagina html
+  NolGenova(); //quando clicco sul marker apre un'altra pagina html
 });
 //Venezia
 pVE.on("mouseover", function (e) {
@@ -83,7 +84,7 @@ pVE.on("mouseout", function (e) {
   pVE.closePopup();
 });
 pVE.on("click", function (e) {
-  window.open("https://www.port.venice.it/it"); //quando clicco sul marker apre un'altra pagina html
+  NolVenezia(); //quando clicco sul marker apre un'altra pagina html
 });
 //Porto cervo
 pSS.on("mouseover", function (e) {
@@ -93,7 +94,7 @@ pSS.on("mouseout", function (e) {
   pSS.closePopup();
 });
 pSS.on("click", function (e) {
-  window.open("http://www.adspmaredisardegna.it/cagliari/"); //quando clicco sul marker apre un'altra pagina html
+  NolPortoCervo(); //quando clicco sul marker apre un'altra pagina html
 });
 //Napoli
 pNA.on("mouseover", function (e) {
@@ -103,7 +104,70 @@ pNA.on("mouseout", function (e) {
   pNA.closePopup();
 });
 pNA.on("click", function (e) {
-  window.open("https://adsptirrenocentrale.it/"); //quando clicco sul marker apre un'altra pagina html
+  NolNapoli() //quando clicco sul marker apre un'altra pagina html
 });
 
 //#endregion funzioni markers
+
+//funzioni noleggio al click della mappa 
+var nolCatania = document.getElementById("nolCatania");
+var nolPalermo = document.getElementById("nolPalermo");
+var nolPortoCervo = document.getElementById("nolPortoCervo");
+var nolVenezia = document.getElementById("nolVenezia");
+var nolNapoli = document.getElementById("nolNapoli");
+var nolGenova = document.getElementById("nolGenova");
+
+function NolCatania(){
+nolCatania.style.display = "block";
+nolPalermo.style.display = "none";
+nolPortoCervo.style.display = "none";
+nolVenezia.style.display = "none";
+nolNapoli.style.display = "none";
+nolGenova.style.display = "none";
+
+}
+function NolPalermo(){
+  nolCatania.style.display = "none";
+  nolPalermo.style.display = "block";
+  nolPortoCervo.style.display = "none";
+  nolVenezia.style.display = "none";
+  nolNapoli.style.display = "none";
+  nolGenova.style.display = "none";
+  
+  }
+  function NolPortoCervo(){
+    nolCatania.style.display = "none";
+    nolPalermo.style.display = "none";
+    nolPortoCervo.style.display = "block";
+    nolVenezia.style.display = "none";
+    nolNapoli.style.display = "none";
+    nolGenova.style.display = "none";
+    
+    }
+    function NolVenezia(){
+      nolCatania.style.display = "none";
+      nolPalermo.style.display = "none";
+      nolPortoCervo.style.display = "none";
+      nolVenezia.style.display = "block";
+      nolNapoli.style.display = "none";
+      nolGenova.style.display = "none";
+      
+      }
+      function NolNapoli(){
+        nolCatania.style.display = "none";
+        nolPalermo.style.display = "none";
+        nolPortoCervo.style.display = "none";
+        nolVenezia.style.display = "none";
+        nolNapoli.style.display = "block";
+        nolGenova.style.display = "none";
+        
+        }
+        function NolGenova(){
+          nolCatania.style.display = "none";
+          nolPalermo.style.display = "none";
+          nolPortoCervo.style.display = "none";
+          nolVenezia.style.display = "none";
+          nolNapoli.style.display = "none";
+          nolGenova.style.display = "block";
+          
+          }
