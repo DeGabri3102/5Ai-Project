@@ -109,7 +109,8 @@ pNA.on("mouseout", function (e) {
   pNA.closePopup();
 });
 pNA.on("click", function (e) {
-  NolNapoli() //quando clicco sul marker apre un'altra pagina html
+  NolNapoli(); //quando clicco sul marker apre un'altra pagina html
+	Noleggio();
 });
 
 //#endregion funzioni markers
