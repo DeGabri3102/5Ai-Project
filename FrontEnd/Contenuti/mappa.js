@@ -55,6 +55,7 @@ pCT.on("mouseout", function (e) {
 });
 pCT.on("click", function (e) {
   NolCatania(); //quando clicco sul marker apre un'altra pagina html
+	Noleggio();
 });
 //Palermo
 pPA.on("mouseover", function (e) {
@@ -65,6 +66,7 @@ pPA.on("mouseout", function (e) {
 });
 pPA.on("click", function (e) {
   NolPalermo(); //quando clicco sul marker apre un'altra pagina html
+	Noleggio();
 });
 //Genova
 pGE.on("mouseover", function (e) {
@@ -75,6 +77,7 @@ pGE.on("mouseout", function (e) {
 });
 pGE.on("click", function (e) {
   NolGenova(); //quando clicco sul marker apre un'altra pagina html
+	Noleggio();
 });
 //Venezia
 pVE.on("mouseover", function (e) {
@@ -85,6 +88,7 @@ pVE.on("mouseout", function (e) {
 });
 pVE.on("click", function (e) {
   NolVenezia(); //quando clicco sul marker apre un'altra pagina html
+	Noleggio();
 });
 //Porto cervo
 pSS.on("mouseover", function (e) {
@@ -95,6 +99,7 @@ pSS.on("mouseout", function (e) {
 });
 pSS.on("click", function (e) {
   NolPortoCervo(); //quando clicco sul marker apre un'altra pagina html
+ Noleggio();
 });
 //Napoli
 pNA.on("mouseover", function (e) {
@@ -104,7 +109,8 @@ pNA.on("mouseout", function (e) {
   pNA.closePopup();
 });
 pNA.on("click", function (e) {
-  NolNapoli() //quando clicco sul marker apre un'altra pagina html
+  NolNapoli(); //quando clicco sul marker apre un'altra pagina html
+	Noleggio();
 });
 
 //#endregion funzioni markers
@@ -116,7 +122,9 @@ var nolPortoCervo = document.getElementById("nolPortoCervo");
 var nolVenezia = document.getElementById("nolVenezia");
 var nolNapoli = document.getElementById("nolNapoli");
 var nolGenova = document.getElementById("nolGenova");
-var noleggio = document.getElementsByClassName("noleggio");
+function Noleggio(){
+	document.getElementById('noleggio').style.display = "block";
+}
 
 function NolCatania(){
 nolCatania.style.display = "block";
@@ -125,8 +133,6 @@ nolPortoCervo.style.display = "none";
 nolVenezia.style.display = "none";
 nolNapoli.style.display = "none";
 nolGenova.style.display = "none";
-noleggio.style.display = "block";
-
 }
 function NolPalermo(){
   nolCatania.style.display = "none";
@@ -135,8 +141,6 @@ function NolPalermo(){
   nolVenezia.style.display = "none";
   nolNapoli.style.display = "none";
   nolGenova.style.display = "none";
-  noleggio.style.display = "block";
-  
   }
   function NolPortoCervo(){
     nolCatania.style.display = "none";
@@ -145,7 +149,6 @@ function NolPalermo(){
     nolVenezia.style.display = "none";
     nolNapoli.style.display = "none";
     nolGenova.style.display = "none";
-    noleggio.style.display = "block";
     }
     function NolVenezia(){
       nolCatania.style.display = "none";
@@ -154,8 +157,7 @@ function NolPalermo(){
       nolVenezia.style.display = "block";
       nolNapoli.style.display = "none";
       nolGenova.style.display = "none";
-      noleggio.style.display = "block";
-      }
+	}
       function NolNapoli(){
         nolCatania.style.display = "none";
         nolPalermo.style.display = "none";
@@ -163,7 +165,6 @@ function NolPalermo(){
         nolVenezia.style.display = "none";
         nolNapoli.style.display = "block";
         nolGenova.style.display = "none";
-		noleggio.style.display = "block";
         }
         function NolGenova(){
           nolCatania.style.display = "none";
@@ -172,5 +173,4 @@ function NolPalermo(){
           nolVenezia.style.display = "none";
           nolNapoli.style.display = "none";
           nolGenova.style.display = "block";
-			noleggio.style.display = "block";
           }

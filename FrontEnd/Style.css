@@ -157,13 +157,14 @@ ul#menu a:hover {
   border: groove;
 }
 /*Div noleggio*/
-.noleggio{
+#noleggio{
   background-color: rgba(255,255,255,1.00);
 	width: 25%;
 	margin: auto;
 	margin-top: 20px;
 	padding: 10px;
 	border-radius: 10px;
+	border: groove;
 	display: none;
 }
 
