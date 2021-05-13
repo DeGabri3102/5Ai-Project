@@ -158,7 +158,14 @@ ul#menu a:hover {
 }
 /*Div noleggio*/
 .noleggio{
-  background-color: rgb(211, 29, 29);
+  background-color: rgba(255,255,255,1.00);
+	width: 25%;
+	margin: auto;
+	margin-top: 20px;
+	border: groove;
+	padding: 10px;
+	border-radius: 10px;
+	visibility: hidden;
 }
 #nolCatania
 {
@@ -183,4 +190,8 @@ ul#menu a:hover {
 #nolNapoli
 {
   display: none;
+}
+.MNoleggio{
+	width: 70%;
+	margin: auto;
 }
