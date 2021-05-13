@@ -125,7 +125,7 @@ nolPortoCervo.style.display = "none";
 nolVenezia.style.display = "none";
 nolNapoli.style.display = "none";
 nolGenova.style.display = "none";
-noleggio.style.visibility = "visible";
+noleggio.style.display = "block";
 
 }
 function NolPalermo(){
@@ -135,7 +135,7 @@ function NolPalermo(){
   nolVenezia.style.display = "none";
   nolNapoli.style.display = "none";
   nolGenova.style.display = "none";
-  noleggio.style.visibility = "visible";
+  noleggio.style.display = "block";
   
   }
   function NolPortoCervo(){
@@ -145,7 +145,7 @@ function NolPalermo(){
     nolVenezia.style.display = "none";
     nolNapoli.style.display = "none";
     nolGenova.style.display = "none";
-    noleggio.style.visibility = "visible";
+    noleggio.style.display = "block";
     }
     function NolVenezia(){
       nolCatania.style.display = "none";
@@ -154,7 +154,7 @@ function NolPalermo(){
       nolVenezia.style.display = "block";
       nolNapoli.style.display = "none";
       nolGenova.style.display = "none";
-      noleggio.style.visibility = "visible";
+      noleggio.style.display = "block";
       }
       function NolNapoli(){
         nolCatania.style.display = "none";
@@ -163,7 +163,7 @@ function NolPalermo(){
         nolVenezia.style.display = "none";
         nolNapoli.style.display = "block";
         nolGenova.style.display = "none";
-        noleggio.style.visibility = "visible";
+		noleggio.style.display = "block";
         }
         function NolGenova(){
           nolCatania.style.display = "none";
@@ -172,5 +172,5 @@ function NolPalermo(){
           nolVenezia.style.display = "none";
           nolNapoli.style.display = "none";
           nolGenova.style.display = "block";
-          noleggio.style.visibility = "visible";
+			noleggio.style.display = "block";
           }
