@@ -205,11 +205,21 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-Chi_siamo {
-  margin: auto;
-  width: 300px;
-  height: 200px;
-	
+  margin: 0 auto;
+  max-width: 300px;
+	position: relative;
 }
+.role{
+  position: absolute;
+  text-align: center; 
+  bottom:0 ; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.3); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 10px; /* Some padding */
+}
+
 .Chi{
 	width: 100%;
 	max-height: 350px;
@@ -248,12 +258,5 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
-.role{
-	text-align: center;
-  bottom: 20px;
-  right: 20px;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
+
