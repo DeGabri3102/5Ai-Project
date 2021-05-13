@@ -162,11 +162,11 @@ ul#menu a:hover {
 	width: 25%;
 	margin: auto;
 	margin-top: 20px;
-	border: groove;
 	padding: 10px;
 	border-radius: 10px;
-	visibility: hidden;
+	display: none;
 }
+
 #nolCatania
 {
   display: none;
