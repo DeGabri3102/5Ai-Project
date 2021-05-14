@@ -1,9 +1,12 @@
 # 5Ai-Project
-## Mappe
+Sito elaborato esami.
+## API Mappe
 - Maptiler
 - Leaflet
-## todo
-- query con php per database
+## To do
+Lista di cose da fare:
+- Aggiungere dettagli porti e località 
+- Query con php per database ([Ajax-PHP](https://www.w3schools.com/php/php_ajax_database.asp), [Ajax-PHP 2](https://www.w3schools.com/xml/ajax_database.asp))
     - login 
     - barche disponibili
     - prenotazioni
