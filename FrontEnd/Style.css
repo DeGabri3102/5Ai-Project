@@ -203,6 +203,7 @@ ul#menu a:hover {
 	width: 70%;
 	margin: auto;
 	border-radius: 12px;
+	border: groove;
 }
 
 * {box-sizing: border-box;}
