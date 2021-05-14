@@ -196,6 +196,7 @@ ul#menu a:hover {
 .MNoleggio{
 	width: 70%;
 	margin: auto;
+	border-radius: 12px;
 }
 
 * {box-sizing: border-box;}
