@@ -1,5 +1,6 @@
 <?php
-$conn = new mysqli('127.0.0.1', 'root', '', 'prova');
+
+include_once("db_connect.php");
 
 $documento=$_POST['documento'];
 $dataNol = date("Y/m/d");
@@ -18,4 +19,7 @@ else
 {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
+$conn->close();
+
 ?>

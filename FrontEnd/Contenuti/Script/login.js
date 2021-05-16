@@ -8,12 +8,12 @@ var spanReg = document.getElementsByClassName("close")[1];
 function MostraLogin() {
   log.style.display = "block";
   reg.style.display = "none";
-}
+};
 //mostra registrazione
 function MostraRegistrazione() {
   reg.style.display = "block";
   log.style.display = "none";
-}
+};
 //Cliudi popup
 spanLog.onclick = function () {
   log.style.display = "none";

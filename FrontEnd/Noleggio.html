@@ -239,8 +239,8 @@
 </footer>
 
 
-    <script src="Contenuti/login.js"></script>
-    <script src="Contenuti/mappa.js"></script>
+    <script src="Contenuti/Script/login.js"></script>
+    <script src="Contenuti/Script/mappa.js"></script>
     <!--Passaggio dati al file insert.php per inserire i dati nel DataBase-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
@@ -253,14 +253,13 @@
               var dataFine=$("#dataFine").val();
               var caparra=$("#caparra").val();
               $.ajax({
-                  url:'insert.php',
+                  url:'../BackEnd/insert.php',
                   method:'POST',
                   data:{
                       documento,
                       dataInizio,
                       dataFine,
                       caparra
-
                   },
                  success:function(data){
                      alert(data);
