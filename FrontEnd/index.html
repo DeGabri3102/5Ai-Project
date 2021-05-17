@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Blue Horizon</title>
-    <link href="Style.css" rel="stylesheet" type="text/css" />
-    <!--Mappa-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
-    <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
-    <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Blue Horizon</title>
+  <link href="Style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!--Mappa-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+  <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
+  <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
 <body>
   <header>
@@ -62,116 +58,89 @@
         <img class="Myslides" src="Contenuti/porto_Cervo_Sardegna.jpg" />
         <h1 class="City">Porto Cervo</h1>
       </div>
-		</div>
-
-      <!--popup per il login-->
-      <div id="logincon" class="logcont">
-        <div class="log">
-          <span class="close">&times;</span>
-          <h1>Accedi</h1>
-
-          <!--Inserimento nome utente-->
-          <label for="emailUtente" class="loglab">Email utente</label><br />
-          <input
-            type="text"
-            id="emailUtente"
-            class="Inslog"
-            placeholder="Inserisci email utente"
-          /><br />
-
-          <!--Inserimento password utente-->
-          <label for="passwordUtente" class="loglab">Password utente</label
-          ><br />
-          <input
-            type="password"
-            id="passwordUtente"
-            class="Inslog"
-            placeholder="Inserisci password"
-          /><br /><br />
-
-          <button id="confermaLog" class="Inslog">Accedi</button><br />
-          <a href="#" onclick="MostraRegistrazione()"
-            >Non hai un account? Creane uno subito!</a
-          >
-        </div>
-      </div>
-
-      <!--popUp per la registrazione-->
-      <div id="registrazione" class="logcont">
-        <div class="log">
-          <span class="close">&times;</span>
-          <h1>Registrati</h1>
-
-          <!--Inserimento nome utente-->
-          <label for="nomeUtente" class="loglab">Nome </label><br />
-          <input
-            type="text"
-            id="NomeUtente"
-            class="Inslog"
-            placeholder="Inserisci nome"
-          /><br />
-
-          <!--Inserimento cognome utente-->
-          <label for="cognomeUtente" class="loglab">Cognome</label><br />
-          <input
-            type="text"
-            id="CognomeUtente"
-            class="Inslog"
-            placeholder="Inserisci cognome"
-          /><br />
-
-          <!--Inserimento email utente-->
-          <label for="emailUtente" class="loglab">Email </label><br />
-          <input
-            type="text"
-            id="emailUtente"
-            class="Inslog"
-            placeholder="Inserisci email"
-          /><br />
-
-          <!--Inserimento password utente-->
-          <label for="passwordUtente" class="loglab">Password </label><br />
-          <input
-            type="password"
-            id="PasswordUtente"
-            class="Inslog"
-            placeholder="Inserisci password"
-          /><br />
-
-          <!--Reinserimento password utente-->
-          <label for="checkPUtente" class="loglab">Conferma password</label
-          ><br />
-          <input
-            type="password"
-            id="checkPUtente"
-            class="Inslog"
-            placeholder="Reinserisci password"
-          />
-          <br /><br />
-
-          <button id="ConfermaLog" class="Inslog">Crea</button><br />
-          <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a>
-        </div>
-        
-      </div>
-	  <div class="Mappa">
-      <div id = "map"></div>
     </div>
-	  <div style="clear: both"></div>
-    </section>
 
-    
-	
-    <footer class="section footer-classic context-dark bg-image" style="background: rgba(51, 135, 188, 1);margin-top: 5vw;">
-  <div class="container">
-    <div class="row row-30">
-      <div class="col-md-4 col-xl-5">
-       
+    <!--popup per il login-->
+    <div id="logincon" class="logcont">
+      <div class="log">
+        <span class="close">&times;</span>
+        <h1>Accedi</h1>
+
+        <!--Inserimento nome utente-->
+        <label for="emailUtente" class="loglab">Email utente</label><br />
+        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email utente" /><br />
+
+        <!--Inserimento password utente-->
+        <div>
+          <label for="passwordUtente" class="loglab">Password utente</label><br />
+          <input type="password" id="passwordUtente" class="Inslog" placeholder="Inserisci password" />
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
+        </div><br /><br />
+
+        <button id="confermaLog" class="Inslog">Accedi</button><br />
+        <a href="#" onclick="MostraRegistrazione()">Non hai un account? Creane uno subito!</a>
+      </div>
+    </div>
+
+    <!--popUp per la registrazione-->
+    <div id="registrazione" class="logcont">
+      <div class="log">
+        <span class="close">&times;</span>
+        <h1>Registrati</h1>
+
+        <!--Inserimento nome utente-->
+        <label for="nomeUtente" class="loglab">Nome </label><br />
+        <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br />
+
+        <!--Inserimento cognome utente-->
+        <label for="cognomeUtente" class="loglab">Cognome</label><br />
+        <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
+
+        <!--Inserimento email utente-->
+        <label for="emailUtente" class="loglab">Email </label><br />
+        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email" /><br />
+
+        <!--Inserimento password utente-->
+        <div>
+          <label for="passwordUtente" class="loglab">Password </label><br />
+          <input type="password" id="PasswordUtente" class="Inslog" placeholder="Inserisci password" />
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
+        </div>
+
+        <!--Reinserimento password utente-->
+        <div>
+          <label for="checkPUtente" class="loglab">Conferma password</label><br />
+          <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" />
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
+        </div>
+        <br /><br />
+
+        <button id="ConfermaLog" class="Inslog">Crea</button><br />
+        <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a>
+      </div>
+
+    </div>
+
+    <div class="Mappa">
+      <div id="map"></div>
+    </div>
+    <div style="clear: both"></div>
+  </section>
+
+
+
+  <footer class="section footer-classic context-dark bg-image"
+    style="background: rgba(51, 135, 188, 1);margin-top: 5vw;">
+    <div class="container">
+      <div class="row row-30">
+        <div class="col-md-4 col-xl-5">
+
           <p style="padding-top: 10px">Noleggiare yacht al giusto prezzo?
             Il team di Blue Horizon ha la risposta!
             Corri a visitare il nostro sito! Troverai un vasto assortimento.</p>
           <!-- Rights-->
-          <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Blue Horizon</span><span> - </span><span>All Rights Reserved.</span></p>
+          <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>Blue
+              Horizon</span><span> - </span><span>All Rights Reserved.</span></p>
         </div>
       </div>
       <div class="col-md-4">
@@ -200,42 +169,50 @@
         </ul>
       </div>
     </div>
-  
- <div class="row no-gutters social-container">
-          <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner" href="https://www.facebook.com/BLUE.HORIZON.PROJECT2021/"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
-	  
-          <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner" href="https://www.instagram.com/blue.horizon.project/"><span class="icon mdi mdi-instagram"></span><span>Instagram</span></a></div>
-	  
-          <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>Twitter</span></a></div>
-	  
-          <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>Youtube</span></a>
-	      </div>
-	  <div style=" clear: both"></div>
-	</div>
-</footer>
-    <script src="Contenuti/Script/mappa.js"></script>
-    <script src="Contenuti/Script/login.js"></script>
 
-    <script>
-      var myIndex = 0;
-      carousel();
+    <div class="row no-gutters social-container">
+      <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner"
+          href="https://www.facebook.com/BLUE.HORIZON.PROJECT2021/"><span
+            class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
 
-      function carousel() {
-        var i;
-        var x = document.getElementsByClassName("Myslides");
-        var y = document.getElementsByClassName("City");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-          y[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length) {
-          myIndex = 1;
-        }
-        x[myIndex - 1].style.display = "block";
-        y[myIndex - 1].style.display = "block";
-        setTimeout(carousel, 3000);
+      <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner"
+          href="https://www.instagram.com/blue.horizon.project/"><span
+            class="icon mdi mdi-instagram"></span><span>Instagram</span></a></div>
+
+      <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner"
+          href="#"><span class="icon mdi mdi-twitter"></span><span>Twitter</span></a></div>
+
+      <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner"
+          href="#"><span class="icon mdi mdi-youtube-play"></span><span>Youtube</span></a>
+      </div>
+      <div style=" clear: both"></div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="Contenuti/Script/mappa.js"></script>
+  <script src="Contenuti/Script/login.js"></script>
+
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("Myslides");
+      var y = document.getElementsByClassName("City");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+        y[i].style.display = "none";
       }
-    </script>
-  </body>
+      myIndex++;
+      if (myIndex > x.length) {
+        myIndex = 1;
+      }
+      x[myIndex - 1].style.display = "block";
+      y[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 3000);
+    }
+  </script>
+</body>
+
 </html>
