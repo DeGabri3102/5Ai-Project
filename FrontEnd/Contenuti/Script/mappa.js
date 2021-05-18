@@ -1,5 +1,6 @@
 //leaflet e maptiler cloud per la mappa ed il layout
 var titolo = document.getElementsByTagName("title")[0].innerHTML;
+var contBarche =document.getElementById("barche");
 //creazione mappa
 var map = L.map("map").setView([41.32, 12.43], 4);
 map.options.minZoom = 3; //zoom minimo della mappa
@@ -146,6 +147,12 @@ var nolPortoCervo = document.getElementById("nolPortoCervo");
 var nolVenezia = document.getElementById("nolVenezia");
 var nolNapoli = document.getElementById("nolNapoli");
 var nolGenova = document.getElementById("nolGenova");
+//
+//
+// id porti : Napoli = 1;  catania = 2;   venezia = 3;   genova = 4;  porto cervo = 5; palermo = 6;
+//
+//
+
 function Noleggio() {
   document.getElementById("noleggio").style.display = "block";
 }
@@ -157,6 +164,9 @@ function NolCatania() {
   nolVenezia.style.display = "none";
   nolNapoli.style.display = "none";
   nolGenova.style.display = "none";
+  contBarche.innerHTML = "";
+  if(titolo == "Noleggio")
+  CercaBarche(2)
 }
 function NolPalermo() {
   nolCatania.style.display = "none";
@@ -165,6 +175,9 @@ function NolPalermo() {
   nolVenezia.style.display = "none";
   nolNapoli.style.display = "none";
   nolGenova.style.display = "none";
+  contBarche.innerHTML = "";
+  if(titolo == "Noleggio")
+  CercaBarche(6)
 }
 function NolPortoCervo() {
   nolCatania.style.display = "none";
@@ -173,6 +186,9 @@ function NolPortoCervo() {
   nolVenezia.style.display = "none";
   nolNapoli.style.display = "none";
   nolGenova.style.display = "none";
+  contBarche.innerHTML = "";
+  if(titolo == "Noleggio")
+  CercaBarche(5)
 }
 function NolVenezia() {
   nolCatania.style.display = "none";
@@ -181,6 +197,9 @@ function NolVenezia() {
   nolVenezia.style.display = "block";
   nolNapoli.style.display = "none";
   nolGenova.style.display = "none";
+  contBarche.innerHTML = "";
+  if(titolo == "Noleggio")
+  CercaBarche(3)
 }
 function NolNapoli() {
   nolCatania.style.display = "none";
@@ -189,6 +208,9 @@ function NolNapoli() {
   nolVenezia.style.display = "none";
   nolNapoli.style.display = "block";
   nolGenova.style.display = "none";
+  contBarche.innerHTML = "";
+  if(titolo == "Noleggio")
+  CercaBarche(1)
 }
 function NolGenova() {
   nolCatania.style.display = "none";
@@ -197,4 +219,7 @@ function NolGenova() {
   nolVenezia.style.display = "none";
   nolNapoli.style.display = "none";
   nolGenova.style.display = "block";
+  contBarche.innerHTML = "";
+  if(titolo == "Noleggio")
+  CercaBarche(4)
 }

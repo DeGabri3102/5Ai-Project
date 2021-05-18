@@ -1,5 +1,6 @@
-$(document).ready(function () {
-  $("#noleggia").click(function () {
+//$(document).ready(function () {
+  //Funzione ricerca barche
+  function CercaBarche(porto){
     var documento = $("#documento").val();
     var dataInizio = $("#dataInizio").val();
     var dataFine = $("#dataFine").val();
@@ -17,10 +18,12 @@ $(document).ready(function () {
         dataFine,
         caparra,
         funzione,
+        porto
       },
       success: function (data) {
-        $("#barche").append(data);
+        $("#barche").append(data);//inserire i dati calcolati dentro insert.php dentro il div barche nella pagina noleggio
       },
     });
-  });
-});
+  }
+//});
+

@@ -40,11 +40,12 @@ function InserisciNoleggio()//Inserimento noleggio nel database
 function VisualizzaNavi()
 {
     include_once("db_connect.php");
-    $sql = "SELECT porti.citta,imbarcazioni.nome,imbarcazioni.marca,dataOrmeggio FROM ormeggi JOIN porti on porti.iDPorto = ormeggi.IDporto JOIN imbarcazioni on imbarcazioni.iDImb = ormeggi.iDImb " ;
+    $porto = $_POST['porto'];
+    $sql = "SELECT porti.citta,imbarcazioni.nome,imbarcazioni.marca,dataOrmeggio FROM ormeggi JOIN porti on porti.iDPorto = ormeggi.IDporto JOIN imbarcazioni on imbarcazioni.iDImb = ormeggi.iDImb where porti.iDPorto = '$porto'" ;
     //$risultato = $conn->query($sql);
-    $output = '<table style="font-weight: normal; border: 1px solid black; border-collapse: collapse;">';
+    $output = '<table style="font-weight: normal; border: 1px solid black; border-collapse: collapse; border-bottom:1px solid black;">';
     if ($risultato = $conn->query($sql)) {
-        echo("funziona");
+        //echo("funziona");
         // $result is an object and can be used to fetch row here
         if ($risultato->num_rows) {
             // output data of each row
@@ -56,7 +57,7 @@ function VisualizzaNavi()
                 $output .= "<td> Data Ormeggio: " . $row["dataOrmeggio"] ."</td>";
             }
           } else {
-            echo "0 results";
+            echo "In questo porto non si trova nessuna nostra barca";
           }
     }
     else {

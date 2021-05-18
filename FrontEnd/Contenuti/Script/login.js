@@ -1,3 +1,6 @@
+
+
+
 //elementi per popUp login/Registrazione
 var log = document.getElementById("logincon");
 var reg = document.getElementById("registrazione");
