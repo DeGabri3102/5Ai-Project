@@ -273,7 +273,6 @@
             class="icon mdi mdi-twitter"></span><span>Twitter</span></a>
       </div>
 
-<<<<<<< HEAD
     <script src="Contenuti/Script/login.js"></script>
     <script src="Contenuti/Script/mappa.js"></script>
     <!--Passaggio dati al file insert.php per inserire i dati nel DataBase-->
@@ -304,43 +303,8 @@
                  }
               });
           });
-=======
-      <div style="float: left; width: 25%" class="col">
-        <a style="text-decoration: none" class="social-inner" href="#"><span
-            class="icon mdi mdi-youtube-play"></span><span>Youtube</span></a>
-      </div>
-      <div style="clear: both"></div>
-    </div>
-    <div style="clear: both"></div>
-  </footer>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="Contenuti/Script/login.js"></script>
-  <script src="Contenuti/Script/mappa.js"></script>
-  <!--Passaggio dati al file insert.php per inserire i dati nel DataBase-->
-  <script>
-    $(document).ready(function () {
-      $("#noleggia").click(function () {
-        var documento = $("#documento").val();
-        var dataInizio = $("#dataInizio").val();
-        var dataFine = $("#dataFine").val();
-        var caparra = $("#caparra").val();
-        $.ajax({
-          url: "../BackEnd/insert.php",
-          method: "POST",
-          data: {
-            documento,
-            dataInizio,
-            dataFine,
-            caparra,
-          },
-          success: function (data) {
-            alert(data);
-          },
-        });
->>>>>>> 47202b26f5886febfd5a2873c3cfdb7891181080
       });
-    });
+   
   </script>
 </body>
 
