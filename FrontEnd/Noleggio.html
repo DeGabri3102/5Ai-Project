@@ -138,6 +138,8 @@
       </div>
 
       <div id = "noleggio">
+        <table>
+          <th>
         <!--Noleggio Catania-->
         <div id = "nolCatania">
           Noleggio catania<br>         
@@ -180,6 +182,14 @@
         <label for="patente">No</label><br>
         <label for="noleggia">Clicca per confermare il noleggio</label>
         <button type="submit" id="noleggia"> Conferma noleggio</button>
+      </th>
+      <th>
+        <div>
+          mostra barche
+          <textarea id="barche" rows="10"></textarea>
+        </div>
+      </th>
+      </table>
       </div>
 
 
@@ -252,6 +262,8 @@
               var dataInizio=$("#dataInizio").val();
               var dataFine=$("#dataFine").val();
               var caparra=$("#caparra").val();
+              //il valore della variabile funzione determina la funzione da usare nel fule insert.php
+              var funzione = 2;
               $.ajax({
                   url:'../BackEnd/insert.php',
                   method:'POST',
@@ -259,10 +271,11 @@
                       documento,
                       dataInizio,
                       dataFine,
-                      caparra
+                      caparra,
+                      funzione
                   },
                  success:function(data){
-                     alert(data);
+                     $("#barche").append(data);
                  }
               });
           });
