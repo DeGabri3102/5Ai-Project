@@ -13,7 +13,7 @@ var gl = L.mapboxGL({
 
 //icona del marker
 var iconaMarker = L.icon({
-  iconUrl: "Contenuti/icon.png",
+  iconUrl: "Contenuti/markerMappa.png",
   iconSize: [20, 33],
   iconAnchor: [10, 33],
   popupAnchor: [0, -33],
