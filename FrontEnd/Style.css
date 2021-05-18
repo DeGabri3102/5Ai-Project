@@ -167,6 +167,7 @@ ul#menu a:hover {
   border-radius: 10px;
   border: groove;
   display: none;
+  text-align: justify;
 }
 
 #nolCatania {
