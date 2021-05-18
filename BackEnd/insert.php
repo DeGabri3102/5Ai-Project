@@ -40,7 +40,7 @@ function InserisciNoleggio()//Inserimento noleggio nel database
 function VisualizzaNavi()
 {
     include_once("db_connect.php");
-    $sql = "SELECT idOrmeggio,IDPorto,iDImb,dataOrmeggio FROM ormeggi";
+    $sql = "SELECT porti.citta,imbarcazioni.nome,imbarcazioni.marca,dataOrmeggio FROM ormeggi JOIN porti on porti.iDPorto = ormeggi.IDporto JOIN imbarcazioni on imbarcazioni.iDImb = ormeggi.iDImb " ;
     //$risultato = $conn->query($sql);
     $output = '<table style="font-weight: normal; border: 1px solid black; border-collapse: collapse;">';
     if ($risultato = $conn->query($sql)) {
@@ -50,9 +50,9 @@ function VisualizzaNavi()
             // output data of each row
             while($row = $risultato->fetch_assoc()) {
                 $output .= "<tr>";
-                $output .= "<td> id: " . $row["idOrmeggio"]. "</td>"; 
-                $output .=  "<td> iDPorto: " . $row["iDPorto"]. "</td>";
-                $output .= "<td> Id barca: " . $row["iDImb"]. "</td>"; 
+                $output .= "<td> citta: " . $row["citta"]. "</td>"; 
+                $output .=  "<td> nome: " . $row["nome"]. "</td>";
+                $output .= "<td> marca: " . $row["marca"]. "</td>"; 
                 $output .= "<td> Data Ormeggio: " . $row["dataOrmeggio"] ."</td>";
             }
           } else {
