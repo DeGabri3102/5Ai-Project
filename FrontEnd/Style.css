@@ -321,9 +321,8 @@ ul, ol {
 
 .avatar {
   vertical-align: middle;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 120px;
+  height: 120px;
   margin-top: 10px;
   margin-left: 10px;
 }

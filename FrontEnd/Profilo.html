@@ -29,12 +29,22 @@
     <section>
       <div class="desc">
         <h1 class="Titolo">Informazioni</h1>
-        <img src="Contenuti/avatar.png" alt="Avatar" class="avatar">
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Profil_licnosti.png" alt="avatar" class="avatar"> //https://codepen.io/diegobdev/pen/KoXJZm
+        </div>
+        <input type="file" id="profile_image">
+        <script>
+        $(function(){ $('#profile_image').change( function(e) {
+        var img = URL.createObjectURL(e.target.files[0]);
+        $('.image').attr('src', img);
+    });
+});
+      </script>
         <div class="dati">
           <p class="Nome">Nome:</p>
           <p class="Cognome">Cognome:</p>
           <p class="Email">Email:</p>
-          <p class="NumDocumento">Num Documento:</p>
+          <p class="NumDocumento">Numero Documento</p>
         </div>
       </div>
     </section>
