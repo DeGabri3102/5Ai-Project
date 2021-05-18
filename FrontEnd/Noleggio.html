@@ -37,6 +37,7 @@
     </div>
   </header>
   <section>
+    
     <!--popup per il login-->
     <div id="logincon" class="logcont">
       <div class="log">
@@ -51,18 +52,51 @@
         <div>
           <label for="passwordUtente" class="loglab">Password utente</label><br />
           <input type="password" id="passwordUtente" class="Inslog" placeholder="Inserisci password" />
-          <i class="
-                far
-                fa-eye
-                show-password-toggle
-                icon-eye-close icon-align-confirm
-              "></i>
-        </div>
-        <br /><br />
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
+        </div><br /><br />
 
         <button id="confermaLog" class="Inslog">Accedi</button><br />
         <a href="#" onclick="MostraRegistrazione()">Non hai un account? Creane uno subito!</a>
       </div>
+    </div>
+
+    <!--popUp per la registrazione-->
+    <div id="registrazione" class="logcont">
+      <div class="log">
+        <span class="close">&times;</span>
+        <h1>Registrati</h1>
+
+        <!--Inserimento nome utente-->
+        <label for="nomeUtente" class="loglab">Nome </label><br />
+        <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br />
+
+        <!--Inserimento cognome utente-->
+        <label for="cognomeUtente" class="loglab">Cognome</label><br />
+        <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
+
+        <!--Inserimento email utente-->
+        <label for="emailUtente" class="loglab">Email </label><br />
+        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email" /><br />
+
+        <!--Inserimento password utente-->
+        <div>
+          <label for="passwordUtente" class="loglab">Password </label><br />
+          <input type="password" id="PasswordUtente" class="Inslog" placeholder="Inserisci password" />
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
+        </div>
+
+        <!--Reinserimento password utente-->
+        <div>
+          <label for="checkPUtente" class="loglab">Conferma password</label><br />
+          <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" />
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
+        </div>
+        <br /><br />
+
+        <button id="ConfermaLog" class="Inslog">Crea</button><br />
+        <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a>
+      </div>
+
     </div>
 
       <div id = "noleggio">
@@ -89,17 +123,6 @@
           Noleggio Venezia<br>
         </div>
 
-        <!--Reinserimento password utente-->
-        <div>
-          <label for="checkPUtente" class="loglab">Conferma password</label><br />
-          <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" />
-          <i class="
-                far
-                fa-eye
-                show-password-toggle
-                icon-eye-close icon-align-confirm
-              "></i>
-        </div>
         <label for="documento">Inserire il codice del documento</label><br>
         <input type="text" id = "documento" placeholder="codice documento">
         <br>
@@ -235,39 +258,12 @@
             class="icon mdi mdi-twitter"></span><span>Twitter</span></a>
       </div>
 
-    <script src="Contenuti/Script/login.js"></script>
-    <script src="Contenuti/Script/mappa.js"></script>
-    <!--Passaggio dati al file insert.php per inserire i dati nel DataBase-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        
-          $("#noleggia").click(function(){
-            
-              var documento=$("#documento").val();
-              var dataInizio=$("#dataInizio").val();
-              var dataFine=$("#dataFine").val();
-              var caparra=$("#caparra").val();
-              //il valore della variabile funzione determina la funzione da usare nel fule insert.php
-              var funzione = 2;
-              $.ajax({
-                  url:'../BackEnd/insert.php',
-                  method:'POST',
-                  data:{
-                      documento,
-                      dataInizio,
-                      dataFine,
-                      caparra,
-                      funzione
-                  },
-                 success:function(data){
-                     $("#barche").append(data);
-                 }
-              });
-          });
-      });
-   
-  </script>
+      <!--Libreria funzioni JQuery-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="Contenuti/Script/login.js"></script>
+      <script src="Contenuti/Script/mappa.js"></script>
+      <!--Passaggio dati al file insert.php per inserire i dati nel DataBase-->
+      <script src="Contenuti/Script/noleggio.js"></script>
 </body>
 
 </html>
