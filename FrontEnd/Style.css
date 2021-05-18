@@ -38,7 +38,7 @@ ul#menu li a {
 }
 ul#menu a.active,
 ul#menu a:hover {
-  color: rgba(183,166,17,1.00);
+  color: rgba(183, 166, 17, 1);
 }
 .Logo img {
   width: 15vw;
@@ -74,7 +74,7 @@ ul#menu a:hover {
 .Slide {
   max-width: 500px;
   margin-left: 9%;
-	float: left;
+  float: left;
 }
 .Myslides {
   display: none;
@@ -88,15 +88,15 @@ ul#menu a:hover {
 /*mappa */
 #map {
   width: 100%;
-	height: 280px;
-	margin: 0;
+  height: 280px;
+  margin: 0;
 }
 .Mappa {
   width: 500px;
   margin-right: 9%;
   border: groove;
   border-radius: 12px;
-	float: right;
+  float: right;
 }
 /*popup login e registrazione*/
 .logcont {
@@ -141,78 +141,80 @@ ul#menu a:hover {
 .loglab {
   font-weight: bold;
 }
-.container{
+.container {
   margin-top: 3.7vw;
   font-size: 15px;
   font-family: Verdana, sans-serif;
   color: rgb(7, 1, 1);
-	width: 85%;
-	text-align: left;
-	margin: auto;
-	text-align: justify;
+  width: 85%;
+  text-align: left;
+  margin: auto;
+  text-align: justify;
 }
 .desc {
-	margin: auto;
+  margin: auto;
   width: 63%;
   height: auto;
   border: groove;
 }
 /*Div noleggio*/
-#noleggio{
-  background-color: rgba(255,255,255,1.00);
-	width: 25%;
-	margin: auto;
-	margin-top: 20px;
-	padding: 10px;
-	border-radius: 10px;
-	border: groove;
-	display: none;
+#noleggio {
+  background-color: rgba(255, 255, 255, 1);
+  width: 25%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: groove;
+  display: none;
 }
 
-#nolCatania
-{
+#nolCatania {
   display: none;
 }
-#nolPalermo
-{
+#nolPalermo {
   display: none;
 }
-#nolPortoCervo
-{
+#nolPortoCervo {
   display: none;
 }
-#nolVenezia
-{
+#nolVenezia {
   display: none;
 }
-#nolGenova
-{
+#nolGenova {
   display: none;
 }
-#nolNapoli
-{
+#nolNapoli {
   display: none;
 }
-.MNoleggio{
-	width: 70%;
-	margin: auto;
-	border-radius: 12px;
-	border: groove;
+.MNoleggio {
+  width: 70%;
+  margin: auto;
+  border-radius: 12px;
+  border: groove;
 }
 
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.slide {display: none;}
-img {vertical-align: middle;}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, sans-serif;
+}
+.slide {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-Chi_siamo {
   margin: 0 auto;
   max-width: 920px;
 }
-.role{
+.role {
   position: absolute;
-  text-align: center; 
+  text-align: center;
   background: rgb(0, 0, 0); /* Fallback color */
   background: rgba(0, 0, 0, 0.3); /* Black background with 0.5 opacity */
   color: #f1f1f1; /* Grey text */
@@ -220,9 +222,9 @@ img {vertical-align: middle;}
   padding: 10px; /* Some padding */
 }
 
-.Chi{
-	width: 300px;
-	height: 340px;
+.Chi {
+  width: 300px;
+  height: 340px;
 }
 /* Caption text */
 .text {
@@ -235,8 +237,6 @@ img {vertical-align: middle;}
   text-align: center;
 }
 
-
-
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
@@ -245,26 +245,39 @@ img {vertical-align: middle;}
   animation-duration: 1.5s;
 }
 @-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
+  .text {
+    font-size: 11px;
+  }
 }
 
-
-.context-dark, .bg-gray-dark, .bg-primary {
+.context-dark,
+.bg-gray-dark,
+.bg-primary {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+.footer-classic a,
+.footer-classic a:focus,
+.footer-classic a:active {
   color: #ffffff;
 }
 .nav-list li {
@@ -278,7 +291,8 @@ img {vertical-align: middle;}
   visibility: visible;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -290,13 +304,14 @@ ul, ol {
   align-items: center;
   width: 100%;
   padding: 23px;
-  font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
 }
 .social-container .col {
   border: 1px solid rgba(255, 255, 255, 0.1);
-	width: auto;
+  width: auto;
 }
 .nav-list li a:before {
   content: "\f14f";
@@ -308,17 +323,43 @@ ul, ol {
   margin-right: 7px;
   opacity: 0;
   visibility: hidden;
-  transition: .22s ease;
+  transition: 0.22s ease;
 }
-.role{
-	margin-top: -39px;
+.role {
+  margin-top: -39px;
 }
-.Tirreno, .Adriatico, .Mediterraneo, .Ionio, .Ligure{
+.Tirreno {
   width: 100%;
-  height:20px;
+  height: 60vw;
   border: groove;
+  background-image: url("Contenuti/tirreno.jpg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
+.Adriatico {
+  width: 100%;
+  height: 60vw;
+  border: groove;
+  background-image: url("Contenuti/DeltaPO.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Ionio {
+  width: 100%;
+  height: 60vw;
+  border: groove;
+  background-image: url("Contenuti/ionio.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Ligure {
+  width: 100%;
+  height: 60vw;
+  border: groove;
+  background-image: url("Contenuti/CinqueTerre.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .avatar {
   vertical-align: middle;
   width: 120px;
@@ -326,10 +367,11 @@ ul, ol {
   margin-top: 10px;
   margin-left: 10px;
 }
-.dati{
- margin-left: 150px;
- margin-top: -100px;
+.dati {
+  margin-left: 150px;
+  margin-top: -100px;
 }
-th,tr{
+th,
+tr {
   font-weight: normal;
 }
