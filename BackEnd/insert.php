@@ -1,6 +1,6 @@
 <?php
 $scegliFunzione = $_POST['funzione'];
-
+//error_reporting(0);
 switch ($scegliFunzione)
 {
     case 1:InserisciNoleggio();break;
@@ -42,14 +42,18 @@ function VisualizzaNavi()
     include_once("db_connect.php");
     $sql = "SELECT idOrmeggio,IDPorto,iDImb,dataOrmeggio FROM ormeggi";
     //$risultato = $conn->query($sql);
-    $output = "";
+    $output = '<table style="font-weight: normal; border: 1px solid black; border-collapse: collapse;">';
     if ($risultato = $conn->query($sql)) {
         echo("funziona");
         // $result is an object and can be used to fetch row here
         if ($risultato->num_rows) {
             // output data of each row
             while($row = $risultato->fetch_assoc()) {
-              $output .= "id: " . $row["idOrmeggio"]. " - iD Porto: " . $row["iDPorto"]. "Id barca: " . $row["iDImb"]. "Data Ormeggio: " . $row["dataOrmeggio"] ."<br>";
+                $output .= "<tr>";
+                $output .= "<td> id: " . $row["idOrmeggio"]. "</td>"; 
+                $output .=  "<td> iDPorto: " . $row["iDPorto"]. "</td>";
+                $output .= "<td> Id barca: " . $row["iDImb"]. "</td>"; 
+                $output .= "<td> Data Ormeggio: " . $row["dataOrmeggio"] ."</td>";
             }
           } else {
             echo "0 results";
@@ -58,6 +62,7 @@ function VisualizzaNavi()
     else {
         echo("Query failed: ". $conn->error);
     }
+    $output .="</table>";
      echo $output;
     
       $conn->close();

@@ -67,7 +67,7 @@
 
       <div id = "noleggio">
         <table>
-          <th>
+          <th style="font-weight: normal;">
         <!--Noleggio Catania-->
         <div id = "nolCatania">
           Noleggio catania<br>         
@@ -87,34 +87,6 @@
         <!--Noleggio Venezia-->
         <div id = "nolVenezia">
           Noleggio Venezia<br>
-    <!--popUp per la registrazione-->
-    <div id="registrazione" class="logcont">
-      <div class="log">
-        <span class="close">&times;</span>
-        <h1>Registrati</h1>
-
-        <!--Inserimento nome utente-->
-        <label for="nomeUtente" class="loglab">Nome </label><br />
-        <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br />
-
-        <!--Inserimento cognome utente-->
-        <label for="cognomeUtente" class="loglab">Cognome</label><br />
-        <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
-
-        <!--Inserimento email utente-->
-        <label for="emailUtente" class="loglab">Email </label><br />
-        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email" /><br />
-
-        <!--Inserimento password utente-->
-        <div>
-          <label for="passwordUtente" class="loglab">Password </label><br />
-          <input type="password" id="PasswordUtente" class="Inslog" placeholder="Inserisci password" />
-          <i class="
-                far
-                fa-eye
-                show-password-toggle
-                icon-eye-close icon-align-confirm
-              "></i>
         </div>
 
         <!--Reinserimento password utente-->
@@ -148,16 +120,12 @@
         <button type="submit" id="noleggia"> Conferma noleggio</button>
       </th>
       <th>
-        <div>
+        <div id="barche">
           mostra barche
-          <textarea id="barche" rows="10"></textarea>
+          <!-- <textarea id="barche" rows="10" cols="20"></textarea> -->
         </div>
       </th>
       </table>
-        <br /><br />
-
-        <button id="ConfermaLog" class="Inslog">Crea</button><br />
-        <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a>
       </div>
     </div>
   </section>

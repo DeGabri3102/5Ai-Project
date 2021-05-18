@@ -330,3 +330,6 @@ ul, ol {
  margin-left: 150px;
  margin-top: -100px;
 }
+th,tr{
+  font-weight: normal;
+}
