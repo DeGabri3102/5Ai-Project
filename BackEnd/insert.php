@@ -5,12 +5,8 @@ switch ($scegliFunzione)
 {
     case 1:InserisciNoleggio();break;
     case 2:VisualizzaNavi();break;
+    case 3:VisualizzaInfoNavi();break;
 }
-
- 
-
-
-
 
 
 function InserisciNoleggio()//Inserimento noleggio nel database
@@ -41,31 +37,64 @@ function VisualizzaNavi()
 {
     include_once("db_connect.php");
     $porto = $_POST['porto'];
-    $sql = "SELECT porti.citta,imbarcazioni.nome,imbarcazioni.marca,dataOrmeggio FROM ormeggi JOIN porti on porti.iDPorto = ormeggi.IDporto JOIN imbarcazioni on imbarcazioni.iDImb = ormeggi.iDImb where porti.iDPorto = '$porto'" ;
+    $sql = "SELECT imbarcazioni.nome,imbarcazioni.marca FROM imbarcazioni JOIN ormeggi on imbarcazioni.iDImb = ormeggi.IDImb JOIN porti on porti.iDPorto = ormeggi.iDPorto where porti.iDPorto = '$porto'" ;
     //$risultato = $conn->query($sql);
-    $output = '<table style="font-weight: normal; border: 1px solid black; border-collapse: collapse; border-bottom:1px solid black;">';
+    $output = '<select id = "showBarche" onchange="InfoBarche(this.value)" >
+    <option disabled="true" selected="selected">Nome-Marca</option> ';
     if ($risultato = $conn->query($sql)) {
         //echo("funziona");
         // $result is an object and can be used to fetch row here
         if ($risultato->num_rows) {
             // output data of each row
             while($row = $risultato->fetch_assoc()) {
-                $output .= "<tr>";
-                $output .= "<td> citta: " . $row["citta"]. "</td>"; 
-                $output .=  "<td> nome: " . $row["nome"]. "</td>";
-                $output .= "<td> marca: " . $row["marca"]. "</td>"; 
-                $output .= "<td> Data Ormeggio: " . $row["dataOrmeggio"] ."</td>";
+
+                $output.= '<option >'. $row["nome"].'-'.$row["marca"]. "</option>";
             }
           } else {
-            echo "In questo porto non si trova nessuna nostra barca";
+            //echo "In questo porto non si trova nessuna nostra barca";
+            $output .= '<option disabled="true">In questo porto non si trova nessuna nostra barca</option>';
           }
     }
     else {
         echo("Query failed: ". $conn->error);
     }
-    $output .="</table>";
+    $output .="</select>";
      echo $output;
     
       $conn->close();
+}
+
+
+function VisualizzaInfoNavi()
+{
+    include_once("db_connect.php");
+    $nomeBarca = $_POST['nomeBarca'];
+    $sql = "SELECT nome,marca,modello,prezzonoleggio_al_giorno,lunghezza,potenza_cv,nPostiLetto,obbligoPatenteNautica FROM imbarcazioni  where nome = '$nomeBarca'" ;
+
+    $output = "";
+    
+    if ($risultato = $conn->query($sql)) {
+        //echo("funziona");
+        // $result is an object and can be used to fetch row here
+        if ($risultato->num_rows) {
+            // output data of each row
+            while($row = $risultato->fetch_assoc()) {
+                $output.= 'La barca '. $row["nome"].', modello '.$row["modello"]. "(".$row["marca"]. ")". " ha una lunghezza di: ".$row["lunghezza"]."m.\n".
+                " La sua capienza arriva fino a ".$row['nPostiLetto']. " posti letto, con una potenza di :".$row["potenza_cv"]." CV.\n"
+                ."Prezzo affitto giornaliero: ".$row["prezzonoleggio_al_giorno"]."€ \n".
+                "Obbligo patente nautica: ".$row["obbligoPatenteNautica"];
+            }
+          } else {
+            //echo "In questo porto non si trova nessuna nostra barca";
+            $output .= 'Nessuna informazione trovata';
+          }
+    }
+    else {
+        echo("Query failed: ". $conn->error);
+    }
+     echo $output;
+    
+      $conn->close();
+
 }
 ?>
