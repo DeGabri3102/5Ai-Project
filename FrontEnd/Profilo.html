@@ -32,14 +32,9 @@
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Profil_licnosti.png" alt="avatar" class="avatar"> 
         </div>
-        <input type="file" id="profile_image">
-        <script>
-        $(function(){ $('#profile_image').change( function(e) {
-        var img = URL.createObjectURL(e.target.files[0]);
-        $('.image').attr('src', img);
-    });
-});
-      </script>
+        <input type="file" id="profile_image" accept="image/jpeg">
+    
+     
         <div class="dati">
           <p class="Nome">Nome:</p>
           <p class="Cognome">Cognome:</p>
@@ -48,7 +43,7 @@
         </div>
       </div>
     </section>
-    </body>
+    
     <footer class="section footer-classic context-dark bg-image" style="background: rgba(51, 135, 188, 1);margin-top: 5vw">
         <div class="container">
           <div class="row row-30">
@@ -100,5 +95,12 @@
             <div style=" clear: both"></div>
           </div>
       </footer>
-      
+          <script>
+        $(function(){ $('#profile_image').change( function(e) {
+        var img = URL.createObjectURL(e.target.files[0]);
+        $('.avatar').attr('src', img);
+    });
+});
+	</script>
+			  </body>
       </html>
