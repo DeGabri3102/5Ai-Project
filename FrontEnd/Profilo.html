@@ -30,9 +30,9 @@
       <div class="desc">
         <h1 class="Titolo">Informazioni</h1>
         <div>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Profil_licnosti.png" alt="avatar" class="avatar"> 
+          <img src="Contenuti/avatar.jpeg" alt="avatar" class="avatar"> 
         </div>
-        <input type="file" id="profile_image" accept="image/jpeg">
+        <input type="file" id="profile_image">
     
      
         <div class="dati">
@@ -96,8 +96,9 @@
           </div>
       </footer>
           <script>
-        $(function(){ $('#profile_image').change( function(e) {
-        var img = URL.createObjectURL(e.target.files[0]);
+        $(function(){ 
+			$('#profile_image').change( function(e) {
+		var	img = URL.createObjectURL(e.target.files[1]);
         $('.avatar').attr('src', img);
     });
 });
