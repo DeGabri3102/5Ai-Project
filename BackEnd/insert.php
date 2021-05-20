@@ -17,18 +17,39 @@ function InserisciNoleggio()//Inserimento noleggio nel database
     $dataInizio=$_POST['dataInizio'];
     $dataFine=$_POST['dataFine'];
     $caparra=$_POST['caparra'];
+    $nomeBarca =$_POST['nomeBarca'];
+    
+    $cercaIdBarca = "SELECT iDImb FROM imbarcazioni where nome = '$nomeBarca'";
+    $idBarca = $conn->query($cercaIdBarca);
+    $idBarca->num_rows;
+    $row = $idBarca->fetch_assoc();
 
-    $sql="INSERT INTO noleggio (idnol, documento, dataNol, dataInizio, dataFine, caparra) 
-    VALUES 
-    (NULL, '$documento', '$dataNol', '$dataInizio', '$dataFine', '$caparra')";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "data inserted";
-    }
-    else 
-    {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+
+    echo ($row["iDImb"]);
+
+
+
+    // if ($conn->query($cercaIdBarca) === TRUE) {
+    //     echo "Noleggio effettuato";
+    // }
+    // else 
+    // {
+    //     echo "Error: " . $sql . "<br>" . $conn->error;
+    // }
+
+
+    // $sql="INSERT INTO noleggio (idnol, documento, dataNol, dataInizio, dataFine, caparra) 
+    // VALUES 
+    // (NULL, '$documento', '$dataNol', '$dataInizio', '$dataFine', '$caparra')";
+
+    // if ($conn->query($sql) === TRUE) {
+    //     echo "Noleggio effettuato";
+    // }
+    // else 
+    // {
+    //     echo "Error: " . $sql . "<br>" . $conn->error;
+    // }
 
     $conn->close();
 }
