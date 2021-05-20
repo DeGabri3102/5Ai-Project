@@ -129,40 +129,42 @@
 
 
     <div id="noleggio">
-      <!--Noleggio Catania-->
-      <div id="nolCatania">Noleggio catania<br /></div>
-      <!--Noleggio Palermo-->
-      <div id="nolPalermo">Noleggio Palermo<br /></div>
-      <!--Noleggio Genova-->
-      <div id="nolGenova">Noleggio Genova<br /></div>
-      <!--Noleggio Porto Cervo-->
-      <div id="nolPortoCervo">Noleggio Porto Cervo<br /></div>
-      <!--Noleggio Venezia-->
-      <div id="nolVenezia">Noleggio Venezia<br /></div>
-      <!--Noleggio Napoli-->
-      <div id="nolNapoli">Noleggio Napoli<br /></div>
-      <label for="documento">Inserire il codice del documento</label><br />
-      <input type="text" id="documento" placeholder="codice documento" />
-      <br />
-      <label for="dataInizio">Inserire la data di inizio</label><br />
-      <input type="date" id="dataInizio" placeholder="data inizio" />
-      <br />
-      <label for="dataFine">Inserire la data di fine </label><br />
-      <input type="date" id="dataFine" placeholder="data fine" />
-      <br />
-      <label for="caparra">Inserire la caparra da versare</label><br />
-      <input type="number" id="caparra" min="100" placeholder="caparra" />
-      <p>Specificare se Patente Nautica munito</p>
-      <input type="radio" id="Patente" name="drone" value="Patente" />
-      <label for="Patente">Si</label>
-      <input type="radio" id="patente" name="drone" value="patente" />
-      <label for="patente">No</label><br />
-      <label for="noleggia">Clicca per confermare il noleggio</label>
-      <button type="submit" id="noleggia" onclick="InserisciBarche()">
-        Conferma noleggio
-      </button>
-      </th>
-      <th></th>
+      <table>
+        <th style="font-weight: normal">
+          <!--Noleggio Catania-->
+          <div id="nolCatania">Noleggio catania<br /></div>
+          <!--Noleggio Palermo-->
+          <div id="nolPalermo">Noleggio Palermo<br /></div>
+          <!--Noleggio Genova-->
+          <div id="nolGenova">Noleggio Genova<br /></div>
+          <!--Noleggio Porto Cervo-->
+          <div id="nolPortoCervo">Noleggio Porto Cervo<br /></div>
+          <!--Noleggio Venezia-->
+          <div id="nolVenezia">Noleggio Venezia<br /></div>
+          <!--Noleggio Napoli-->
+          <div id="nolNapoli">Noleggio Napoli<br /></div>
+          <label for="documento">Inserire il codice del documento</label><br />
+          <input type="text" id="documento" placeholder="codice documento" />
+          <br />
+          <label for="dataInizio">Inserire la data di inizio</label><br />
+          <input type="date" id="dataInizio" placeholder="data inizio" />
+          <br />
+          <label for="dataFine">Inserire la data di fine </label><br />
+          <input type="date" id="dataFine" placeholder="data fine" />
+          <br />
+          <label for="caparra">Inserire la caparra da versare</label><br />
+          <input type="number" id="caparra" min="100" placeholder="caparra" />
+          <p>Specificare se Patente Nautica munito</p>
+          <input type="radio" id="Patente" name="drone" value="Patente" />
+          <label for="Patente">Si</label>
+          <input type="radio" id="patente" name="drone" value="patente" />
+          <label for="patente">No</label><br />
+          <label for="noleggia">Clicca per confermare il noleggio</label>
+          <button type="submit" id="noleggia" onclick="InserisciBarche()">
+            Conferma noleggio
+          </button>
+        </th>
+        <th></th>
       </table>
       <div id="barche">
         <!-- <textarea id="barche" rows="10" cols="20"></textarea> -->
