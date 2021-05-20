@@ -2,253 +2,301 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Noleggio</title>
-  <link href="Style.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!--Mappa-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
-  <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
-  <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
-  <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Noleggio</title>
+    <link href="Style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Mappa-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.js"></script>
+    <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <header>
-    <div class="Navbar">
-      <div class="Logo">
-        <img src="Contenuti/logoBlueHorizon.png" />
-        <p class="Sito">Blue Horizon</p>
-      </div>
-      <div class="Allineamento">
-        <ul id="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ChiSiamo.html">Chi Siamo</a></li>
-          <li class="active"><a href="Noleggio.html" style="color: rgba(0, 0, 0, 1)">Noleggio</a></li>
-          <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Monitoraggio Acque</a>
-            <div class="dropdown-content">
-              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Tirreno"
-                onClick="mostratir()">Mar Tirreno</a>
-              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Ionio"
-                onClick="mostraion()">Mar Ionio</a>
-              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Adriatico"
-                onClick="mostraadr()">Mar Adriatico</a>
-              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Ligure"
-                onClick="mostralig()">Mar Ligure</a>
+    <header>
+        <div class="Navbar">
+            <div class="Logo">
+                <img src="Contenuti/logoBlueHorizon.png" />
+                <p class="Sito">Blue Horizon</p>
             </div>
-          </li>
-          <li><a href="#" onclick="MostraLogin()">Login</a></li>
-        </ul>
-      </div>
+            <div class="Allineamento">
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ChiSiamo.html">Chi Siamo</a></li>
+                    <li class="active"><a href="Noleggio.html" style="color: rgba(0, 0, 0, 1)">Noleggio</a></li>     
+                    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Monitoraggio Acque</a>
+    <div class="dropdown-content">
+      <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Tirreno" onClick="mostratir()">Mar Tirreno</a>
+      <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Ionio" onClick="mostraion()">Mar Ionio</a>
+	  <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Adriatico" onClick="mostraadr()">Mar Adriatico</a>
+      <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Ligure" onClick="mostralig()">Mar Ligure</a>
     </div>
-  </header>
-  <section>
-    <!--popup per il login-->
-    <div id="logincon" class="logcont">
-      <div class="log">
-        <span class="close">&times;</span>
-        <h1>Accedi</h1>
+  </li>
+                    <li><a href="#" onclick="MostraLogin()">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section>
+        <!--popup per il login-->
+        <div id="logincon" class="logcont">
+            <div class="log">
+                <span class="close">&times;</span>
+                <h1>Accedi</h1>
 
-        <!--Inserimento nome utente-->
-        <label for="emailUtente" class="loglab">Email utente</label><br />
-        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email utente" /><br />
+                <!--Inserimento nome utente-->
+                <label for="emailUtente" class="loglab">Email utente</label><br />
+                <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email utente" /><br />
 
-        <!--Inserimento password utente-->
-        <div>
-          <label for="passwordUtente" class="loglab">Password utente</label><br />
-          <input type="password" id="passwordUtente" class="Inslog" placeholder="Inserisci password" />
-          <i class="
+                <!--Inserimento password utente-->
+                <div>
+                    <label for="passwordUtente" class="loglab">Password utente</label
+            ><br />
+            <input
+              type="password"
+              id="passwordUtente"
+              class="Inslog"
+              placeholder="Inserisci password"
+            />
+            <i
+              class="
+                far
+                fa-eye
+                show-password-toggle
+                icon-eye-close icon-align-confirm
+              "
+            ></i>
+          </div>
+          <br /><br />
+
+          <button id="confermaLog" class="Inslog">Accedi</button><br />
+          <a href="#" onclick="MostraRegistrazione()"
+            >Non hai un account? Creane uno subito!</a
+          >
+        </div>
+      </div>
+
+      <!--popUp per la registrazione-->
+      <div id="registrazione" class="logcont">
+        <div class="log">
+          <span class="close">&times;</span>
+          <h1>Registrati</h1>
+
+          <!--Inserimento nome utente-->
+          <label for="nomeUtente" class="loglab">Nome </label><br />
+                    <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br />
+
+                    <!--Inserimento cognome utente-->
+                    <label for="cognomeUtente" class="loglab">Cognome</label><br />
+                    <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
+
+                    <!--Inserimento email utente-->
+                    <label for="emailUtente" class="loglab">Email </label><br />
+                    <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email" /><br />
+
+                    <!--Inserimento password utente-->
+                    <div>
+                        <label for="passwordUtente" class="loglab">Password </label><br />
+                        <input type="password" id="PasswordUtente" class="Inslog" placeholder="Inserisci password" />
+                        <i class="
                 far
                 fa-eye
                 show-password-toggle
                 icon-eye-close icon-align-confirm
               "></i>
-        </div>
-        <br /><br />
+                    </div>
 
-        <button id="confermaLog" class="Inslog">Accedi</button><br />
-        <a href="#" onclick="MostraRegistrazione()">Non hai un account? Creane uno subito!</a>
-      </div>
-    </div>
-
-    <!--popUp per la registrazione-->
-    <div id="registrazione" class="logcont">
-      <div class="log">
-        <span class="close">&times;</span>
-        <h1>Registrati</h1>
-
-        <!--Inserimento nome utente-->
-        <label for="nomeUtente" class="loglab">Nome </label><br />
-        <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br />
-
-        <!--Inserimento cognome utente-->
-        <label for="cognomeUtente" class="loglab">Cognome</label><br />
-        <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
-
-        <!--Inserimento email utente-->
-        <label for="emailUtente" class="loglab">Email </label><br />
-        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email" /><br />
-
-        <!--Inserimento password utente-->
-        <div>
-          <label for="passwordUtente" class="loglab">Password </label><br />
-          <input type="password" id="PasswordUtente" class="Inslog" placeholder="Inserisci password" />
-          <i class="
+                    <!--Reinserimento password utente-->
+                    <div>
+                        <label for="checkPUtente" class="loglab">Conferma password</label
+            ><br />
+            <input
+              type="password"
+              id="checkPUtente"
+              class="Inslog"
+              placeholder="Reinserisci password"
+            />
+            <i
+              class="
                 far
                 fa-eye
                 show-password-toggle
                 icon-eye-close icon-align-confirm
-              "></i>
-        </div>
+              "
+            ></i>
+          </div>
+          <br /><br />
 
-        <!--Reinserimento password utente-->
-        <div>
-          <label for="checkPUtente" class="loglab">Conferma password</label><br />
-          <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" />
-          <i class="
-                far
-                fa-eye
-                show-password-toggle
-                icon-eye-close icon-align-confirm
-              "></i>
+          <button id="ConfermaLog" class="Inslog">Crea</button><br />
+          <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a>
         </div>
-        <br /><br />
-
-        <button id="ConfermaLog" class="Inslog">Crea</button><br />
-        <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a>
       </div>
-    </div>
-    <h3 style="text-align: center">SCEGLI DOVE VUOI PRENOTARE</h3>
-    <div class="MNoleggio">
-      <div id="map"></div>
-    </div>
+      <h3 style="text-align: center">SCEGLI DOVE VUOI PRENOTARE</h3>
+      <div class="MNoleggio">
+        <div id="map"></div>
+      </div>
+      <div id="noleggio">
+        <table>
+          <th style="font-weight: normal">
+            <!--Noleggio Catania-->
+            <div id="nolCatania">Noleggio catania<br /></div>
+            <!--Noleggio Palermo-->
+            <div id="nolPalermo">Noleggio Palermo<br /></div>
+            <!--Noleggio Genova-->
+            <div id="nolGenova">Noleggio Genova<br /></div>
+            <!--Noleggio Porto Cervo-->
+            <div id="nolPortoCervo">Noleggio Porto Cervo<br /></div>
+            <!--Noleggio Venezia-->
+            <div id="nolVenezia">Noleggio Venezia<br /></div>
 
+            <label for="documento">Inserire il codice del documento</label
+            ><br />
+            <input type="text" id="documento" placeholder="codice documento" />
+            <br />
+            <label for="dataInizio">Inserire la data di inizio</label><br />
+                        <input type="date" id="dataInizio" placeholder="data inizio" />
+                        <br />
+                        <label for="dataFine">Inserire la data di fine </label><br />
+                        <input type="date" id="dataFine" placeholder="data fine" />
+                        <br />
+                        <label for="caparra">Inserire la caparra da versare</label><br />
+                        <input type="number" id="caparra" min="100" placeholder="caparra" />
+                        <p>Specificare se Patente Nautica munito</p>
+                        <input type="radio" id="Patente" name="drone" value="Patente" />
+                        <label for="Patente">Si</label>
+                        <input type="radio" id="patente" name="drone" value="patente" />
+                        <label for="patente">No</label><br />
+                        <label for="noleggia">Clicca per confermare il noleggio</label>
+                        <button type="submit" id="noleggia" onclick="InserisciBarche()">
+              Conferma noleggio
+            </button>
+                        </th>
+                        <th></th>
+                        </table>
+                        <div id="barche">
+                            <!-- <textarea id="barche" rows="10" cols="20"></textarea> -->
+                        </div>
+                        <label for="informazioni"> Informazioni barca</label><br>
+                        <textarea id="informazioni" cols="40" rows="10" readonly="true"></textarea>
+                    </div>
+    </section>
 
     <div id="noleggio">
-      <table>
-        <th style="font-weight: normal">
-          <!--Noleggio Catania-->
-          <div id="nolCatania">Noleggio catania<br /></div>
-          <!--Noleggio Palermo-->
-          <div id="nolPalermo">Noleggio Palermo<br /></div>
-          <!--Noleggio Genova-->
-          <div id="nolGenova">Noleggio Genova<br /></div>
-          <!--Noleggio Porto Cervo-->
-          <div id="nolPortoCervo">Noleggio Porto Cervo<br /></div>
-          <!--Noleggio Venezia-->
-          <div id="nolVenezia">Noleggio Venezia<br /></div>
-          <!--Noleggio Napoli-->
-          <div id="nolNapoli">Noleggio Napoli<br /></div>
-          <label for="documento">Inserire il codice del documento</label><br />
-          <input type="text" id="documento" placeholder="codice documento" />
-          <br />
-          <label for="dataInizio">Inserire la data di inizio</label><br />
-          <input type="date" id="dataInizio" placeholder="data inizio" />
-          <br />
-          <label for="dataFine">Inserire la data di fine </label><br />
-          <input type="date" id="dataFine" placeholder="data fine" />
-          <br />
-          <label for="caparra">Inserire la caparra da versare</label><br />
-          <input type="number" id="caparra" min="100" placeholder="caparra" />
-          <p>Specificare se Patente Nautica munito</p>
-          <input type="radio" id="Patente" name="drone" value="Patente" />
-          <label for="Patente">Si</label>
-          <input type="radio" id="patente" name="drone" value="patente" />
-          <label for="patente">No</label><br />
-          <label for="noleggia">Clicca per confermare il noleggio</label>
-          <button type="submit" id="noleggia" onclick="InserisciBarche()">
-            Conferma noleggio
-          </button>
-        </th>
-        <th></th>
-      </table>
-      <div id="barche">
-        <!-- <textarea id="barche" rows="10" cols="20"></textarea> -->
-      </div>
-      <label for="informazioni"> Informazioni barca</label><br>
-      <textarea id="informazioni" cols="40" rows="10" readonly="true"></textarea>
+        <!--Noleggio Catania-->
+        <div id="nolCatania">Noleggio catania<br /></div>
+        <!--Noleggio Palermo-->
+        <div id="nolPalermo">Noleggio Palermo<br /></div>
+        <!--Noleggio Genova-->
+        <div id="nolGenova">Noleggio Genova<br /></div>
+        <!--Noleggio Porto Cervo-->
+        <div id="nolPortoCervo">Noleggio Porto Cervo<br /></div>
+        <!--Noleggio Venezia-->
+        <div id="nolVenezia">Noleggio Venezia<br /></div>
+        <!--Noleggio Napoli-->
+        <div id="nolNapoli">Noleggio Napoli<br /></div>
+        <label for="documento">Inserire il codice del documento</label><br />
+        <input type="text" id="documento" placeholder="codice documento" />
+        <br />
+        <label for="dataInizio">Inserire la data di inizio</label><br />
+        <input type="date" id="dataInizio" placeholder="data inizio" />
+        <br />
+        <label for="dataFine">Inserire la data di fine </label><br />
+        <input type="date" id="dataFine" placeholder="data fine" />
+        <br />
+        <label for="caparra">Inserire la caparra da versare</label><br />
+        <input type="number" id="caparra" min="100" placeholder="caparra" />
+        <p>Specificare se Patente Nautica munito</p>
+        <input type="radio" id="Patente" name="drone" value="Patente" />
+        <label for="Patente">Si</label>
+        <input type="radio" id="patente" name="drone" value="patente" />
+        <label for="patente">No</label><br />
+        <label for="noleggia">Clicca per confermare il noleggio</label>
+        <button type="submit" id="noleggia">Conferma noleggio</button>
     </div>
-  </section>
 
-  <!--footer-->
-  <footer class="section footer-classic context-dark bg-image"
-    style="background: rgba(51, 135, 188, 1); margin-top: 5vw">
-    <div class="container">
-      <div class="row row-30">
-        <div class="col-md-4 col-xl-5">
-          <p style="padding-top: 10px">
-            Noleggiare yacht al giusto prezzo? Il team di Blue Horizon ha la risposta! Corri a visitare il nostro sito!
-            Troverai un vasto assortimento.
-          </p>
-          <!-- Rights-->
-          <p class="rights">
-            <span>©  </span><span class="copyright-year">2020</span><span> </span><span>Blue Horizon</span><span>
-              - </span><span>All Rights Reserved.</span>
-          </p>
+    <!--footer-->
+    <footer class="section footer-classic context-dark bg-image" style="background: rgba(51, 135, 188, 1); margin-top: 5vw">
+        <div class="container">
+            <div class="row row-30">
+                <div class="col-md-4 col-xl-5">
+                    <p style="padding-top: 10px">
+                        Noleggiare yacht al giusto prezzo? Il team di Blue Horizon ha la risposta! Corri a visitare il nostro sito! Troverai un vasto assortimento.
+                    </p>
+                    <!-- Rights-->
+                    <p class="rights">
+                        <span>©  </span><span class="copyright-year">2020</span
+              ><span> </span><span>Blue Horizon</span><span> - </span
+              ><span>All Rights Reserved.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Contatti</h5>
+                <dl class="contact-list">
+                    <dt>Indirizzo:</dt>
+                    <dd>Via Motta Giuseppe, 87, 95037 San Giovanni La Punta CT</dd>
+                </dl>
+                <dl class="contact-list">
+                    <dt>Email:</dt>
+                    <dd>
+                        <a href="mailto:blue.horizon_project@libero.it">blue.horizon_project@libero.it</a
+              >
+            </dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>Telefono:</dt>
+            <dd>
+              <a href="tel:3474250707">347 425 0707</a> <span>o</span>
+                        <a href="tel:3458373516">345 837 3516</a>
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <h5>Links</h5>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ChiSiamo.html">Chi Siamo</a></li>
+                    <li><a href="Noleggio.html">Noleggio</a></li>
+                    <li><a href="MonitoraggioAmbiente.html">Monitoraggio Acque</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row no-gutters social-container">
+            <div style="float: left; width: 25%" class="col">
+                <a style="text-decoration: none" class="social-inner" href="https://www.facebook.com/BLUE.HORIZON.PROJECT2021/"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a
+          >
+        </div>
+
+        <div style="float: left; width: 25%" class="col">
+          <a
+            style="text-decoration: none"
+            class="social-inner"
+            href="https://www.instagram.com/blue.horizon.project/"
+            ><span class="icon mdi mdi-instagram"></span
+            ><span>Instagram</span></a
+          >
+        </div>
+
+        <div style="float: left; width: 25%" class="col">
+          <a style="text-decoration: none" class="social-inner" href="#"
+            ><span class="icon mdi mdi-twitter"></span><span>Twitter</span></a
+          >
         </div>
       </div>
-      <div class="col-md-4">
-        <h5>Contatti</h5>
-        <dl class="contact-list">
-          <dt>Indirizzo:</dt>
-          <dd>Via Motta Giuseppe, 87, 95037 San Giovanni La Punta CT</dd>
-        </dl>
-        <dl class="contact-list">
-          <dt>Email:</dt>
-          <dd>
-            <a href="mailto:blue.horizon_project@libero.it">blue.horizon_project@libero.it</a>
-          </dd>
-        </dl>
-        <dl class="contact-list">
-          <dt>Telefono:</dt>
-          <dd>
-            <a href="tel:3474250707">347 425 0707</a> <span>o</span>
-            <a href="tel:3458373516">345 837 3516</a>
-          </dd>
-        </dl>
-      </div>
-      <div>
-        <h5>Links</h5>
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="ChiSiamo.html">Chi Siamo</a></li>
-          <li><a href="Noleggio.html">Noleggio</a></li>
-          <li><a href="MonitoraggioAmbiente.html">Monitoraggio Acque</a></li>
-        </ul>
-      </div>
-    </div>
+    </footer>
 
-    <div class="row no-gutters social-container">
-      <div style="float: left; width: 25%" class="col">
-        <a style="text-decoration: none" class="social-inner"
-          href="https://www.facebook.com/BLUE.HORIZON.PROJECT2021/"><span
-            class="icon mdi mdi-facebook"></span><span>Facebook</span></a>
-      </div>
-
-      <div style="float: left; width: 25%" class="col">
-        <a style="text-decoration: none" class="social-inner"
-          href="https://www.instagram.com/blue.horizon.project/"><span
-            class="icon mdi mdi-instagram"></span><span>Instagram</span></a>
-      </div>
-
-      <div style="float: left; width: 25%" class="col">
-        <a style="text-decoration: none" class="social-inner" href="#"><span
-            class="icon mdi mdi-twitter"></span><span>Twitter</span></a>
-      </div>
-    </div>
-  </footer>
-
-  <!--Libreria funzioni JQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="Contenuti/Script/login.js"></script>
-  <script src="Contenuti/Script/mappa.js"></script>
-  <!--Passaggio dati al file insert.php per inserire i dati nel DataBase-->
-  <script src="Contenuti/Script/noleggio.js"></script>
-  <script src="Contenuti/Script/Monitoraggio.js"></script>
-</body>
-
+    <!--Libreria funzioni JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="Contenuti/Script/login.js"></script>
+    <script src="Contenuti/Script/mappa.js"></script>
+    <!--Passaggio dati al file insert.php per inserire i dati nel DataBase-->
+    <script src="Contenuti/Script/noleggio.js"></script>
+	<script src="Contenuti/Script/Monitoraggio.js"></script>
+  </body>
 </html>
