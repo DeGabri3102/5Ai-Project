@@ -430,7 +430,7 @@ ol {
     width: 100%;
     height: 60vw;
     border: groove;
-    background-image: url("Contenuti/località_img/tirreno.jpg");
+    background-image: url("Contenuti/località_img/tirreno.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -442,7 +442,7 @@ ol {
     width: 100%;
     height: 60vw;
     border: groove;
-    background-image: url("Contenuti/località_img/DeltaPO.jpg");
+    background-image: url("Contenuti/località_img/adriatico.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
