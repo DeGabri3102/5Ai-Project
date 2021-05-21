@@ -433,6 +433,8 @@ ol {
     background-image: url("Contenuti/località_img/tirreno.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+#tirreno{
 	display: none;
 }
 
@@ -443,6 +445,8 @@ ol {
     background-image: url("Contenuti/località_img/DeltaPO.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+#adriatico{
 	display: none;
 }
 
@@ -453,6 +457,8 @@ ol {
     background-image: url("Contenuti/località_img/ionio.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+#ionio{
 	display: none;
 }
 
@@ -463,6 +469,8 @@ ol {
     background-image: url("Contenuti/località_img/CinqueTerre.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+#ligure{
 	display: none;
 }
 
