@@ -57,7 +57,7 @@ function InfoBarche(barca) {
     //alert(nomeBarca);
     //il valore della variabile funzione determina la funzione da usare nel file insert.php
     var funzione = 3;
-
+    //Visualizzare le barche
     $.ajax({
         url: "../BackEnd/insert.php",
         method: "POST",
@@ -71,4 +71,29 @@ function InfoBarche(barca) {
             //alert(data);
         },
     });
+    
+    AggiornaDate(nomeBarca);
+}
+
+
+ function AggiornaDate (nomeBarca){
+     //Modifica calendari e giorni disponibili
+
+     var funzione = 4;
+    $.ajax({
+        url: "../BackEnd/insert.php",
+        method: "POST",
+        data: {
+            funzione,
+            nomeBarca
+        },
+        success: function(data) {
+
+            Aggiorna(data);
+            //alert(data);
+        },
+    });
 };
+  
+    
+    
