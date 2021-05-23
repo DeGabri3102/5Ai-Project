@@ -48,25 +48,51 @@ function CercaBarche(porto) {
 
 //visualizzazione informazioni barca
 function InfoBarche(barca) {
-  //var documento = $("#documento").val();
-  barca += "";
-  var nomeBarca = barca.split("-");
-  nomeBarca = nomeBarca[0];
+    //var documento = $("#documento").val();
+    barca += "";
+    var nomeBarca = barca.split("-");
+    nomeBarca = nomeBarca[0];
 
-  //alert(nomeBarca);
-  //il valore della variabile funzione determina la funzione da usare nel file insert.php
-  var funzione = 3;
+    //alert(nomeBarca);
+    //il valore della variabile funzione determina la funzione da usare nel file insert.php
+    var funzione = 3;
+    //Visualizzare le barche
+    $.ajax({
+        url: "../BackEnd/insert.php",
+        method: "POST",
+        data: {
+            funzione,
+            nomeBarca
+        },
+        success: function(data) {
 
-  $.ajax({
-    url: "../BackEnd/insert.php",
-    method: "POST",
-    data: {
-      funzione,
-      nomeBarca,
-    },
-    success: function (data) {
-      $("#informazioni").val(data); //inserire i dati calcolati dentro insert.php dentro la textarea info nella pagina noleggio
-      //alert(data);
-    },
-  });
+            $("#informazioni").val(data); //inserire i dati calcolati dentro insert.php dentro la textarea info nella pagina noleggio
+            //alert(data);
+        },
+    });
+    
+    AggiornaDate(nomeBarca);
 }
+
+
+ function AggiornaDate (nomeBarca){
+     //Modifica calendari e giorni disponibili
+
+     var funzione = 4;
+    $.ajax({
+        url: "../BackEnd/insert.php",
+        method: "POST",
+        data: {
+            funzione,
+            nomeBarca
+        },
+        success: function(data) {
+
+            Aggiorna(data);
+            //alert(data);
+        },
+    });
+};
+  
+    
+    

@@ -13,6 +13,9 @@
   <script src="https://cdn.maptiler.com/mapbox-gl-leaflet/latest/leaflet-mapbox-gl.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css" />
   <link rel="stylesheet" href="https://cdn.maptiler.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -132,10 +135,10 @@
           <input type="text" id="documento" placeholder="codice documento" />
           <br />
           <label for="dataInizio">Inserire la data di inizio</label><br />
-          <input type="date" id="dataInizio" placeholder="data inizio" />
+          <input type="text" id="dataInizio" placeholder="data inizio " />
           <br />
           <label for="dataFine">Inserire la data di fine </label><br />
-          <input type="date" id="dataFine" placeholder="data fine" />
+          <input type="text" id="dataFine" placeholder="data fine" />
           <br />
           <label for="caparra">Inserire la caparra da versare</label><br />
           <input type="number" id="caparra" min="100" placeholder="caparra" />
@@ -232,12 +235,13 @@
   </footer>
 
   <!--Libreria funzioni JQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   <script src="Contenuti/Script/login.js"></script>
   <script src="Contenuti/Script/mappa.js"></script>
   <!--Passaggio dati al file insert.php per inserire i dati nel DataBase-->
   <script src="Contenuti/Script/noleggio.js"></script>
   <script src="Contenuti/Script/Monitoraggio.js"></script>
+  <script src = "Contenuti/Script/date.js"></script>
 </body>
 
 </html>

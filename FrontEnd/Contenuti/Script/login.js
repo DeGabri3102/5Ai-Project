@@ -65,7 +65,7 @@ window.onclick = function (event) {
 function LogIn() {
   var email = $("#emailUtente").val();
   var password = $("#passwordUtente").val();
-  var funzione = 4; //funzione login in php
+  var funzione = 6; //funzione login in php
 
   $.ajax({
     type: "POST",

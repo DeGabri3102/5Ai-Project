@@ -13,10 +13,13 @@ switch ($scegliFunzione) {
         VisualizzaInfoNavi();
         break;
     case 4:
-        LogIn();
+        DateNoleggio();
         break;
     case 5:
         LogOn();
+        break;
+    case 6:
+        LogIn();
         break;
 }
 
@@ -30,7 +33,7 @@ function InserisciNoleggio() //Inserimento noleggio nel database
     $dataFine = $_POST['dataFine'];
     $caparra = $_POST['caparra'];
     $nomeBarca = $_POST['nomeBarca'];
-
+    //cerca id barca 
     $cercaIdBarca = "SELECT iDImb FROM imbarcazioni where nome = '$nomeBarca'";
     $idBarca = $conn->query($cercaIdBarca);
     $idBarca->num_rows;
@@ -38,30 +41,24 @@ function InserisciNoleggio() //Inserimento noleggio nel database
 
 
 
-    echo ($row["iDImb"]);
+    $idBarca = ($row["iDImb"]);
+    //cerca id prenotazione sistemare con autoincrement
+    $cercaIdPrenotazione = "SELECT iDPrenotazione FROM prenotazioninoleggi ORDER BY iDPrenotazione DESC LIMIT 1";
+    $idpren = $conn->query($cercaIdPrenotazione);
+    $idpren->num_rows;
+    $ultimaRiga = $idpren->fetch_assoc();
+    $ultimaRiga = (int)$ultimaRiga + 3;
+    $ultimaRiga = strval($ultimaRiga);
+    echo $ultimaRiga;
+    $sql = "INSERT INTO prenotazioninoleggi (iDPrenotazione, codDocumento,iDImb, dataPrenotazione, inizioNoleggio, fineNoleggio, caparra,noleggiata) 
+    VALUES 
+    ('$ultimaRiga', '$documento', '$dataNol','$idBarca', '$dataInizio', '$dataFine', '$caparra','SI')";
 
-
-
-    // if ($conn->query($cercaIdBarca) === TRUE) {
-    //     echo "Noleggio effettuato";
-    // }
-    // else 
-    // {
-    //     echo "Error: " . $sql . "<br>" . $conn->error;
-    // }
-
-
-    // $sql="INSERT INTO noleggio (idnol, documento, dataNol, dataInizio, dataFine, caparra) 
-    // VALUES 
-    // (NULL, '$documento', '$dataNol', '$dataInizio', '$dataFine', '$caparra')";
-
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "Noleggio effettuato";
-    // }
-    // else 
-    // {
-    //     echo "Error: " . $sql . "<br>" . $conn->error;
-    // }
+    if ($conn->query($sql) === TRUE) {
+        echo "Noleggio effettuato";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 
     $conn->close();
 }
@@ -160,6 +157,36 @@ function LogIn()
     } else {
         echo ("Query fallita: " . $conn->error);
     }
+
+    $conn->close();
+}
+
+function DateNoleggio()
+{
+    include_once("db_connect.php");
+    $nomeBarca = $_POST['nomeBarca'];
+    $cercaIdBarca = "SELECT iDImb FROM imbarcazioni where nome = '$nomeBarca'";
+    $idBarca = $conn->query($cercaIdBarca);
+    $idBarca->num_rows;
+    $row = $idBarca->fetch_assoc();
+
+    $idBarca = $row["iDImb"];
+    $output = "";
+    $sql = "SELECT inizioNoleggio,fineNoleggio FROM prenotazioninoleggi where iDimb = '$idBarca'";
+    if ($risultato = $conn->query($sql)) {
+        if ($risultato->num_rows) {
+            while ($row = $risultato->fetch_assoc()) {
+                $output .= $row["inizioNoleggio"] . ":" . $row["fineNoleggio"] . "@";
+            }
+        } else {
+            //echo "In questo porto non si trova nessuna nostra barca";
+            $output .= 'NO';
+        }
+    } else {
+        echo ("Query failed: " . $conn->error);
+    }
+
+    echo $output;
 
     $conn->close();
 }
