@@ -40,19 +40,20 @@
                 onClick="mostralig()">Mar Ligure</a>
             </div>
           </li>
-          <li><a href="#" onclick="MostraLogin()">Login</a></li>
+          <li><a href="#" id="testoLogin" onclick="MostraLogin()">Login</a></li>
         </ul>
       </div>
     </div>
   </header>
   <section>
+
     <!--popup per il login-->
     <div id="logincon" class="logcont">
       <div class="log">
         <span class="close">&times;</span>
         <h1>Accedi</h1>
 
-        <!--Inserimento nome utente-->
+        <!--Inserimento email utente-->
         <label for="emailUtente" class="loglab">Email utente</label><br />
         <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email utente" /><br />
 
@@ -60,16 +61,10 @@
         <div>
           <label for="passwordUtente" class="loglab">Password utente</label><br />
           <input type="password" id="passwordUtente" class="Inslog" placeholder="Inserisci password" />
-          <i class="
-                far
-                fa-eye
-                show-password-toggle
-                icon-eye-close icon-align-confirm
-              "></i>
-        </div>
-        <br /><br />
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
+        </div><br /><br />
 
-        <button id="confermaLog" class="Inslog">Accedi</button><br />
+        <button id="confermaLog" class="Inslog" onclick="LogIn()">Accedi</button><br />
         <a href="#" onclick="MostraRegistrazione()">Non hai un account? Creane uno subito!</a>
       </div>
     </div>
@@ -89,37 +84,28 @@
         <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
 
         <!--Inserimento email utente-->
-        <label for="emailUtente" class="loglab">Email </label><br />
-        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email" /><br />
+        <label for="emailUtenteReg" class="loglab">Email </label><br />
+        <input type="text" id="emailUtenteReg" class="Inslog" placeholder="Inserisci email" /><br />
 
         <!--Inserimento password utente-->
         <div>
-          <label for="passwordUtente" class="loglab">Password </label><br />
-          <input type="password" id="PasswordUtente" class="Inslog" placeholder="Inserisci password" />
-          <i class="
-                far
-                fa-eye
-                show-password-toggle
-                icon-eye-close icon-align-confirm
-              "></i>
+          <label for="passwordUtenteReg" class="loglab">Password </label><br />
+          <input type="password" id="passwordUtenteReg" class="Inslog" placeholder="Inserisci password" />
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
         </div>
 
         <!--Reinserimento password utente-->
         <div>
           <label for="checkPUtente" class="loglab">Conferma password</label><br />
           <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" />
-          <i class="
-                far
-                fa-eye
-                show-password-toggle
-                icon-eye-close icon-align-confirm
-              "></i>
+          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
         </div>
         <br /><br />
 
-        <button id="ConfermaLog" class="Inslog">Crea</button><br />
+        <button id="ConfermaLog" class="Inslog" onclick="LogOn()">Crea</button><br />
         <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a>
       </div>
+
     </div>
     <h3 style="text-align: center">SCEGLI DOVE VUOI PRENOTARE</h3>
     <div class="MNoleggio">
@@ -238,11 +224,11 @@
         <a style="text-decoration: none" class="social-inner" href="#"><span
             class="icon mdi mdi-twitter"></span><span>Twitter</span></a>
       </div>
-		<div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner" href="#"><span
-          class="icon mdi mdi-youtube-play"></span><span>Youtube</span></a>
+      <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner"
+          href="#"><span class="icon mdi mdi-youtube-play"></span><span>Youtube</span></a>
+      </div>
     </div>
-    </div>
-	  <div style="clear:both"></div>
+    <div style="clear:both"></div>
   </footer>
 
   <!--Libreria funzioni JQuery-->

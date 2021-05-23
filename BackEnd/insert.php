@@ -1,4 +1,5 @@
 <?php
+
 $scegliFunzione = $_POST['funzione'];
 //error_reporting(0);
 switch ($scegliFunzione) {
@@ -10,6 +11,12 @@ switch ($scegliFunzione) {
         break;
     case 3:
         VisualizzaInfoNavi();
+        break;
+    case 4:
+        LogIn();
+        break;
+    case 5:
+        LogOn();
         break;
 }
 
@@ -117,6 +124,77 @@ function VisualizzaInfoNavi()
         echo ("Query failed: " . $conn->error);
     }
     echo $output;
+
+    $conn->close();
+}
+
+
+function LogIn()
+{
+    include_once("db_connect.php");
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Protezione mySQL injection
+    $email = stripslashes($email);
+    $password = stripslashes($password);
+    $email = mysqli_real_escape_string($conn, $email);
+    $password = mysqli_real_escape_string($conn, $password);
+
+    //hashing della password
+    //$password = hash_hmac('sha512', 'salt' . $password, $_SERVER['site_key']);
+
+    $sql = "SELECT codDocumento,tipoDocumento,nome,cognome,ddn,email,nTel,indirizzo,numeroCivico,patentenautica FROM clienti  where email = '$email'";
+    $passwordCheck = $conn->query("SELECT password FROM clienti where email = '$email'");
+
+    if ($risultato = $conn->query($sql)) {
+        // $risultato contiene tutto cioò che viene "visualizzato" con la nostra query $sql
+        if ($risultato->num_rows == 1 && $password == $passwordCheck->fetch_assoc()["password"]) {
+            $output = json_encode($risultato->fetch_assoc());
+            echo "result: " . $output;
+        } else {
+            //echo "nessun utente";
+            echo ("Nessun utente corrisponde con l'email o la password");
+        }
+    } else {
+        echo ("Query fallita: " . $conn->error);
+    }
+
+    $conn->close();
+}
+
+function LogOn()
+{
+    include_once("db_connect.php");
+
+    $nome = $_POST['nome'];
+    $cognome = $_POST['cognome'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $codDocumento = $_POST['codDocumento'];
+    $tipoDocumento = $_POST['tipoDocumento'];
+    $ddn = $_POST['ddn'];
+    $nTel = $_POST['nTel'];
+    $indirizzo = $_POST['indirizzo'];
+    $numeroCivico = $_POST['numeroCivico'];
+    $patentenautica = $_POST['patentenautica'];
+
+    // Protezione mySQL injection
+    $email = stripslashes($email);
+    $password = stripslashes($password);
+    $email = mysqli_real_escape_string($conn, $email);
+    $password = mysqli_real_escape_string($conn, $password);
+
+    //hashing della password
+    //$password = hash_hmac('sha512', 'salt' . $password, $_SERVER['site_key']);
+
+    $sql = "INSERT INTO `clienti` (`codDocumento`, `tipoDocumento`, `nome`, `cognome`, `ddn`, `email`, `password`, `nTel`, `indirizzo`, `numeroCivico`, `patentenautica`)VALUES ('$codDocumento', '$tipoDocumento', '$nome', '$cognome', '$ddn', '$email', '$password', '$nTel', '$indirizzo', '$numeroCivico', '$patentenautica');";
+    if ($risultato = $conn->query($sql)) {
+        echo $risultato;
+    } else {
+        echo ("Query fallita: " . $conn->error);
+    }
 
     $conn->close();
 }
