@@ -1,16 +1,17 @@
 # 5Ai-Project
-Sito elaborato esami.
+Sito elaborato esami classe 5AI anno 2020/2021.
 ## API Mappe
-- Maptiler
-- Leaflet
+- [Leaflet](https://leafletjs.com)
+- [Maptiler](https://www.maptiler.com)
 ## To do
 Lista di cose da fare:
-- Aggiungere dettagli porti e località 
-- Query con php per database ([Ajax-PHP](https://www.w3schools.com/php/php_ajax_database.asp), [Ajax-PHP 2](https://www.w3schools.com/xml/ajax_database.asp))
-    - login 
+- Aggiungere dettagli per porti e località 
+- Query con php per database
+    - login (aggiungere pulsante per il metodo logout)
     - barche disponibili
     - prenotazioni
-    - informazioni account
+    - informazioni account. Bisogna aggiungere degli input per le info:
+      -  codDocumento, tipoDocumento, ddn, nTel, indirizzo, numeroCivico, patentenautica
     - informazioni porti
     - informazione sulle acque e monitoraggio
     - informazioni personale
