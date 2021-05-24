@@ -6,21 +6,23 @@
 
  var getDates = function(startDate, endDate) {
      //alert(startDate);
-     
-    
-     var dates = [],
-     currentDate = startDate,
+     var dates = [];
+    for (let index = 0; index < startDate.length; index++) {  
+      
+     currentDate = startDate[index],
      addDays = function(days) {
        var date = new Date(this.valueOf());
        date.setDate(date.getDate() + days);
        return date;
      };
- while (currentDate <= endDate) {
-   //alert(currentDate);
-   dates.push(currentDate);
-   currentDate = addDays.call(currentDate, 1);
+      while (currentDate <= endDate[index]) {
+        //alert(currentDate);
+      dates.push(currentDate);
+      currentDate = addDays.call(currentDate, 1);
    
  }
+    }
+     
 
     //sistemazione data
     var arrString = new Array();
@@ -41,16 +43,14 @@
         arrString.push(d);
         //alert(d);
     });
-    
-    
+     
     return arrString;
   };
 
 
  function DisableDates(date) {
     
-       inizio = new Date(inizio);
-       fine = new Date(fine);
+      
         getDateArray = getDates(inizio,fine);
   
     
@@ -72,15 +72,20 @@ function Aggiorna(rangeDate){
       spittatore = date.split(":");
       var i = spittatore[0];
       var f = spittatore[1];
-      
-      inizio.push(i.replaceAll("-","/"));
-      fine.push(f.replaceAll("-","/"));
+      i = i.replaceAll("-","/");
+      i = new Date(i);
+      f = f.replaceAll("-","/");
+      f = new Date(f);
+      inizio.push(i);
+      fine.push(f);
     });
 
  $(function() {
     $("#dataFine").datepicker({
      beforeShowDay: DisableDates
     });
+
+   
  });
 
  $(function() {
