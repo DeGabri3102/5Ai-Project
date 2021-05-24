@@ -434,9 +434,6 @@ ol {
     background-repeat: no-repeat;
     background-size: cover;
 }
-#tirreno{
-	display: none;
-}
 
 .Adriatico {
     width: 100%;
@@ -445,9 +442,6 @@ ol {
     background-image: url("Contenuti/località_img/adriatico.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
-#adriatico{
-	display: none;
 }
 
 .Ionio {
@@ -458,9 +452,6 @@ ol {
     background-repeat: no-repeat;
     background-size: cover;
 }
-#ionio{
-	display: none;
-}
 
 .Ligure {
     width: 100%;
@@ -469,9 +460,6 @@ ol {
     background-image: url("Contenuti/località_img/CinqueTerre.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
-#ligure{
-	display: none;
 }
 
 

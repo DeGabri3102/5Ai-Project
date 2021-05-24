@@ -1,5 +1,12 @@
 // JavaScript Document
 
+//var titolo = document.getElementsByTagName("title")[0].innerHTML;
+$(document).ready(function (){
+	$("Tirreno").style.display="none";
+	$("Ionio").style.display="none";
+	$("Adriatico").style.display="none";
+	$("Ligure").style.display="none";
+})			  
 
 function mostratir(){
 	document.getElementById("tirreno").style.display ="block";
@@ -25,4 +32,3 @@ function mostralig(){
 	document.getElementById("adriatico").style.display ="none";
 	document.getElementById("ligure").style.display ="block";
 }
-
