@@ -1,32 +1,45 @@
 // JavaScript Document
 
-//var titolo = document.getElementsByTagName("title")[0].innerHTML;
+
 // $(document).ready(function (){
 // 	$("Tirreno").style.display="none";
 // 	$("Ionio").style.display="none";
 // 	$("Adriatico").style.display="none";
 // 	$("Ligure").style.display="none";
-// })			  
+// })
+function scegliMare(mare)
+{
+ document.cookie = mare;
+}			 
 
-function mostratir(){
+function Mostra ()
+{
+	switch (document.cookie){
+		case "1" :tir();break;
+		case "2" :ion();break;
+		case "3" :adr();break;
+		case "4" :lig();break;
+	}
+}
+function tir(){
 	document.getElementById("tirreno").style.display ="block";
 	document.getElementById("ionio").style.display ="none";
 	document.getElementById("adriatico").style.display ="none";
 	document.getElementById("ligure").style.display ="none";	
 }
-function mostraion(){
+function ion(){
 	document.getElementById("tirreno").style.display ="none";
 	document.getElementById("ionio").style.display ="block";
 	document.getElementById("adriatico").style.display ="none";
 	document.getElementById("ligure").style.display ="none";
 }
-function mostraadr(){
+function adr(){
 	document.getElementById("tirreno").style.display ="none";
 	document.getElementById("ionio").style.display ="none";
 	document.getElementById("adriatico").style.display ="block";
 	document.getElementById("ligure").style.display ="none";
 }
-function mostralig(){
+function lig(){
 	document.getElementById("tirreno").style.display ="none";
 	document.getElementById("ionio").style.display ="none";
 	document.getElementById("adriatico").style.display ="none";

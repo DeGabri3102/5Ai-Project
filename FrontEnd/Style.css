@@ -240,26 +240,32 @@ li.dropdown {
 
 #nolCatania {
     display: none;
+    text-align: center;
 }
 
 #nolPalermo {
     display: none;
+    text-align: center;
 }
 
 #nolPortoCervo {
     display: none;
+    text-align: center;
 }
 
 #nolVenezia {
     display: none;
+    text-align: center;
 }
 
 #nolGenova {
     display: none;
+    text-align: center;
 }
 
 #nolNapoli {
     display: none;
+    text-align: center;
 }
 
 .MNoleggio {
