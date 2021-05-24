@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versione server:              10.1.37-MariaDB - mariadb.org binary distribution
--- S.O. server:                  Win32
+-- Versione server:              10.4.18-MariaDB - mariadb.org binary distribution
+-- S.O. server:                  Win64
 -- HeidiSQL Versione:            11.2.0.6213
 -- --------------------------------------------------------
 
@@ -38,7 +38,7 @@ INSERT INTO `acque` (`nomeZona`, `profondita`) VALUES
 
 -- Dump della struttura di tabella charternautico.amministrare
 CREATE TABLE IF NOT EXISTS `amministrare` (
-  `iDAmministrare` tinyint(4) NOT NULL,
+  `iDAmministrare` tinyint(4) NOT NULL AUTO_INCREMENT,
   `iDAmministratore` tinyint(4) DEFAULT NULL,
   `iDPorto` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`iDAmministrare`),
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `amministrare` (
   KEY `iDPorto` (`iDPorto`),
   CONSTRAINT `amministrare_ibfk_1` FOREIGN KEY (`iDAmministratore`) REFERENCES `amministratori` (`iDAmministratore`),
   CONSTRAINT `amministrare_ibfk_2` FOREIGN KEY (`iDPorto`) REFERENCES `porti` (`iDPorto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella charternautico.amministrare: ~7 rows (circa)
 /*!40000 ALTER TABLE `amministrare` DISABLE KEYS */;
@@ -62,11 +62,11 @@ INSERT INTO `amministrare` (`iDAmministrare`, `iDAmministratore`, `iDPorto`) VAL
 
 -- Dump della struttura di tabella charternautico.amministratori
 CREATE TABLE IF NOT EXISTS `amministratori` (
-  `iDAmministratore` tinyint(4) NOT NULL,
+  `iDAmministratore` tinyint(4) NOT NULL AUTO_INCREMENT,
   `nome` varchar(20) DEFAULT NULL,
   `cognome` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`iDAmministratore`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella charternautico.amministratori: ~6 rows (circa)
 /*!40000 ALTER TABLE `amministratori` DISABLE KEYS */;
@@ -81,11 +81,11 @@ INSERT INTO `amministratori` (`iDAmministratore`, `nome`, `cognome`) VALUES
 
 -- Dump della struttura di tabella charternautico.centraline
 CREATE TABLE IF NOT EXISTS `centraline` (
-  `iDCentralina` tinyint(4) NOT NULL,
+  `iDCentralina` tinyint(4) NOT NULL AUTO_INCREMENT,
   `x` double DEFAULT NULL,
   `y` double DEFAULT NULL,
   PRIMARY KEY (`iDCentralina`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella charternautico.centraline: ~6 rows (circa)
 /*!40000 ALTER TABLE `centraline` DISABLE KEYS */;
@@ -150,7 +150,7 @@ INSERT INTO `comunicazioni` (`iDComunicazione`, `iDCentralina`, `iDPorto`, `d`) 
 
 -- Dump della struttura di tabella charternautico.imbarcazioni
 CREATE TABLE IF NOT EXISTS `imbarcazioni` (
-  `iDImb` tinyint(4) NOT NULL,
+  `iDImb` tinyint(4) NOT NULL AUTO_INCREMENT,
   `iDCentralina` tinyint(4) DEFAULT NULL,
   `nome` varchar(20) DEFAULT NULL,
   `marca` varchar(20) DEFAULT NULL,
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `imbarcazioni` (
   PRIMARY KEY (`iDImb`),
   KEY `iDCentralina` (`iDCentralina`),
   CONSTRAINT `imbarcazioni_ibfk_1` FOREIGN KEY (`iDCentralina`) REFERENCES `centraline` (`iDCentralina`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella charternautico.imbarcazioni: ~6 rows (circa)
 /*!40000 ALTER TABLE `imbarcazioni` DISABLE KEYS */;
@@ -233,7 +233,7 @@ INSERT INTO `ormeggi` (`iDOrmeggio`, `iDPorto`, `iDImb`, `dataOrmeggio`) VALUES
 
 -- Dump della struttura di tabella charternautico.personale
 CREATE TABLE IF NOT EXISTS `personale` (
-  `iDPersonale` tinyint(4) NOT NULL,
+  `iDPersonale` tinyint(4) NOT NULL AUTO_INCREMENT,
   `codice` enum('SK','ST','HO') DEFAULT NULL,
   `iDImb` tinyint(4) DEFAULT NULL,
   `nome` varchar(20) DEFAULT NULL,
@@ -243,7 +243,7 @@ CREATE TABLE IF NOT EXISTS `personale` (
   KEY `iDImb` (`iDImb`),
   CONSTRAINT `personale_ibfk_1` FOREIGN KEY (`codice`) REFERENCES `qualifiche` (`codice`),
   CONSTRAINT `personale_ibfk_2` FOREIGN KEY (`iDImb`) REFERENCES `imbarcazioni` (`iDImb`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella charternautico.personale: ~5 rows (circa)
 /*!40000 ALTER TABLE `personale` DISABLE KEYS */;
@@ -257,7 +257,7 @@ INSERT INTO `personale` (`iDPersonale`, `codice`, `iDImb`, `nome`, `cognome`) VA
 
 -- Dump della struttura di tabella charternautico.porti
 CREATE TABLE IF NOT EXISTS `porti` (
-  `iDPorto` tinyint(4) NOT NULL,
+  `iDPorto` tinyint(4) NOT NULL AUTO_INCREMENT,
   `citta` enum('Napoli','Catania','Venezia','Genova','Porto Cervo','Palermo') DEFAULT NULL,
   `nome` varchar(20) DEFAULT NULL,
   `provincia` enum('Napoli','Catania','Venezia','Genova','Olbia','Palermo') DEFAULT NULL,
@@ -265,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `porti` (
   `indirizzo` varchar(30) DEFAULT NULL,
   `numeroCivico` varchar(3) DEFAULT NULL,
   PRIMARY KEY (`iDPorto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella charternautico.porti: ~6 rows (circa)
 /*!40000 ALTER TABLE `porti` DISABLE KEYS */;
@@ -283,9 +283,9 @@ CREATE TABLE IF NOT EXISTS `prenotazioninoleggi` (
   `iDPrenotazione` varchar(5) NOT NULL,
   `codDocumento` varchar(16) DEFAULT NULL,
   `iDImb` tinyint(4) DEFAULT NULL,
-  `dataPrenotazione` DATE DEFAULT NULL,
-  `inizioNoleggio` DATE DEFAULT NULL,
-  `fineNoleggio` DATE DEFAULT NULL,
+  `dataPrenotazione` datetime DEFAULT NULL,
+  `inizioNoleggio` datetime DEFAULT NULL,
+  `fineNoleggio` datetime DEFAULT NULL,
   `caparra` varchar(4) DEFAULT NULL,
   `noleggiata` enum('SI','NO') DEFAULT NULL,
   PRIMARY KEY (`iDPrenotazione`),
@@ -311,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `qualifiche` (
   PRIMARY KEY (`codice`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.qualifiche: ~2 rows (circa)
+-- Dump dei dati della tabella charternautico.qualifiche: ~3 rows (circa)
 /*!40000 ALTER TABLE `qualifiche` DISABLE KEYS */;
 INSERT INTO `qualifiche` (`codice`, `descrizione`, `stipendio`) VALUES
 	('SK', 'SKIPPER', '3500'),
