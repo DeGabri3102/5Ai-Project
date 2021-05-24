@@ -82,7 +82,8 @@ function Aggiorna(rangeDate){
 
  $(function() {
     $("#dataFine").datepicker({
-     beforeShowDay: DisableDates
+     beforeShowDay: DisableDates,
+     minDate:new Date()
     });
 
    
@@ -90,7 +91,8 @@ function Aggiorna(rangeDate){
 
  $(function() {
     $("#dataInizio").datepicker({
-     beforeShowDay: DisableDates
+     beforeShowDay: DisableDates,
+     minDate:new Date()
     });
  });
 }
@@ -98,11 +100,13 @@ else
 {
   $(function() {
     $("#dataFine").datepicker({
+      minDate:new Date()
     });
  });
 
  $(function() {
     $("#dataInizio").datepicker({
+      minDate:new Date()
     });
  });
 }
