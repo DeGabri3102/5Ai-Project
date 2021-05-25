@@ -175,12 +175,11 @@ function LogOut() {
     $("#testoLogin").html("Login");
   }
 }
-function DataLoad() {
-  $(".Nome").html(sessionStorage.getItem("nome"));
-  $(".Cognome").html(sessionStorage.getItem("cognome"));
-  $(".NumDocumento").html(sessionStorage.getItem("codDocumento"));
-  $(".tipoDocumento").html(sessionStorage.getItem("tipoDocumento"));
-  $(".nTel").html(sessionStorage.getItem("nTel"));
-  $("indirizzo").html(sessionStorage.getItem("indirizzo"));
-  $(".numeroCivico").html(sessionStorage.getItem("numeroCivico"));
+function LoadInformation() { //Funzione che permette il caricamento delle informazioni dell'utente
+  $(".Nome").append( sessionStorage.getItem("nome"));
+  $(".Cognome").append( sessionStorage.getItem("cognome"));
+  $(".Email").append( sessionStorage.getItem("email"));
+  $(".Documento").append( sessionStorage.getItem("tipoDocumento") +", "+ "COD."+ sessionStorage.getItem("codDocumento"));
+  $(".nTel").append( sessionStorage.getItem("nTel"));
+  $(".Indirizzo").append( sessionStorage.getItem("indirizzo") + " N°" + sessionStorage.getItem("numeroCivico") );
 }
