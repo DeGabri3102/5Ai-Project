@@ -57,8 +57,17 @@ pCT.on("mouseout", function(e) {
     pCT.closePopup();
 });
 pCT.on("click", function(e) {
+    if(sessionStorage.getItem("codDocumento") != null)
+    {
     NolCatania(); //quando clicco sul marker apre un'altra pagina html
-    Noleggio();
+    Noleggio();  
+    document.getElementById("avvisoLog").innerHTML = ""
+    }
+    else
+    {
+        document.getElementById("avvisoLog").innerHTML = "Prima di effettuare un noleggio devi effettuare il login."
+    }
+
 });
 //Palermo
 pPA.on("mouseover", function(e) {
@@ -72,8 +81,16 @@ pPA.on("mouseout", function(e) {
     pPA.closePopup();
 });
 pPA.on("click", function(e) {
+    if(sessionStorage.getItem("codDocumento") != null)
+    {
     NolPalermo(); //quando clicco sul marker apre un'altra pagina html
     Noleggio();
+    document.getElementById("avvisoLog").innerHTML = ""
+    }
+    else
+    {
+        document.getElementById("avvisoLog").innerHTML = "Prima di effettuare un noleggio devi effettuare il login."
+    }
 });
 //Genova
 pGE.on("mouseover", function(e) {
@@ -87,8 +104,16 @@ pGE.on("mouseout", function(e) {
     pGE.closePopup();
 });
 pGE.on("click", function(e) {
+    if(sessionStorage.getItem("codDocumento") != null)
+    {
     NolGenova(); //quando clicco sul marker apre un'altra pagina html
     Noleggio();
+    document.getElementById("avvisoLog").innerHTML = ""
+    }
+    else
+    {
+        document.getElementById("avvisoLog").innerHTML = "Prima di effettuare un noleggio devi effettuare il login."
+    }
 });
 //Venezia
 pVE.on("mouseover", function(e) {
@@ -102,8 +127,16 @@ pVE.on("mouseout", function(e) {
     pVE.closePopup();
 });
 pVE.on("click", function(e) {
+    if(sessionStorage.getItem("codDocumento") != null)
+    {
     NolVenezia(); //quando clicco sul marker apre un'altra pagina html
     Noleggio();
+    document.getElementById("avvisoLog").innerHTML = ""
+    }
+    else
+    {
+        document.getElementById("avvisoLog").innerHTML = "Prima di effettuare un noleggio devi effettuare il login."
+    }
 });
 //Porto cervo
 pSS.on("mouseover", function(e) {
@@ -117,8 +150,16 @@ pSS.on("mouseout", function(e) {
     pSS.closePopup();
 });
 pSS.on("click", function(e) {
+    if(sessionStorage.getItem("codDocumento") != null)
+    {
     NolPortoCervo(); //quando clicco sul marker apre un'altra pagina html
     Noleggio();
+    document.getElementById("avvisoLog").innerHTML = ""
+    }
+    else
+    {
+        document.getElementById("avvisoLog").innerHTML = "Prima di effettuare un noleggio devi effettuare il login."
+    }
 });
 //Napoli
 pNA.on("mouseover", function(e) {
@@ -132,8 +173,16 @@ pNA.on("mouseout", function(e) {
     pNA.closePopup();
 });
 pNA.on("click", function(e) {
+    if(sessionStorage.getItem("codDocumento") != null)
+    {
     NolNapoli(); //quando clicco sul marker apre un'altra pagina html
     Noleggio();
+    document.getElementById("avvisoLog").innerHTML = ""
+    }
+    else
+    {
+        document.getElementById("avvisoLog").innerHTML = "Prima di effettuare un noleggio devi effettuare il login."
+    }
 });
 
 //#endregion funzioni markers

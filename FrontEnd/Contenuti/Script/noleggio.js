@@ -2,7 +2,7 @@
 //Funzione ricerca barche
 function InserisciBarche() {
   var funzione = 1;
-  var documento = $("#documento").val();
+  var documento = sessionStorage.getItem("codDocumento");
   var dataInizio = $("#dataInizio").val();
   var dataFine = $("#dataFine").val();
   var caparra = $("#caparra").val();
@@ -15,7 +15,7 @@ function InserisciBarche() {
     url: "../BackEnd/insert.php",
     method: "POST",
     data: {
-      documento,
+      documento ,
       dataInizio,
       dataFine,
       funzione,
@@ -72,6 +72,7 @@ function InfoBarche(barca) {
     });
     
     AggiornaDate(nomeBarca);
+    ControlloPantente(nomeBarca);
 }
 
 
@@ -93,6 +94,29 @@ function InfoBarche(barca) {
         },
     });
 };
+
+
+function ControlloPantente(nomebarca){
+
+  var patenteUser = sessionStorage.getItem("patentenautica");
+  var codDocumento = sessionStorage.getItem("codDocumento");
+  var funzione = 7;
   
+  $.ajax({
+    url: "../BackEnd/insert.php",
+    method: "POST",
+    data: {
+        funzione,
+        patenteUser,
+        codDocumento,
+        nomebarca
+    },
+    success: function(data) {
+
+        
+        alert(data);
+    },
+  });
+};
     
     

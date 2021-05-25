@@ -21,6 +21,10 @@ switch ($scegliFunzione) {
     case 6:
         LogIn();
         break;
+    case 7:
+        ControllaPatente();
+        break;
+
 }
 
 
@@ -222,5 +226,25 @@ function LogOn()
         echo ("Query fallita: " . $conn->error);
     }
 
+    $conn->close();
+}
+
+function ControllaPatente()
+{
+    $patenteUser = $_POST['patenteUser'];
+    $codDocumento = $_POST['codDocumento'];
+    $nomeBarca = $_POST['nomebarca'];
+    include_once("db_connect.php");
+
+    $cercaPatente = "SELECT obbligoPatenteNautica FROM imbarcazioni where nome = '$nomeBarca'";
+    $patente = $conn->query($cercaPatente);
+    $patente->num_rows;
+    $row = $patente->fetch_assoc();
+
+    if($row['obbligoPatenteNautica'] == "SI" && $patenteUser == "NO")
+    {
+        echo "Non puoi noleggiare questa barca";
+    }
+ 
     $conn->close();
 }
