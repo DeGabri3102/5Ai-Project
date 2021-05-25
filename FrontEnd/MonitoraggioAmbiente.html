@@ -25,17 +25,17 @@
           <li class="dropdown">
             <a href="MonitoraggioAmbiente.html" class="dropbtn">Monitoraggio Acque</a>
             <div class="dropdown-content">
-              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Tir"
-                onClick="tir()">Mar Tirreno</a>
-              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Ion"
-                onClick="ion()">Mar Ionio</a>
-              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Adr"
-                onClick="adr()">Mar Adriatico</a>
-              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Lig"
-                onClick="lig()">Mar Ligure</a>
+              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Tir" onClick="tir()">Mar
+                Tirreno</a>
+              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Ion" onClick="ion()">Mar
+                Ionio</a>
+              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Adr" onClick="adr()">Mar
+                Adriatico</a>
+              <a style="text-align:justify;padding-left: 1.7vw" href="MonitoraggioAmbiente.html#Lig" onClick="lig()">Mar
+                Ligure</a>
             </div>
           </li>
-          <li><a href="#" id="testoLogin" onclick="MostraLogin()">Login</a></li>
+          <li id="loginNav" class="dropdown"><a href="#" onclick="MostraLogin()">Login</a></li>
         </ul>
       </div>
     </div>
@@ -85,7 +85,9 @@
       <p><a href="../Docs/SISTEMA AIS.pdf" target="_blank" style="color: rgb(29, 101, 129); ">Apri Documentazione</a>
       </p>
     </div>
-	  <div style="clear: both"></div>
+    <div style="clear: both"></div>
+
+
 
 
 
@@ -146,6 +148,35 @@
         <!--Inserimento cognome utente-->
         <label for="cognomeUtente" class="loglab">Cognome</label><br />
         <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
+
+        <!--Inserimento tipoDocumento utente-->
+        <label for="tipoDocumento" class="loglab">Tipo Documento</label><br />
+
+        <select name="Tipo Documento" id="tipoDocumento">
+          <option value="Patente nautica">Patente nautica</option>
+          <option value="Passaporto">Passaporto</option>
+          <option value="Carta d identità">Carta d'identità</option>
+        </select><br />
+
+        <!--Inserimento codDocumento utente-->
+        <label for="codDocumento" class="loglab">Codice Documento</label><br />
+        <input type="text" id="codDocumento" class="Inslog" placeholder="Codice Documento" /><br />
+
+        <!--Inserimento nascita utente-->
+        <label for="nascita" class="loglab">Data di Nascita:</label><br />
+        <input type="date" id="nascita" class="Inslog" placeholder="Data di Nascita" /><br />
+
+        <!--Inserimento nTel utente-->
+        <label for="nTel" class="loglab">Numero di telefono</label><br />
+        <input type="text" id="nTel" class="Inslog" placeholder="Numero di telefono" /><br />
+
+        <!--Inserimento indirizzo utente-->
+        <label for="indirizzo" class="loglab">Indirizzo</label><br />
+        <input type="text" id="indirizzo" class="Inslog" placeholder="Inserisci indirizzo" /><br />
+
+        <!--Inserimento numeroCivico utente-->
+        <label for="numeroCivico" class="loglab">Numero civico</label><br />
+        <input type="text" id="numeroCivico" class="Inslog" placeholder="N°" /><br />
 
         <!--Inserimento email utente-->
         <label for="emailUtenteReg" class="loglab">Email </label><br />

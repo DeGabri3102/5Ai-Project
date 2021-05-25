@@ -9,15 +9,15 @@
 </head>
 
 <body>
-<script>
-  $(".Nome").html(sessionStorage.getItem("nome"));
-  $(".Cognome").html(sessionStorage.getItem("cognome"));
-  $(".NumDocumento").html(sessionStorage.getItem("codDocumento"));
-  $(".tipoDocumento").html(sessionStorage.getItem("tipoDocumento"));
-  $(".nTel").html(sessionStorage.getItem("nTel"));
-  $("indirizzo").html(sessionStorage.getItem("indirizzo"));
-  $(".numeroCivico").html(sessionStorage.getItem("numeroCivico"));
-</script>
+  <script>
+    $(".Nome").html(sessionStorage.getItem("nome"));
+    $(".Cognome").html(sessionStorage.getItem("cognome"));
+    $(".NumDocumento").html(sessionStorage.getItem("codDocumento"));
+    $(".tipoDocumento").html(sessionStorage.getItem("tipoDocumento"));
+    $(".nTel").html(sessionStorage.getItem("nTel"));
+    $("indirizzo").html(sessionStorage.getItem("indirizzo"));
+    $(".numeroCivico").html(sessionStorage.getItem("numeroCivico"));
+  </script>
   <header>
     <div class="Navbar">
       <div class="Logo">
@@ -27,10 +27,11 @@
       <div class="Allineamneto">
         <ul id="menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="ChiSiamo.html" style="color: rgba(0,0,0,1.00);">Chi Siamo</a></li>
+          <li><a href="ChiSiamo.html">Chi Siamo</a></li>
           <li><a href="Noleggio.html">Noleggio</a></li>
           <li><a href="MonitoraggioAmbiente.html">Monitoraggio Acque</a></li>
-          <li><a href="#" id="testoLogin" onclick="MostraLogin()">Login</a></li>
+          <li id="loginNav" class="dropdown"><a href="#"
+              onclick="MostraLogin()">Login</a></li>
         </ul>
       </div>
     </div>
@@ -111,6 +112,8 @@
       <div style=" clear: both"></div>
     </div>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="Contenuti/Script/login.js"></script>
 </body>
 
 </html>
