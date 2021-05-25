@@ -10,7 +10,8 @@
 function scegliMare(mare)
 {
  document.cookie = mare;
-}			 
+}
+
 
 function Mostra ()
 {
