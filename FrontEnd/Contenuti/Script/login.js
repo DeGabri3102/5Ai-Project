@@ -3,7 +3,7 @@ var log = document.getElementById("logincon");
 var reg = document.getElementById("registrazione");
 var spanLog = document.getElementsByClassName("close")[0];
 var spanReg = document.getElementsByClassName("close")[1];
-var patentenautica = "NO";
+
 //Azioni da eseguire dopo aver caricato l'html
 $(document).ready(function () {
   //Controlla se una sessione è già presente
@@ -118,6 +118,7 @@ function LogOn() {
     var nTel = $("#nTel").val();
     var indirizzo = $("#indirizzo").val();
     var numeroCivico = $("#numeroCivico").val();
+    var patentenautica = "NO";
 
     if (tipoDocumento == "Patente nautica") patentenautica = "SI";
     else patentenautica = "NO";
@@ -175,12 +176,14 @@ function LogOut() {
     $("#testoLogin").html("Login");
   }
 }
+
 function DataLoad() {
-  $(".Nome").html(sessionStorage.getItem("nome"));
-  $(".Cognome").html(sessionStorage.getItem("cognome"));
-  $(".NumDocumento").html(sessionStorage.getItem("codDocumento"));
-  $(".tipoDocumento").html(sessionStorage.getItem("tipoDocumento"));
-  $(".nTel").html(sessionStorage.getItem("nTel"));
-  $("indirizzo").html(sessionStorage.getItem("indirizzo"));
-  $(".numeroCivico").html(sessionStorage.getItem("numeroCivico"));
+  $(".Nome").append(" " + sessionStorage.getItem("nome"));
+  $(".Cognome").append(" " + sessionStorage.getItem("cognome"));
+  $(".tipoDocumento").append(" " + sessionStorage.getItem("tipoDocumento"));
+  $(".codDocumento").append(" N°" + sessionStorage.getItem("codDocumento"));
+  $(".Email").append(" " + sessionStorage.getItem("email"));
+  $(".nTel").append(" " + sessionStorage.getItem("nTel"));
+  $(".indirizzo").append(" " + sessionStorage.getItem("indirizzo"));
+  $(".numeroCivico").append(" " + sessionStorage.getItem("numeroCivico"));
 }
