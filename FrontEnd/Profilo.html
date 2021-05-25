@@ -9,6 +9,15 @@
 </head>
 
 <body>
+<script>
+  $(".Nome").html(sessionStorage.getItem("nome"));
+  $(".Cognome").html(sessionStorage.getItem("cognome"));
+  $(".NumDocumento").html(sessionStorage.getItem("codDocumento"));
+  $(".tipoDocumento").html(sessionStorage.getItem("tipoDocumento"));
+  $(".nTel").html(sessionStorage.getItem("nTel"));
+  $("indirizzo").html(sessionStorage.getItem("indirizzo"));
+  $(".numeroCivico").html(sessionStorage.getItem("numeroCivico"));
+</script>
   <header>
     <div class="Navbar">
       <div class="Logo">
@@ -36,7 +45,9 @@
         <p class="Nome">Nome:</p>
         <p class="Cognome">Cognome:</p>
         <p class="Email">Email:</p>
-        <p class="NumDocumento">Numero Documento:</p>
+        <p class="tipoDocumento codDocumento">Numero Documento:</p>
+        <p class="nTel">Numero di Telefono</p>
+        <p class="indirizzo numeroCivico">Indirizzo</p>
       </div>
     </div>
   </section>
