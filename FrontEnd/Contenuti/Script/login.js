@@ -7,14 +7,7 @@ var spanReg = document.getElementsByClassName("close")[1];
 //Azioni da eseguire dopo aver caricato l'html
 $(document).ready(function () {
   //Controlla se una sessione è già presente
-  if (sessionStorage.getItem("email") != null) {
-    $("#testoLogin").html(
-      sessionStorage.getItem("nome") + " " + sessionStorage.getItem("cognome")
-    );
-    log.style.display = "none";
-    reg.style.display = "none";
-  }
-
+  checkSessione();
   //Modifica la visualizzazione della password
   $(".show-password-toggle").each(function () {
     var eye = $(this);
@@ -30,6 +23,21 @@ $(document).ready(function () {
     });
   });
 });
+
+function checkSessione() {
+  if (sessionStorage.getItem("email") != null) {
+    $("#loginNav").html(
+      '<a href="Profilo.html" class="dropbtn">' +
+        sessionStorage.getItem("nome") +
+        " " +
+        sessionStorage.getItem("cognome") +
+        '</a><div class="dropdown-content"><a style="text-align:justify;padding-left: 1.7vw" href="index.html" onClick="LogOut()">Esci</a></div>'
+    );
+
+    log.style.display = "none";
+    reg.style.display = "none";
+  }
+}
 
 //Mostra login
 function MostraLogin() {
@@ -90,11 +98,7 @@ function LogIn() {
       sessionStorage.setItem("numeroCivico", data.numeroCivico);
       sessionStorage.setItem("patentenautica", data.patentenautica);
 
-      $("#testoLogin").html(
-        sessionStorage.getItem("nome") + " " + sessionStorage.getItem("cognome")
-      );
-      log.style.display = "none";
-      reg.style.display = "none";
+      checkSessione();
     },
     error: function (xhr, ajaxOptions, thrownError, data) {
       alert("Server errors:", thrownError, data);
@@ -108,20 +112,15 @@ function LogOn() {
     var cognome = $("#CognomeUtente").val();
     var email = $("#emailUtenteReg").val();
     var password = $("#passwordUtenteReg").val();
+    var tipoDocumento = $("#tipoDocumento").val();
+    var codDocumento = $("#codDocumento").val();
+    var ddn = $("#nascita").val();
+    var nTel = $("#nTel").val();
+    var indirizzo = $("#indirizzo").val();
+    var numeroCivico = $("#numeroCivico").val();
+    var patentenautica = "NO";
 
-    //##############################################
-    //LE RIGHE CON STRINGHE A CASO SONO DA SISTEMARE
-    //##############################################
-    var codDocumento = "codDocumento";
-    var tipoDocumento = "tipoDocumento";
-    var ddn = "ddn";
-    var nTel = "nTel";
-    var indirizzo = "indirizzo";
-    var numeroCivico = "numeroCivico";
-    var patentenautica = "patentenautica";
-    //##############################################
-    //LE RIGHE CON STRINGHE A CASO SONO DA SISTEMARE
-    //##############################################
+    if (tipoDocumento == "Patente nautica") patentenautica = "SI";
 
     var funzione = 5; //funzione logon in php
 
@@ -144,27 +143,25 @@ function LogOn() {
       },
       success: function (data) {
         //Impostando la sessione dell'utente
-        sessionStorage.setItem("nome", nome);
-        sessionStorage.setItem("cognome", cognome);
-        sessionStorage.setItem("email", email);
-        sessionStorage.setItem("codDocumento", codDocumento);
-        sessionStorage.setItem("tipoDocumento", tipoDocumento);
-        sessionStorage.setItem("ddn", ddn);
-        sessionStorage.setItem("nTel", nTel);
-        sessionStorage.setItem("indirizzo", indirizzo);
-        sessionStorage.setItem("numeroCivico", numeroCivico);
-        sessionStorage.setItem("patentenautica", patentenautica);
+        if (data == "0") {
+          sessionStorage.setItem("nome", nome);
+          sessionStorage.setItem("cognome", cognome);
+          sessionStorage.setItem("email", email);
+          sessionStorage.setItem("codDocumento", codDocumento);
+          sessionStorage.setItem("tipoDocumento", tipoDocumento);
+          sessionStorage.setItem("ddn", ddn);
+          sessionStorage.setItem("nTel", nTel);
+          sessionStorage.setItem("indirizzo", indirizzo);
+          sessionStorage.setItem("numeroCivico", numeroCivico);
+          sessionStorage.setItem("patentenautica", patentenautica);
 
-        $("#testoLogin").html(
-          sessionStorage.getItem("nome") +
-            " " +
-            sessionStorage.getItem("cognome")
-        );
-        log.style.display = "none";
-        reg.style.display = "none";
+          checkSessione();
+        } else {
+          alert("Errore: " + data);
+        }
       },
       error: function (xhr, ajaxOptions, thrownError, data) {
-        alert("Server errors:", thrownError, data);
+        alert("Errore nel server:", thrownError, data);
       },
     });
   } else {
@@ -177,4 +174,12 @@ function LogOut() {
     sessionStorage.clear();
     $("#testoLogin").html("Login");
   }
+}
+function LoadInformation() { //Funzione che permette il caricamento delle informazioni dell'utente
+  $(".Nome").append( sessionStorage.getItem("nome"));
+  $(".Cognome").append( sessionStorage.getItem("cognome"));
+  $(".Email").append( sessionStorage.getItem("email"));
+  $(".Documento").append( sessionStorage.getItem("tipoDocumento") +", "+ "COD."+ sessionStorage.getItem("codDocumento"));
+  $(".nTel").append( sessionStorage.getItem("nTel"));
+  $(".Indirizzo").append( sessionStorage.getItem("indirizzo") + " N°" + sessionStorage.getItem("numeroCivico") );
 }

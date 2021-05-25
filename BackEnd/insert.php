@@ -34,9 +34,9 @@ function InserisciNoleggio() //Inserimento noleggio nel database
     $documento = $_POST['documento'];
     $dataNol = date("Y/m/d");
     $dataInizio = $_POST['dataInizio'];
-    $dataInizio = date("Y-m-d",strtotime($dataInizio));
+    $dataInizio = date("Y-m-d", strtotime($dataInizio));
     $dataFine = $_POST['dataFine'];
-    $dataFine = date("Y-m-d",strtotime($dataFine));
+    $dataFine = date("Y-m-d", strtotime($dataFine));
     $caparra = $_POST['caparra'];
     $nomeBarca = $_POST['nomeBarca'];
     //cerca id barca 
@@ -52,7 +52,7 @@ function InserisciNoleggio() //Inserimento noleggio nel database
     $cercaIdPrenotazione = "SELECT iDPrenotazione FROM prenotazioninoleggi ORDER BY iDPrenotazione DESC LIMIT 1";
     $idpren = $conn->query($cercaIdPrenotazione);
     $idpren->num_rows;
-    
+
     $sql = "INSERT INTO prenotazioninoleggi (iDPrenotazione, codDocumento,iDImb, dataPrenotazione, inizioNoleggio, fineNoleggio, caparra,noleggiata) 
     VALUES 
     (NULL, '$documento', '$idBarca','$dataNol', '$dataInizio', '$dataFine', '$caparra','SI')";
@@ -62,7 +62,7 @@ function InserisciNoleggio() //Inserimento noleggio nel database
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    
+
     $conn->close();
 }
 
@@ -218,12 +218,18 @@ function LogOn()
 
     //hashing della password
     //$password = hash_hmac('sha512', 'salt' . $password, $_SERVER['site_key']);
+    $sql = "SELECT email FROM clienti  where email = '$email'";
 
-    $sql = "INSERT INTO `clienti` (`codDocumento`, `tipoDocumento`, `nome`, `cognome`, `ddn`, `email`, `password`, `nTel`, `indirizzo`, `numeroCivico`, `patentenautica`)VALUES ('$codDocumento', '$tipoDocumento', '$nome', '$cognome', '$ddn', '$email', '$password', '$nTel', '$indirizzo', '$numeroCivico', '$patentenautica');";
-    if ($risultato = $conn->query($sql)) {
-        echo $risultato;
+    if (($conn->query($sql)->num_rows) == 0) {
+        $sql = "INSERT INTO `clienti` (`codDocumento`, `tipoDocumento`, `nome`, `cognome`, `ddn`, `email`, `password`, `nTel`, `indirizzo`, `numeroCivico`, `patentenautica`)
+        VALUES ('$codDocumento', '$tipoDocumento', '$nome', '$cognome', '$ddn', '$email', '$password', '$nTel', '$indirizzo', '$numeroCivico', '$patentenautica');";
+        if ($risultato = $conn->query($sql)) {
+            echo 0; // Per confermare la buona riuscita
+        } else {
+            echo ("Query fallita: " . $conn->error);
+        }
     } else {
-        echo ("Query fallita: " . $conn->error);
+        echo ("Utente già registrato");
     }
 
     $conn->close();

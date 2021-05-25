@@ -7,17 +7,7 @@
   <link href="Style.css" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
-<body>
-<script>
-  $(".Nome").html(sessionStorage.getItem("nome"));
-  $(".Cognome").html(sessionStorage.getItem("cognome"));
-  $(".NumDocumento").html(sessionStorage.getItem("codDocumento"));
-  $(".tipoDocumento").html(sessionStorage.getItem("tipoDocumento"));
-  $(".nTel").html(sessionStorage.getItem("nTel"));
-  $("indirizzo").html(sessionStorage.getItem("indirizzo"));
-  $(".numeroCivico").html(sessionStorage.getItem("numeroCivico"));
-</script>
+<body onload="LoadInformation()">
   <header>
     <div class="Navbar">
       <div class="Logo">
@@ -27,10 +17,11 @@
       <div class="Allineamneto">
         <ul id="menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="ChiSiamo.html" style="color: rgba(0,0,0,1.00);">Chi Siamo</a></li>
+          <li><a href="ChiSiamo.html">Chi Siamo</a></li>
           <li><a href="Noleggio.html">Noleggio</a></li>
           <li><a href="MonitoraggioAmbiente.html">Monitoraggio Acque</a></li>
-          <li><a href="#" id="testoLogin" onclick="MostraLogin()">Login</a></li>
+          <li id="loginNav" class="dropdown"><a href="#"
+              onclick="MostraLogin()">Login</a></li>
         </ul>
       </div>
     </div>
@@ -42,12 +33,12 @@
         <img src="Contenuti/avatar.jpeg" alt="avatar" class="avatar">
       </div>
       <div class="dati">
-        <p class="Nome">Nome:</p>
-        <p class="Cognome">Cognome:</p>
-        <p class="Email">Email:</p>
-        <p class="tipoDocumento codDocumento">Numero Documento:</p>
-        <p class="nTel">Numero di Telefono</p>
-        <p class="indirizzo numeroCivico">Indirizzo</p>
+        <p class="Nome">Nome: </p>
+        <p class="Cognome">Cognome: </p>
+        <p class="Email">Email: </p>
+        <p class="Documento">Documento: </p>
+        <p class="nTel">Numero di Telefono: </p>
+        <p class="Indirizzo">Indirizzo: </p>
       </div>
     </div>
   </section>
@@ -111,6 +102,8 @@
       <div style=" clear: both"></div>
     </div>
   </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="Contenuti/Script/login.js"></script>
 </body>
 
 </html>

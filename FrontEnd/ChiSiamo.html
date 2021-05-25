@@ -34,7 +34,7 @@
                 onClick="scegliMare(4)">Mar Ligure</a>
             </div>
           </li>
-          <li><a href="#" id="testoLogin" onclick="MostraLogin()">Login</a></li>
+          <li id="loginNav" class="dropdown"><a href="#" onclick="MostraLogin()">Login</a></li>
         </ul>
       </div>
     </div>
@@ -135,37 +135,66 @@
         </p>
       </div>
     </div>
-
+    
     <h1 class="Titolo">IL NOSTRO STAFF</h1>
     <div class="slideshow-Chi_siamo">
       <div class="slides fade">
-        <img class="Chi" src="Contenuti\chisiamo_img\sciuto_simone.jpg">
+        <img class="Chi" src="Contenuti/Chi_siamo/sciuto_simone.jpg">
         <div class="role">CEO Simone Sciuto</div>
-        <img class="Chi" src="Contenuti\chisiamo_img\bruno_giuseppe_pio.png">
+        <img class="Chi" src="Contenuti/Chi_siamo/bruno_giuseppe_pio.jpeg">
         <div class="role" style="margin-left: 305.5px">Capo Skipper</div>
-        <img class="Chi" src="Contenuti/chisiamo_img/spina_riccardo.jpg">
+        <img class="Chi" src="Contenuti/Chi_siamo/carciotto_giovanni.jpg">
         <div class="role " style="margin-left: 611.5px">Skipper</div>
 
       </div>
 
       <div class="slides fade">
-        <img class="Chi" src="Contenuti/chisiamo_img/maccarone_antonio.jpg">
+        <img class="Chi" src="Contenuti/Chi_siamo/Cavallaro_Samuele.jpg">
         <div class="role">Skipper</div>
-        <img class="Chi" src="Contenuti/chisiamo_img/di_mauro_salvatore.jpg">
+        <img class="Chi" src="Contenuti/Chi_siamo/di_mauro_salvatore.jpg">
         <div class="role" style="margin-left: 305.5px">Skipper</div>
-        <img class="Chi" src="Contenuti/chisiamo_img/stella_gaetano.jpg">
+        <img class="Chi" src="Contenuti/Chi_siamo/geraci_salvatore.jpeg">
         <div class="role" style="margin-left: 611.5px">Skipper</div>
       </div>
 
       <div class="slides fade">
-        <img class="Chi" src="Contenuti/chisiamo_img/la_fata_sebastiano.jpg">
+        <img class="Chi" src="Contenuti/Chi_siamo/la_fata_sebastiano_2.jpg">
         <div class="role">Steward</div>
-        <img class="Chi" src="Contenuti/chisiamo_img/testa_simone.jpg">
+        <img class="Chi" src="Contenuti/Chi_siamo/Limonelli_Francesco.jpg">
         <div class="role" style="margin-left: 305.5px">Steward</div>
-        <img class="Chi" src="Contenuti\chisiamo_img\tosto_gabriele.jpeg">
+        <img class="Chi" src="Contenuti/Chi_siamo/riolo_giorgio.jpg">
+        <div class="role" style="margin-left: 611.5px">Hostess</div>
+      </div>
+		
+		<div class="slides fade">
+        <img class="Chi" src="Contenuti/Chi_siamo/maccarone_antonio.jpg">
+        <div class="role">Steward</div>
+        <img class="Chi" src="Contenuti/Chi_siamo/Nuncibello_Riccardo.jpg">
+        <div class="role" style="margin-left: 305.5px">Steward</div>
+        <img class="Chi" src="Contenuti/Chi_siamo/stella_gaetano.jpg">
+        <div class="role" style="margin-left: 611.5px">Hostess</div>
+      </div>
+		
+		<div class="slides fade">
+        <img class="Chi" src="Contenuti/Chi_siamo/testa_simone.jpg">
+        <div class="role">Steward</div>
+        <img class="Chi" src="Contenuti/Chi_siamo/spina_riccardo.jpg">
+        <div class="role" style="margin-left: 305.5px">Steward</div>
+        <img class="Chi" src="Contenuti/Chi_siamo/tosto_gabriele.jpeg">
         <div class="role" style="margin-left: 611.5px">Hostess</div>
       </div>
     </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     <script>
       var slideIndex = 0;
       showSlides();
@@ -184,7 +213,6 @@
         setTimeout(showSlides, 3000); // Change image every 2 seconds
       }
     </script>
-
 
     <!--popup per il login-->
     <div id="logincon" class="logcont">
@@ -221,6 +249,35 @@
         <!--Inserimento cognome utente-->
         <label for="cognomeUtente" class="loglab">Cognome</label><br />
         <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
+
+        <!--Inserimento tipoDocumento utente-->
+        <label for="tipoDocumento" class="loglab">Tipo Documento</label><br />
+
+        <select name="Tipo Documento" id="tipoDocumento">
+          <option value="Patente nautica">Patente nautica</option>
+          <option value="Passaporto">Passaporto</option>
+          <option value="Carta d identità">Carta d'identità</option>
+        </select><br />
+
+        <!--Inserimento codDocumento utente-->
+        <label for="codDocumento" class="loglab">Codice Documento</label><br />
+        <input type="text" id="codDocumento" class="Inslog" placeholder="Codice Documento" /><br />
+
+        <!--Inserimento nascita utente-->
+        <label for="nascita" class="loglab">Data di Nascita</label><br />
+        <input type="date" id="nascita" class="Inslog" placeholder="Data di Nascita" /><br />
+
+        <!--Inserimento nTel utente-->
+        <label for="nTel" class="loglab">Numero di telefono</label><br />
+        <input type="text" id="nTel" class="Inslog" placeholder="Numero di telefono" /><br />
+
+        <!--Inserimento indirizzo utente-->
+        <label for="indirizzo" class="loglab">Indirizzo</label><br />
+        <input type="text" id="indirizzo" class="Inslog" placeholder="Inserisci indirizzo" /><br />
+
+        <!--Inserimento numeroCivico utente-->
+        <label for="numeroCivico" class="loglab">Numero civico</label><br />
+        <input type="text" id="numeroCivico" class="Inslog" placeholder="N°" /><br />
 
         <!--Inserimento email utente-->
         <label for="emailUtenteReg" class="loglab">Email </label><br />
