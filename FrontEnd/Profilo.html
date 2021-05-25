@@ -7,17 +7,7 @@
   <link href="Style.css" rel="stylesheet" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
-<body>
-  <script>
-    $(".Nome").html(sessionStorage.getItem("nome"));
-    $(".Cognome").html(sessionStorage.getItem("cognome"));
-    $(".NumDocumento").html(sessionStorage.getItem("codDocumento"));
-    $(".tipoDocumento").html(sessionStorage.getItem("tipoDocumento"));
-    $(".nTel").html(sessionStorage.getItem("nTel"));
-    $("indirizzo").html(sessionStorage.getItem("indirizzo"));
-    $(".numeroCivico").html(sessionStorage.getItem("numeroCivico"));
-  </script>
+<body onload="DataLoad()">
   <header>
     <div class="Navbar">
       <div class="Logo">
@@ -45,12 +35,13 @@
       <div class="dati">
         <p class="Nome">Nome:</p>
         <p class="Cognome">Cognome:</p>
-        <p class="Email">Email:</p>
-        <p class="tipoDocumento codDocumento">Numero Documento:</p>
-        <p class="nTel">Numero di Telefono</p>
-        <p class="indirizzo numeroCivico">Indirizzo</p>
+        <p class="Email">Email: </p>
+        <p class="tipoDocumento codDocumento">Numero Documento: </p>
+        <p class="nTel">Numero di Telefono: </p>
+        <p class="indirizzo numeroCivico">Indirizzo: </p>
       </div>
     </div>
+    
   </section>
 
   <footer class="section footer-classic context-dark bg-image"

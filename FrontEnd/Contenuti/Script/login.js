@@ -175,3 +175,12 @@ function LogOut() {
     $("#testoLogin").html("Login");
   }
 }
+function DataLoad() {
+  $(".Nome").html(sessionStorage.getItem("nome"));
+  $(".Cognome").html(sessionStorage.getItem("cognome"));
+  $(".NumDocumento").html(sessionStorage.getItem("codDocumento"));
+  $(".tipoDocumento").html(sessionStorage.getItem("tipoDocumento"));
+  $(".nTel").html(sessionStorage.getItem("nTel"));
+  $("indirizzo").html(sessionStorage.getItem("indirizzo"));
+  $(".numeroCivico").html(sessionStorage.getItem("numeroCivico"));
+}
