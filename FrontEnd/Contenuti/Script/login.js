@@ -3,7 +3,7 @@ var log = document.getElementById("logincon");
 var reg = document.getElementById("registrazione");
 var spanLog = document.getElementsByClassName("close")[0];
 var spanReg = document.getElementsByClassName("close")[1];
-var patentenautica = "NO";
+
 //Azioni da eseguire dopo aver caricato l'html
 $(document).ready(function () {
   //Controlla se una sessione è già presente
@@ -118,9 +118,9 @@ function LogOn() {
     var nTel = $("#nTel").val();
     var indirizzo = $("#indirizzo").val();
     var numeroCivico = $("#numeroCivico").val();
+    var patentenautica = "NO";
 
     if (tipoDocumento == "Patente nautica") patentenautica = "SI";
-    else patentenautica = "NO";
 
     var funzione = 5; //funzione logon in php
 
