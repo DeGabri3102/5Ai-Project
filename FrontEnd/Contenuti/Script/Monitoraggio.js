@@ -9,13 +9,13 @@
 // })
 function scegliMare(mare)
 {
- document.cookie = mare;
+	sessionStorage.setItem("mare",mare);
 }
 
 
 function Mostra ()
 {
-	switch (document.cookie){
+	switch (sessionStorage.mare){
 		case "1" :tir();break;
 		case "2" :ion();break;
 		case "3" :adr();break;
