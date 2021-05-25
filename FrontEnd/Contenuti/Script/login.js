@@ -121,7 +121,6 @@ function LogOn() {
     var patentenautica = "NO";
 
     if (tipoDocumento == "Patente nautica") patentenautica = "SI";
-    else patentenautica = "NO";
 
     var funzione = 5; //funzione logon in php
 
