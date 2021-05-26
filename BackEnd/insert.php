@@ -24,7 +24,6 @@ switch ($scegliFunzione) {
     case 7:
         ControllaPatente();
         break;
-
 }
 
 
@@ -247,10 +246,9 @@ function ControllaPatente()
     $patente->num_rows;
     $row = $patente->fetch_assoc();
 
-    if($row['obbligoPatenteNautica'] == "SI" && $patenteUser == "NO")
-    {
+    if ($row['obbligoPatenteNautica'] == "SI" && $patenteUser == "NO") {
         echo "Non puoi noleggiare questa barca";
     }
- 
+
     $conn->close();
 }
