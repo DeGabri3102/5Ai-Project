@@ -84,6 +84,11 @@ li.dropdown {
   display: inline-block;
 }
 
+.Avatar img {
+  width: 35%;
+  height: 150%;
+}
+
 .Allineamneto {
   float: right;
 }
