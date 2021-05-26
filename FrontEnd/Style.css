@@ -446,6 +446,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
+	top: 0;
 }
 
 .Adriatico {
@@ -455,6 +456,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
+	top: 0;
 }
 
 .Ionio {
@@ -464,6 +466,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
+	top: 0;
 }
 
 .Ligure {
@@ -474,6 +477,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
+	top: 0;
 }
 
 .avatar {
