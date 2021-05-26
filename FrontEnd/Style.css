@@ -13,6 +13,7 @@ body {
   background-color: #6ab9e649;
 }
 
+
 .Navbar {
   width: 100%;
   height: 9vw;
@@ -218,6 +219,13 @@ li.dropdown {
   width: 63%;
   height: auto;
   border: groove;
+	
+}
+.mod{
+	background: url("Contenuti/logoBlueHorizon.png") fixed;
+	background-repeat: no-repeat;
+	background-size: contain;
+	opacity: 0.5;
 }
 /*Div noleggio*/
 
