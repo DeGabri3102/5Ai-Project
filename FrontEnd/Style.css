@@ -6,6 +6,11 @@ body {
     margin: 0;
     overflow-x: hidden;
     font-family: Verdana, sans-serif;
+    background-repeat: no-repeat, no-repeat;
+    background-position-x: center;
+    background-position-y: 750px;
+    background-size: 1000px;
+    background-color: #6ab9e649;
 }
 
 .Navbar {
@@ -73,14 +78,6 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-
-
-
-
-
-
-
 
 
 .Logo img {
@@ -221,9 +218,8 @@ li.dropdown {
     width: 63%;
     height: auto;
     border: groove;
+    
 }
-
-
 /*Div noleggio*/
 
 #noleggio {
