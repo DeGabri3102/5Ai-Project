@@ -212,21 +212,28 @@ li.dropdown {
   text-align: left;
   margin: auto;
   text-align: justify;
+	z-index: -999;
 }
 
 .desc {
   margin: auto;
   width: 63%;
   height: auto;
-  border: groove;
-	
 }
-.mod{
-	background: url("Contenuti/logoBlueHorizon.png") fixed;
+.desc::before{
+	content: "";
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left:0;
+	right: 0;
+	background-image: url("Contenuti/logoBlueHorizon.png");
 	background-repeat: no-repeat;
-	background-size: contain;
-	opacity: 0.5;
+	background-size: 100% 100%;
+	opacity: 0.2;
+	z-index: -998;
 }
+
 /*Div noleggio*/
 
 #noleggio {
