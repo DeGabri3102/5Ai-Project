@@ -10,8 +10,7 @@ Lista di cose da fare:
     - login (aggiungere pulsante per il metodo logout)
     - barche disponibili
     - prenotazioni
-    - informazioni account. Bisogna aggiungere degli input per le info:
-      -  codDocumento, tipoDocumento, ddn, nTel, indirizzo, numeroCivico, patentenautica
+    - informazioni account
     - informazioni porti
     - informazione sulle acque e monitoraggio
     - informazioni personale
