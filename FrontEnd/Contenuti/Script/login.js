@@ -100,7 +100,7 @@ function LogIn() {
       alert("Server errors:", thrownError, data);
     },
   });
-  
+
   document.getElementById("avvisoLog").innerHTML = "";
 }
 
@@ -175,36 +175,45 @@ function LogOut() {
 }
 function LoadInformation() {
   //Funzione che permette il caricamento delle informazioni dell'utente
-  $(".Nome").append(sessionStorage.getItem("nome"));
-  $(".Cognome").append(sessionStorage.getItem("cognome"));
-  $(".Email").append(sessionStorage.getItem("email"));
-  $(".Documento").append(
-    sessionStorage.getItem("tipoDocumento") +
-      ", " +
-      "COD." +
-      sessionStorage.getItem("codDocumento")
-  );
-  $(".nTel").append(sessionStorage.getItem("nTel"));
-  $(".Indirizzo").append(
-    sessionStorage.getItem("indirizzo") +
-      " N°" +
-      sessionStorage.getItem("numeroCivico")
-  );
-  InfoNoleggi();
+  if (sessionStorage.getItem("email") == null) {
+    $(".desc").html(
+      '<h1>Devi accedere per vedere le informazioni.<br/><a href="index.html">Torna alla Home</a></h1>'
+    );
+  } else {
+    $(".Nome").append(sessionStorage.getItem("nome"));
+    $(".Cognome").append(sessionStorage.getItem("cognome"));
+    $(".Email").append(sessionStorage.getItem("email"));
+    $(".Documento").append(
+      sessionStorage.getItem("tipoDocumento") +
+        ", " +
+        "COD." +
+        sessionStorage.getItem("codDocumento")
+    );
+    $(".nTel").append(sessionStorage.getItem("nTel"));
+    $(".Indirizzo").append(
+      sessionStorage.getItem("indirizzo") +
+        " N°" +
+        sessionStorage.getItem("numeroCivico")
+    );
+    InfoNoleggi();
+  }
 }
-function InfoNoleggi(){
+function InfoNoleggi() {
   var codDocumento = sessionStorage.getItem("codDocumento");
   var funzione = 8;
   $.ajax({
     url: "../BackEnd/insert.php",
     method: "POST",
     data: {
-        funzione,
-        codDocumento
+      funzione,
+      codDocumento,
     },
-    success: function(data) {        
-        document.getElementById("Tabella_Noleggi").innerHTML= data;
-        //alert(data);
+    success: function (data) {
+      document.getElementById("Tabella_Noleggi").innerHTML = data;
+      //alert(data);
+    },
+    error: function (xhr, ajaxOptions, thrownError, data) {
+      alert("Errore nel server:", thrownError, data);
     },
   });
-}; 
+}
