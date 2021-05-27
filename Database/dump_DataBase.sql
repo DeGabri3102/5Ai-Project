@@ -105,13 +105,14 @@ CREATE TABLE IF NOT EXISTS `clienti` (
   `nome` varchar(20) DEFAULT NULL,
   `cognome` varchar(15) DEFAULT NULL,
   `ddn` date DEFAULT NULL,
-  `email` varchar(40) DEFAULT NULL,
+  `email` varchar(40) NOT NULL,
   `password` varchar(20) DEFAULT NULL,
   `nTel` varchar(15) DEFAULT NULL,
   `indirizzo` varchar(30) DEFAULT NULL,
   `numeroCivico` varchar(3) DEFAULT NULL,
   `patentenautica` enum('SI','NO') DEFAULT NULL,
-  PRIMARY KEY (`codDocumento`)
+  PRIMARY KEY (`codDocumento`),
+  UNIQUE KEY `UNIQUE` (`email`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella charternautico.clienti: ~4 rows (circa)
@@ -280,7 +281,7 @@ INSERT INTO `porti` (`iDPorto`, `citta`, `nome`, `provincia`, `nTel`, `indirizzo
 
 -- Dump della struttura di tabella charternautico.prenotazioninoleggi
 CREATE TABLE IF NOT EXISTS `prenotazioninoleggi` (
-  `iDPrenotazione` varchar(5) NOT NULL,
+  `iDPrenotazione` TINYINT NOT NULL AUTO_INCREMENT,
   `codDocumento` varchar(16) DEFAULT NULL,
   `iDImb` tinyint(4) DEFAULT NULL,
   `dataPrenotazione` datetime DEFAULT NULL,

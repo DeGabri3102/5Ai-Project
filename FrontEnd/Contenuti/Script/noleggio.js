@@ -117,6 +117,5 @@ function ControlloPantente(nomebarca){
         alert(data);
     },
   });
-};
-    
+}; 
     

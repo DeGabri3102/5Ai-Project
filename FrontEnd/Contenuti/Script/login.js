@@ -27,11 +27,7 @@ $(document).ready(function () {
 function checkSessione() {
   if (sessionStorage.getItem("email") != null) {
     $("#loginNav").html(
-      '<a href="Profilo.html" class="dropbtn">' +
-        sessionStorage.getItem("nome") +
-        " " +
-        sessionStorage.getItem("cognome") +
-        '</a><div class="dropdown-content"><a style="text-align:justify;padding-left: 1.7vw" href="index.html" onClick="LogOut()">Esci</a></div>'
+      '<a class="Avatar" href="Profilo.html" class="dropbtn"><img src="Contenuti/avatar.png"></a><div class="dropdown-content"><a style="text-align:justify;padding-left: 1.7vw" href="index.html" onClick="LogOut()">Esci</a></div>'
     );
 
     log.style.display = "none";
@@ -104,8 +100,12 @@ function LogIn() {
       alert("Server errors:", thrownError, data);
     },
   });
+<<<<<<< HEAD
   
   document.getElementById("avvisoLog").innerHTML = "";
+=======
+	document.getElementById("avvisoLog").innerHTML="";
+>>>>>>> 4dd659592e83b2ebd620dcd2da245de121480061
 }
 
 function LogOn() {
@@ -177,11 +177,38 @@ function LogOut() {
     $("#testoLogin").html("Login");
   }
 }
-function LoadInformation() { //Funzione che permette il caricamento delle informazioni dell'utente
-  $(".Nome").append( sessionStorage.getItem("nome"));
-  $(".Cognome").append( sessionStorage.getItem("cognome"));
-  $(".Email").append( sessionStorage.getItem("email"));
-  $(".Documento").append( sessionStorage.getItem("tipoDocumento") +", "+ "COD."+ sessionStorage.getItem("codDocumento"));
-  $(".nTel").append( sessionStorage.getItem("nTel"));
-  $(".Indirizzo").append( sessionStorage.getItem("indirizzo") + " N°" + sessionStorage.getItem("numeroCivico") );
+function LoadInformation() {
+  //Funzione che permette il caricamento delle informazioni dell'utente
+  $(".Nome").append(sessionStorage.getItem("nome"));
+  $(".Cognome").append(sessionStorage.getItem("cognome"));
+  $(".Email").append(sessionStorage.getItem("email"));
+  $(".Documento").append(
+    sessionStorage.getItem("tipoDocumento") +
+      ", " +
+      "COD." +
+      sessionStorage.getItem("codDocumento")
+  );
+  $(".nTel").append(sessionStorage.getItem("nTel"));
+  $(".Indirizzo").append(
+    sessionStorage.getItem("indirizzo") +
+      " N°" +
+      sessionStorage.getItem("numeroCivico")
+  );
+  InfoNoleggi();
 }
+function InfoNoleggi(){
+  var codDocumento = sessionStorage.getItem("codDocumento");
+  var funzione = 8;
+  $.ajax({
+    url: "../BackEnd/insert.php",
+    method: "POST",
+    data: {
+        funzione,
+        codDocumento
+    },
+    success: function(data) {        
+        document.getElementById("Tabella_Noleggi").innerHTML= data;
+        //alert(data);
+    },
+  });
+}; 
