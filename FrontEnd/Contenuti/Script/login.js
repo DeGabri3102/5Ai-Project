@@ -189,4 +189,21 @@ function LoadInformation() {
       " N°" +
       sessionStorage.getItem("numeroCivico")
   );
+  InfoNoleggi();
 }
+function InfoNoleggi(){
+  var codDocumento = sessionStorage.getItem("codDocumento");
+  var funzione = 8;
+  $.ajax({
+    url: "../BackEnd/insert.php",
+    method: "POST",
+    data: {
+        funzione,
+        codDocumento
+    },
+    success: function(data) {        
+        document.getElementById("Tabella_Noleggi").innerHTML= data;
+        //alert(data);
+    },
+  });
+}; 

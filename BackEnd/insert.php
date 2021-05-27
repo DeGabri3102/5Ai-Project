@@ -252,3 +252,27 @@ function ControllaPatente()
 
     $conn->close();
 }
+function VisualizzaNolUser(){
+    $codDocumento = $_POST('codDocumento');
+    include_once("db_connect.php");
+    $cercaNoleggi = "SELECT imbarcazioni.nome,dataPrenotazione,inizioNoleggio,fineNoleggio,caparra 
+    FROM prenotazioninoleggi JOIN imbarcazioni ON imbarcazioni.iDImb = prenotazioninoleggi.iDImb WHERE codDocumento = '$codDocumento'";
+    $nol = $conn->query($cercaNoleggi);
+    $nol->nom_rows;
+    if ($risultato->num_rows) {
+    $output = "<table>";
+    while($row = $nol->fetch_assoc()){
+        $output.= "<tr>";
+        $output.= "<td>" . $row['nome'] ."</td>";
+        $output.= "<td>" . $row['dataPrenotazione'] . "</td>";
+        $output.= "<td>" . $row['inizioNoleggio'] . "</td>";
+        $output.= "<td>" . $row['fineNoleggio'] . "</td>";
+        $output.= "<td>" . $row['caparra'] . "</td>"; 
+    }
+    $output.= "</table>";
+} else
+{
+    $output .= 'Nessuna informazione trovata'; 
+}
+echo $output + "ciao";
+}
