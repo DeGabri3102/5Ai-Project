@@ -100,12 +100,8 @@ function LogIn() {
       alert("Server errors:", thrownError, data);
     },
   });
-<<<<<<< HEAD
   
   document.getElementById("avvisoLog").innerHTML = "";
-=======
-	document.getElementById("avvisoLog").innerHTML="";
->>>>>>> 4dd659592e83b2ebd620dcd2da245de121480061
 }
 
 function LogOn() {
