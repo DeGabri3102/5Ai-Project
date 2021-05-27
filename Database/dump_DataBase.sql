@@ -281,7 +281,7 @@ INSERT INTO `porti` (`iDPorto`, `citta`, `nome`, `provincia`, `nTel`, `indirizzo
 
 -- Dump della struttura di tabella charternautico.prenotazioninoleggi
 CREATE TABLE IF NOT EXISTS `prenotazioninoleggi` (
-  `iDPrenotazione` varchar(5) NOT NULL,
+  `iDPrenotazione` TINYINT NOT NULL AUTO_INCREMENT,
   `codDocumento` varchar(16) DEFAULT NULL,
   `iDImb` tinyint(4) DEFAULT NULL,
   `dataPrenotazione` datetime DEFAULT NULL,
