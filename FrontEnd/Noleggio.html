@@ -146,21 +146,22 @@
 
     <h3 id = "avvisoLog"  style="text-align: center"></h3>
     <div id="noleggio">
+      <!--Noleggio Catania-->
+      <div id="nolCatania" style = 'font-weight: bold;'>Noleggio catania<br /></div>
+      <!--Noleggio Palermo-->
+      <div id="nolPalermo" style = 'font-weight: bold;'>Noleggio Palermo<br /></div>
+      <!--Noleggio Genova-->
+      <div id="nolGenova" style = 'font-weight: bold;'>Noleggio Genova<br /></div>
+      <!--Noleggio Porto Cervo-->
+      <div id="nolPortoCervo" style = 'font-weight: bold;'>Noleggio Porto Cervo<br /></div>
+      <!--Noleggio Venezia-->
+      <div id="nolVenezia" style = 'font-weight: bold;'>Noleggio Venezia<br /></div>
+      <!--Noleggio Napoli-->
+      <div id="nolNapoli" style = 'font-weight: bold;'>Noleggio Napoli<br /></div>
+      <br />
       <table>
-        <th style="font-weight: normal">
-          <!--Noleggio Catania-->
-          <div id="nolCatania">Noleggio catania<br /></div>
-          <!--Noleggio Palermo-->
-          <div id="nolPalermo">Noleggio Palermo<br /></div>
-          <!--Noleggio Genova-->
-          <div id="nolGenova">Noleggio Genova<br /></div>
-          <!--Noleggio Porto Cervo-->
-          <div id="nolPortoCervo">Noleggio Porto Cervo<br /></div>
-          <!--Noleggio Venezia-->
-          <div id="nolVenezia">Noleggio Venezia<br /></div>
-          <!--Noleggio Napoli-->
-          <div id="nolNapoli">Noleggio Napoli<br /></div>
-          <br />
+        <th style="font-weight: normal; width: 50%;" >
+          
           <label for="dataInizio">Inserire la data di inizio</label><br />
           <input type="text" id="dataInizio" placeholder="data inizio " />
           <br />
@@ -169,23 +170,21 @@
           <br />
           <label for="caparra">Inserire la caparra da versare</label><br />
           <input type="number" id="caparra" min="100" placeholder="caparra" />
-          <p>Specificare se Patente Nautica munito</p>
-          <input type="radio" id="Patente" name="drone" value="Patente" />
-          <label for="Patente">Si</label>
-          <input type="radio" id="patente" name="drone" value="patente" />
-          <label for="patente">No</label><br />
-          <label for="noleggia">Clicca per confermare il noleggio</label>
+        <br />
+          <label for="noleggia">Clicca per confermare il noleggio</label><br>
           <button type="submit" id="noleggia" onclick="InserisciBarche()">
             Conferma noleggio
           </button>
         </th>
-        <th></th>
+        <th>
+          Scegliere la barca
+          <div id="barche">
+          <!-- <textarea id="barche" rows="10" cols="20"></textarea> -->
+        </div>
+        <label for="informazioni"> Informazioni barca</label><br>
+        <textarea id="informazioni" cols="25" rows="10" readonly="true" ></textarea>
+      </th>
       </table>
-      <div id="barche">
-        <!-- <textarea id="barche" rows="10" cols="20"></textarea> -->
-      </div>
-      <label for="informazioni"> Informazioni barca</label><br>
-      <textarea id="informazioni" cols="40" rows="10" readonly="true"></textarea>
     </div>
   </section>
 

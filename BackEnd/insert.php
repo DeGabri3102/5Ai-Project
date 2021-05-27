@@ -24,6 +24,9 @@ switch ($scegliFunzione) {
     case 7:
         ControllaPatente();
         break;
+    case 8:
+        VisualizzaNolUser();
+        break;
 }
 
 
@@ -253,26 +256,34 @@ function ControllaPatente()
     $conn->close();
 }
 function VisualizzaNolUser(){
-    $codDocumento = $_POST('codDocumento');
+    $codDocumento = $_POST['codDocumento'];
     include_once("db_connect.php");
     $cercaNoleggi = "SELECT imbarcazioni.nome,dataPrenotazione,inizioNoleggio,fineNoleggio,caparra 
     FROM prenotazioninoleggi JOIN imbarcazioni ON imbarcazioni.iDImb = prenotazioninoleggi.iDImb WHERE codDocumento = '$codDocumento'";
     $nol = $conn->query($cercaNoleggi);
-    $nol->nom_rows;
-    if ($risultato->num_rows) {
-    $output = "<table>";
+    $nol->num_rows;
+    if ($nol->num_rows) {
+        
+    $output = "<h3 style='text-align:center;'> Noleggi Effettuati</h3>
+    <table style='border: 1px solid black; margin:auto;'><tr>
+    <th style='border: 1px solid black;'>Nome Barca</th>
+    <th style='border: 1px solid black;'>Data Prenotazione</th>
+    <th style='border: 1px solid black;'>Nome Inizio Noleggio</th>
+    <th style='border: 1px solid black;'>Data Fine Noleggio</th>
+    <th style='border: 1px solid black;'>Caparra </th>
+  </tr>";
     while($row = $nol->fetch_assoc()){
-        $output.= "<tr>";
-        $output.= "<td>" . $row['nome'] ."</td>";
-        $output.= "<td>" . $row['dataPrenotazione'] . "</td>";
-        $output.= "<td>" . $row['inizioNoleggio'] . "</td>";
-        $output.= "<td>" . $row['fineNoleggio'] . "</td>";
-        $output.= "<td>" . $row['caparra'] . "</td>"; 
+        $output.= "<tr style='border: 1px solid black;'>";
+        $output.= "<td style='border: 1px solid black;'>" . $row['nome'] ."</td>";
+        $output.= "<td style='border: 1px solid black;'>" . $row['dataPrenotazione'] . "</td>";
+        $output.= "<td style='border: 1px solid black;'>" . $row['inizioNoleggio'] . "</td>";
+        $output.= "<td style='border: 1px solid black;'>" . $row['fineNoleggio'] . "</td>";
+        $output.= "<td style='border: 1px solid black;'>" . $row['caparra'] . '€'. "</td>"; 
     }
     $output.= "</table>";
 } else
 {
     $output .= 'Nessuna informazione trovata'; 
 }
-echo $output + "ciao";
+echo $output ;
 }
