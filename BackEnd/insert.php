@@ -255,7 +255,8 @@ function ControllaPatente()
 
     $conn->close();
 }
-function VisualizzaNolUser(){
+function VisualizzaNolUser()
+{
     $codDocumento = $_POST['codDocumento'];
     include_once("db_connect.php");
     $cercaNoleggi = "SELECT imbarcazioni.nome,dataPrenotazione,inizioNoleggio,fineNoleggio,caparra 
@@ -263,27 +264,26 @@ function VisualizzaNolUser(){
     $nol = $conn->query($cercaNoleggi);
     $nol->num_rows;
     if ($nol->num_rows) {
-        
-    $output = "<h3 style='text-align:center;'> Noleggi Effettuati</h3>
-    <table style='border: 1px solid black; margin:auto;'><tr>
-    <th style='border: 1px solid black;'>Nome Barca</th>
-    <th style='border: 1px solid black;'>Data Prenotazione</th>
-    <th style='border: 1px solid black;'>Nome Inizio Noleggio</th>
-    <th style='border: 1px solid black;'>Data Fine Noleggio</th>
-    <th style='border: 1px solid black;'>Caparra </th>
-  </tr>";
-    while($row = $nol->fetch_assoc()){
-        $output.= "<tr style='border: 1px solid black;'>";
-        $output.= "<td style='border: 1px solid black;'>" . $row['nome'] ."</td>";
-        $output.= "<td style='border: 1px solid black;'>" . $row['dataPrenotazione'] . "</td>";
-        $output.= "<td style='border: 1px solid black;'>" . $row['inizioNoleggio'] . "</td>";
-        $output.= "<td style='border: 1px solid black;'>" . $row['fineNoleggio'] . "</td>";
-        $output.= "<td style='border: 1px solid black;'>" . $row['caparra'] . '€'. "</td>"; 
+
+        $output = "<h3 style='text-align:center;'> Noleggi Effettuati</h3>
+            <table class='tabNoleggio' ><thead><tr>
+            <th>Nome Barca</th>
+            <th>Data Prenotazione</th>
+            <th>Nome Inizio Noleggio</th>
+            <th>Data Fine Noleggio</th>
+            <th>Caparra </th>
+            </tr></thead><tbody>";
+        while ($row = $nol->fetch_assoc()) {
+            $output .= "<tr>";
+            $output .= "<td>" . $row['nome'] . "</td>";
+            $output .= "<td>" . $row['dataPrenotazione'] . "</td>";
+            $output .= "<td>" . $row['inizioNoleggio'] . "</td>";
+            $output .= "<td>" . $row['fineNoleggio'] . "</td>";
+            $output .= "<td>" . $row['caparra'] . '€' . "</td>";
+        }
+        $output .= "</tbody></table>";
+    } else {
+        $output .= 'Nessuna informazione trovata';
     }
-    $output.= "</table>";
-} else
-{
-    $output .= 'Nessuna informazione trovata'; 
-}
-echo $output ;
+    echo $output;
 }

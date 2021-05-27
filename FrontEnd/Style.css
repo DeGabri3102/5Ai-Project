@@ -195,7 +195,7 @@ li.dropdown {
   width: 175px;
 }
 
-.show-password-toggle{
+.show-password-toggle {
   cursor: pointer;
 }
 
@@ -491,4 +491,40 @@ ol {
   width: 230px;
   height: 170px;
   resize: none;
+}
+
+.tabNoleggio {
+  border-collapse: collapse;
+  margin: auto;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.267);
+}
+
+.tabNoleggio thead tr {
+  background-color: #167db9c9;
+  color: #ffffff;
+  text-align: left;
+}
+
+.tabNoleggio th,
+.tabNoleggio td {
+  padding: 12px 15px;
+}
+
+.tabNoleggio tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.tabNoleggio tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.tabNoleggio tbody tr:last-of-type {
+  border-bottom: 2px solid #167db9c9;
+}
+
+.tabNoleggio tbody tr.active-row {
+  font-weight: bold;
+  color: #167db9c9;
 }
