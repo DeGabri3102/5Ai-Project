@@ -83,8 +83,9 @@ li.dropdown {
 }
 
 .Avatar img {
-  width: 35%;
-  height: 150%;
+  width: 40%;
+  height: 165%;
+  margin-top: -0.5em;
 }
 
 .Allineamneto {
