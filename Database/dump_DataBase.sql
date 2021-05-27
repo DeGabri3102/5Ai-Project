@@ -65,18 +65,21 @@ CREATE TABLE IF NOT EXISTS `amministratori` (
   `iDAmministratore` tinyint(4) NOT NULL AUTO_INCREMENT,
   `nome` varchar(20) DEFAULT NULL,
   `cognome` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`iDAmministratore`)
+  `email` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY (`iDAmministratore`),
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Dump dei dati della tabella charternautico.amministratori: ~6 rows (circa)
 /*!40000 ALTER TABLE `amministratori` DISABLE KEYS */;
-INSERT INTO `amministratori` (`iDAmministratore`, `nome`, `cognome`) VALUES
-	(1, 'Giovanni', 'Aleo'),
-	(2, 'Roberto', 'Stella'),
-	(3, 'Antonio', 'Marca'),
-	(4, 'Riccardo', 'Chiesa'),
-	(5, 'Simone', 'Torrisi'),
-	(6, 'Salvo', 'Castagna');
+INSERT INTO `amministratori` (`iDAmministratore`, `nome`, `cognome`, `email`, `password`) VALUES
+	(1, 'Giovanni', 'Aleo', 'giovanni@bhor.it', 'giovanni'),
+	(2, 'Roberto', 'Stella', 'roberto@bhor.it', 'roberto'),
+	(3, 'Antonio', 'Marca', 'antonio@bhor.it', 'antonio'),
+	(4, 'Riccardo', 'Chiesa', 'riccardo@bhor.it', 'riccardo'),
+	(5, 'Simone', 'Torrisi', 'simone@bhor.it', 'simone'),
+	(6, 'Salvo', 'Castagna', 'salvo@bhor.it', 'salvo');
 /*!40000 ALTER TABLE `amministratori` ENABLE KEYS */;
 
 -- Dump della struttura di tabella charternautico.centraline
@@ -281,7 +284,7 @@ INSERT INTO `porti` (`iDPorto`, `citta`, `nome`, `provincia`, `nTel`, `indirizzo
 
 -- Dump della struttura di tabella charternautico.prenotazioninoleggi
 CREATE TABLE IF NOT EXISTS `prenotazioninoleggi` (
-  `iDPrenotazione` TINYINT NOT NULL AUTO_INCREMENT,
+  `iDPrenotazione` varchar(5) NOT NULL,
   `codDocumento` varchar(16) DEFAULT NULL,
   `iDImb` tinyint(4) DEFAULT NULL,
   `dataPrenotazione` datetime DEFAULT NULL,
