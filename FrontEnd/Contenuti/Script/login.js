@@ -74,7 +74,7 @@ function LogIn() {
   var email = $("#emailUtente").val();
   var password = $("#passwordUtente").val();
   var funzione = 6; //funzione login in php
-
+  //alert("cawoujcaw");
   $.ajax({
     type: "POST",
     url: "../BackEnd/insert.php",
@@ -104,6 +104,8 @@ function LogIn() {
       alert("Server errors:", thrownError, data);
     },
   });
+  
+  document.getElementById("avvisoLog").innerHTML = "";
 }
 
 function LogOn() {

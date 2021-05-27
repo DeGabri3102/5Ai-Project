@@ -147,7 +147,7 @@
     <h3 id = "avvisoLog"  style="text-align: center"></h3>
     <div id="noleggio">
       <table>
-        <th style="font-weight: normal">
+        <th style="font-weight: normal; width: 50%;" >
           <!--Noleggio Catania-->
           <div id="nolCatania">Noleggio catania<br /></div>
           <!--Noleggio Palermo-->
@@ -169,23 +169,19 @@
           <br />
           <label for="caparra">Inserire la caparra da versare</label><br />
           <input type="number" id="caparra" min="100" placeholder="caparra" />
-          <p>Specificare se Patente Nautica munito</p>
-          <input type="radio" id="Patente" name="drone" value="Patente" />
-          <label for="Patente">Si</label>
-          <input type="radio" id="patente" name="drone" value="patente" />
-          <label for="patente">No</label><br />
-          <label for="noleggia">Clicca per confermare il noleggio</label>
+        
+          <label for="noleggia">Clicca per confermare il noleggio</label><br>
           <button type="submit" id="noleggia" onclick="InserisciBarche()">
             Conferma noleggio
           </button>
         </th>
-        <th></th>
+        <th><div id="barche">
+          <!-- <textarea id="barche" rows="10" cols="20"></textarea> -->
+        </div>
+        <label for="informazioni"> Informazioni barca</label><br>
+        <textarea id="informazioni" cols="25" rows="10" readonly="true" ></textarea>
+      </th>
       </table>
-      <div id="barche">
-        <!-- <textarea id="barche" rows="10" cols="20"></textarea> -->
-      </div>
-      <label for="informazioni"> Informazioni barca</label><br>
-      <textarea id="informazioni" cols="40" rows="10" readonly="true"></textarea>
     </div>
   </section>
 
