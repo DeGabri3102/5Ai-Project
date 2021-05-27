@@ -113,7 +113,3 @@ else
 var d = new Date();
 DisableDates(d);
 };
-
-
-
-  
