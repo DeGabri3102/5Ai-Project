@@ -6,11 +6,6 @@ body {
   margin: 0;
   overflow-x: hidden;
   font-family: Verdana, sans-serif;
-  background-image: url("Contenuti/logoBlueHorizon2.0.png");
-  background-repeat: no-repeat, no-repeat;
-  background-position-x: center;
-  background-attachment:fixed;
-  background-size:  1200px;
   background-color: #6ab9e649;
   
 }
