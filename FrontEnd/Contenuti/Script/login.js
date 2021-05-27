@@ -100,6 +100,7 @@ function LogIn() {
       alert("Server errors:", thrownError, data);
     },
   });
+	document.getElementById("avvisoLog").innerHTML="";
 }
 
 function LogOn() {
