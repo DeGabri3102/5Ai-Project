@@ -74,7 +74,7 @@ function VisualizzaNavi()
     $porto = $_POST['porto'];
     $sql = "SELECT imbarcazioni.nome,imbarcazioni.marca FROM imbarcazioni JOIN ormeggi on imbarcazioni.iDImb = ormeggi.IDImb JOIN porti on porti.iDPorto = ormeggi.iDPorto where porti.iDPorto = '$porto'";
     //$risultato = $conn->query($sql);
-    $output = '<select id = "showBarche" onchange="InfoBarche(this.value)" >
+    $output = '<select class ="showBarche" onchange="InfoBarche(this.value)" style="text-align:center;margin-left:12.7vw;">
     <option disabled="true" selected="selected">Nome-Marca</option> ';
     if ($risultato = $conn->query($sql)) {
         //echo("funziona");

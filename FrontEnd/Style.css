@@ -237,7 +237,7 @@ li.dropdown {
 
 #noleggio {
   background-color: rgba(255, 255, 255, 1);
-  width: 25%;
+  width: 35%;
   margin: auto;
   margin-top: 20px;
   padding: 10px;
@@ -530,4 +530,12 @@ ol {
 .tabNoleggio tbody tr.active-row {
   font-weight: bold;
   color: #167db9c9;
+}
+
+#barche{
+  margin: auto;
+}
+
+.showBarche{
+  text-align: center;
 }
