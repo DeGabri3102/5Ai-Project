@@ -445,6 +445,11 @@ ol {
   background-size: cover;
   display: none;
   border: groove;
+	opacity: 0.2;
+}
+.Ti::after{
+	opacity: 1;
+	
 }
 
 .Adriatico {
