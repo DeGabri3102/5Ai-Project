@@ -81,20 +81,30 @@ function LogIn() {
     },
     success: function (data) {
       //console.log(data);
-      data = JSON.parse(data.replace("result: ", ""));
-      //Impostando la sessione dell'utente
-      sessionStorage.setItem("nome", data.nome);
-      sessionStorage.setItem("cognome", data.cognome);
-      sessionStorage.setItem("email", data.email);
-      sessionStorage.setItem("codDocumento", data.codDocumento);
-      sessionStorage.setItem("tipoDocumento", data.tipoDocumento);
-      sessionStorage.setItem("ddn", data.ddn);
-      sessionStorage.setItem("nTel", data.nTel);
-      sessionStorage.setItem("indirizzo", data.indirizzo);
-      sessionStorage.setItem("numeroCivico", data.numeroCivico);
-      sessionStorage.setItem("patentenautica", data.patentenautica);
+      if (data.split("#")[1] != "1") {
+        data = JSON.parse(data.replace("result: ", ""));
+        //Impostando la sessione dell'utente
+        sessionStorage.setItem("nome", data.nome);
+        sessionStorage.setItem("cognome", data.cognome);
+        sessionStorage.setItem("email", data.email);
 
-      checkSessione();
+        if (data.email.split("@")[1] != "bhor.it") {
+          sessionStorage.setItem("codDocumento", data.codDocumento);
+          sessionStorage.setItem("tipoDocumento", data.tipoDocumento);
+          sessionStorage.setItem("ddn", data.ddn);
+          sessionStorage.setItem("nTel", data.nTel);
+          sessionStorage.setItem("indirizzo", data.indirizzo);
+          sessionStorage.setItem("numeroCivico", data.numeroCivico);
+          sessionStorage.setItem("patentenautica", data.patentenautica);
+        } else {
+          sessionStorage.setItem("idAdmin", data.iDAmministratore);
+          sessionStorage.setItem("admin", true);
+        }
+
+        checkSessione();
+      } else {
+        alert(data.split("#")[0]); //credenziali utente non combaciano
+      }
     },
     error: function (xhr, ajaxOptions, thrownError, data) {
       alert("Server errors:", thrownError, data);
@@ -141,7 +151,7 @@ function LogOn() {
       },
       success: function (data) {
         //Impostando la sessione dell'utente
-        if (data == "0") {
+        if (data == "0" && data.email.split("@")[1] != "bhor.it") {
           sessionStorage.setItem("nome", nome);
           sessionStorage.setItem("cognome", cognome);
           sessionStorage.setItem("email", email);
@@ -180,25 +190,66 @@ function LoadInformation() {
       '<h1>Devi accedere per vedere le informazioni.<br/><a href="index.html">Torna alla Home</a></h1>'
     );
   } else {
-    $(".Nome").append(sessionStorage.getItem("nome"));
-    $(".Cognome").append(sessionStorage.getItem("cognome"));
-    $(".Email").append(sessionStorage.getItem("email"));
-    $(".Documento").append(
-      sessionStorage.getItem("tipoDocumento") +
-        ", " +
-        "COD." +
-        sessionStorage.getItem("codDocumento")
-    );
-    $(".nTel").append(sessionStorage.getItem("nTel"));
-    $(".Indirizzo").append(
-      sessionStorage.getItem("indirizzo") +
-        " N°" +
-        sessionStorage.getItem("numeroCivico")
-    );
+    if (sessionStorage.getItem("admin")) {
+      $(".dati").html(
+        '<p class="Nome">Nome: </p><p class="Cognome">Cognome: </p><p class="Email">Email: </p>'
+      );
+      $(".Nome").append(sessionStorage.getItem("nome"));
+      $(".Cognome").append(sessionStorage.getItem("cognome"));
+      $(".Email").append(sessionStorage.getItem("email"));
+      $(".dati").append(
+        '<p class="idAdmin">ID Admin: ' +
+          sessionStorage.getItem("idAdmin") +
+          " </p>"
+      );
+    } else {
+      $(".Nome").append(sessionStorage.getItem("nome"));
+      $(".Cognome").append(sessionStorage.getItem("cognome"));
+      $(".Email").append(sessionStorage.getItem("email"));
+      $(".Documento").append(
+        sessionStorage.getItem("tipoDocumento") +
+          ", " +
+          "COD." +
+          sessionStorage.getItem("codDocumento")
+      );
+      $(".nTel").append(sessionStorage.getItem("nTel"));
+      $(".Indirizzo").append(
+        sessionStorage.getItem("indirizzo") +
+          " N°" +
+          sessionStorage.getItem("numeroCivico")
+      );
+    }
     InfoNoleggi();
   }
 }
 function InfoNoleggi() {
+  // #######################################
+  // #######################################
+  // if (sessionStorage.getItem("admin")) {
+
+  //   non avendo documento l'admin dovrà essere identificato dall'email per ricevere le tabelle
+  //   var email = sessionStorage.getItem("email");
+  //   var funzione = 8;
+
+  //   $.ajax({
+  //     url: "../BackEnd/insert.php",
+  //     method: "POST",
+  //     data: {
+  //       funzione,
+  //       email,
+  //     },
+  //     success: function (data) {
+  //       document.getElementById("Tabella_Noleggi").innerHTML = data;
+  //       //alert(data);
+  //     },
+  //     error: function (xhr, ajaxOptions, thrownError, data) {
+  //       alert("Errore nel server:", thrownError, data);
+  //     },
+  //   });
+  // } else {
+  //   #######################################
+  //   #######################################
+
   var codDocumento = sessionStorage.getItem("codDocumento");
   var funzione = 8;
   $.ajax({
@@ -216,4 +267,5 @@ function InfoNoleggi() {
       alert("Errore nel server:", thrownError, data);
     },
   });
+  // }
 }
