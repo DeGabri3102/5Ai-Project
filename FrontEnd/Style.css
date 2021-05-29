@@ -542,5 +542,16 @@ ol {
 }
 
 .showBarche{
-  text-align: center;
+  background-color: #167db9c9;
 }
+
+.tabMon{
+  border-collapse: collapse;
+  margin: auto;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.267);
+  z-index: 999;
+  color: rgb(88, 21, 21);
+}
+

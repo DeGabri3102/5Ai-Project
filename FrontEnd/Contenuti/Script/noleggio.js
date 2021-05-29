@@ -6,7 +6,7 @@ function InserisciBarche() {
   var dataInizio = $("#dataInizio").val();
   var dataFine = $("#dataFine").val();
   var caparra = $("#caparra").val();
-  var nomeBarca = $("#showBarche").val();
+  var nomeBarca = $(".showBarche").val();
   nomeBarca += "";
   nomeBarca = nomeBarca.split("-");
   nomeBarca = nomeBarca[0];
@@ -73,6 +73,7 @@ function InfoBarche(barca) {
     
     AggiornaDate(nomeBarca);
     ControlloPantente(nomeBarca);
+    document.getElementById('dataInizio').disabled = false;
 }
 
 
@@ -118,4 +119,7 @@ function ControlloPantente(nomebarca){
     },
   });
 }; 
+
+
+
     

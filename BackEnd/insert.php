@@ -27,6 +27,9 @@ switch ($scegliFunzione) {
     case 8:
         VisualizzaNolUser();
         break;
+    case 9:
+        VisualizzaMonMari();
+        break;
 }
 
 
@@ -269,7 +272,7 @@ function VisualizzaNolUser()
             <table class='tabNoleggio' ><thead><tr>
             <th>Nome Barca</th>
             <th>Data Prenotazione</th>
-            <th>Nome Inizio Noleggio</th>
+            <th>Data Inizio Noleggio</th>
             <th>Data Fine Noleggio</th>
             <th>Caparra </th>
             </tr></thead><tbody>";
@@ -286,4 +289,62 @@ function VisualizzaNolUser()
         $output .= 'Nessuna informazione trovata';
     }
     echo $output;
+    $conn->close();
+}
+
+function VisualizzaMonMari(){
+    $zona = $_POST['zona'];
+
+    switch ($zona){
+        case 1: 
+            $mari = array("Mar Tirreno","Costiera Amalfitana","Costa Smeralda");
+        break;
+        case 2:
+            $mari = array("Mar Ligure","Parco delle cinque terre");
+        break;
+        case 3:
+            $mari = array("Mar Ionio");
+        break;
+        case 4:
+            $mari = array("Delta del Po");
+        break;
+    }
+
+    $m = join("','",$mari);
+    include_once("db_connect.php");
+    $cercaMari = "SELECT nomeZona,ph,temperatura,conducibilita,redox,ossigeno,torbidita,d FROM monitoraggi
+    WHERE nomeZona in ('$m')";
+    $info = $conn->query($cercaMari);
+    $info->num_rows;
+    $output = "";
+        if ($info->num_rows) {
+
+        $output = "<h3 style='text-align:center;'> Noleggi Effettuati</h3>
+            <table class='tabMon' ><thead><tr>
+            <th>Nome ZOna</th>
+            <th>PH</th>
+            <th>Temperatura</th>
+            <th>Conducibilitá</th>
+            <th>Redox</th>
+            <th>Ossigeno</th>
+            <th>Torbiditá </th>
+            <th>Data Monitoraggio</th>
+            </tr></thead><tbody>";
+        while ($row = $info->fetch_assoc()) {
+            $output .= "<tr>";
+            $output .= "<td>" . $row['nomeZona'] . "</td>";
+            $output .= "<td>" . $row['ph'] . "</td>";
+            $output .= "<td>" . $row['temperatura'] . "</td>";
+            $output .= "<td>" . $row['conducibilita'] . "</td>";
+            $output .= "<td>" . $row['redox'] . "</td>";
+            $output .= "<td>" . $row['ossigeno'] . "</td>";
+            $output .= "<td>" . $row['torbidita'] . "</td>";
+            $output .= "<td>" . $row['d'] .  "</td>";
+        }
+        $output .= "</tbody></table>";
+    } else {
+        $output .= 'Nessuna informazione trovata';
+    }
+    echo $output;
+    $conn->close();
 }
