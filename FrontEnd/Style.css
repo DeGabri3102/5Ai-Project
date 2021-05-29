@@ -444,8 +444,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-  border: groove;
-	opacity: 0.2;
+	border: groove thin;
 }
 .Ti::after{
 	opacity: 1;
@@ -459,27 +458,27 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-  border: groove;
+	border: groove thin;
 }
 
 .Ionio {
   width: 100%;
   height: 60vw;
-  background-image: url("Contenuti/località_img/ionio.jpg");
+  background-image: url("Contenuti/località_img/ionio.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-  border: groove;
+	border: groove thin;
 }
 
 .Ligure {
   width: 100%;
   height: 60vw;
-  border: groove;
   background-image: url("Contenuti/località_img/CinqueTerre.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
+	border: groove thin;
 }
 
 .avatar {
