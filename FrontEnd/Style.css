@@ -444,7 +444,6 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-	opacity: 0.2;
 	border: groove thin;
 }
 .Ti::after{
