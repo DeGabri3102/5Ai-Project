@@ -445,6 +445,7 @@ ol {
   background-size: cover;
   display: none;
 	opacity: 0.2;
+	border: groove thin;
 }
 .Ti::after{
 	opacity: 1;
@@ -458,6 +459,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
+	border: groove thin;
 }
 
 .Ionio {
@@ -467,6 +469,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
+	border: groove thin;
 }
 
 .Ligure {
@@ -476,6 +479,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
+	border: groove thin;
 }
 
 .avatar {
