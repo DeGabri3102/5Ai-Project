@@ -444,7 +444,6 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-  border: groove;
 	opacity: 0.2;
 }
 .Ti::after{
@@ -459,7 +458,6 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-  border: groove;
 }
 
 .Ionio {
@@ -469,13 +467,11 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-  border: groove;
 }
 
 .Ligure {
   width: 100%;
   height: 60vw;
-  border: groove;
   background-image: url("Contenuti/località_img/CinqueTerre.jpg");
   background-repeat: no-repeat;
   background-size: cover;

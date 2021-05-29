@@ -74,7 +74,7 @@ function VisualizzaNavi()
     $porto = $_POST['porto'];
     $sql = "SELECT imbarcazioni.nome,imbarcazioni.marca FROM imbarcazioni JOIN ormeggi on imbarcazioni.iDImb = ormeggi.IDImb JOIN porti on porti.iDPorto = ormeggi.iDPorto where porti.iDPorto = '$porto'";
     //$risultato = $conn->query($sql);
-    $output = '<select class ="showBarche" onchange="InfoBarche(this.value)" style="text-align:center;margin-left:12.7vw;">
+    $output = '<select class = "showBarche" onchange="InfoBarche(this.value)" style="text-align:center;margin-left:12.7vw;">
     <option disabled="true" selected="selected">Nome-Marca</option> ';
     if ($risultato = $conn->query($sql)) {
         //echo("funziona");
@@ -147,8 +147,13 @@ function LogIn()
     //hashing della password
     //$password = hash_hmac('sha512', 'salt' . $password, $_SERVER['site_key']);
 
-    $sql = "SELECT codDocumento,tipoDocumento,nome,cognome,ddn,email,nTel,indirizzo,numeroCivico,patentenautica FROM clienti  where email = '$email'";
-    $passwordCheck = $conn->query("SELECT password FROM clienti where email = '$email'");
+    if (explode("@", $email)[1] == "bhor.it") {
+        $sql = "SELECT iDAmministratore,nome,cognome,email FROM amministratori where email = '$email'";
+        $passwordCheck = $conn->query("SELECT password FROM amministratori where email = '$email'");
+    } else {
+        $sql = "SELECT codDocumento,tipoDocumento,nome,cognome,ddn,email,nTel,indirizzo,numeroCivico,patentenautica FROM clienti  where email = '$email'";
+        $passwordCheck = $conn->query("SELECT password FROM clienti where email = '$email'");
+    }
 
     if ($risultato = $conn->query($sql)) {
         // $risultato contiene tutto cioò che viene "visualizzato" con la nostra query $sql
@@ -157,7 +162,7 @@ function LogIn()
             echo "result: " . $output;
         } else {
             //echo "nessun utente";
-            echo ("Nessun utente corrisponde con l'email o la password");
+            echo ("Nessun utente corrisponde con l'email o la password #1");
         }
     } else {
         echo ("Query fallita: " . $conn->error);
@@ -257,10 +262,10 @@ function ControllaPatente()
 }
 function VisualizzaNolUser()
 {
-    $codDocumento = $_POST['codDocumento'];
     include_once("db_connect.php");
+    $codDocumento = $_POST['codDocumento'];
     $cercaNoleggi = "SELECT imbarcazioni.nome,dataPrenotazione,inizioNoleggio,fineNoleggio,caparra 
-    FROM prenotazioninoleggi JOIN imbarcazioni ON imbarcazioni.iDImb = prenotazioninoleggi.iDImb WHERE codDocumento = '$codDocumento'";
+        FROM prenotazioninoleggi JOIN imbarcazioni ON imbarcazioni.iDImb = prenotazioninoleggi.iDImb WHERE codDocumento = '$codDocumento'";
     $nol = $conn->query($cercaNoleggi);
     $nol->num_rows;
     if ($nol->num_rows) {
