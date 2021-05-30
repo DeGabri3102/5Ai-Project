@@ -329,7 +329,7 @@ function VisualizzaMonMari()
 
         $output = "<h3 style='text-align:center;'>Dati sulla zona marina</h3>
             <table class='tabMon' ><thead><tr>
-            <th>Nome ZOna</th>
+            <th>Nome Zona</th>
             <th>PH</th>
             <th>Temperatura</th>
             <th>Conducibilitá</th>
