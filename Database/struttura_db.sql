@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versione server:              10.4.18-MariaDB - mariadb.org binary distribution
+-- Versione server:              10.4.14-MariaDB - mariadb.org binary distribution
 -- S.O. server:                  Win64
--- HeidiSQL Versione:            11.2.0.6213
+-- HeidiSQL Versione:            11.0.0.6037
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -10,7 +10,6 @@
 /*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 -- Dump della struttura del database charternautico
@@ -336,16 +335,51 @@ CREATE TABLE IF NOT EXISTS `personale` (
   KEY `iDImb` (`iDImb`),
   CONSTRAINT `personale_ibfk_1` FOREIGN KEY (`codice`) REFERENCES `qualifiche` (`codice`),
   CONSTRAINT `personale_ibfk_2` FOREIGN KEY (`iDImb`) REFERENCES `imbarcazioni` (`iDImb`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.personale: ~0 rows (circa)
+-- Dump dei dati della tabella charternautico.personale: ~40 rows (circa)
 /*!40000 ALTER TABLE `personale` DISABLE KEYS */;
 INSERT INTO `personale` (`iDPersonale`, `codice`, `iDImb`, `nome`, `cognome`) VALUES
 	(1, 'HO', 3, 'Laura', 'Camicia'),
 	(2, 'ST', 2, 'Lorenzo', 'Scoglio'),
 	(3, 'SK', 5, 'Filippo', 'Insulla'),
 	(4, 'HO', 1, 'Enula', 'Tommasini'),
-	(5, 'ST', 1, 'Eric', 'Etna');
+	(5, 'ST', 1, 'Eric', 'Etna'),
+	(6, 'SK', 1, 'Pippo', 'Carcio'),
+	(7, 'SK', 2, 'Lori', 'Poti'),
+	(8, 'SK', 3, 'Klon', 'Tur'),
+	(9, 'SK', 4, 'Lera', 'Mort'),
+	(10, 'SK', 6, 'Ress', 'Kondor'),
+	(11, 'SK', 7, 'Gigi', 'Sole'),
+	(12, 'SK', 8, 'Ryt', 'Iot'),
+	(13, 'SK', 9, 'Jon', 'Urrian'),
+	(14, 'SK', 10, 'Kolu', 'Nontro'),
+	(15, 'SK', 11, 'Troia', 'Milo'),
+	(16, 'SK', 12, 'Moira', 'Sold'),
+	(17, 'SK', 13, 'Werd', 'Portore'),
+	(18, 'SK', 14, 'Simo', 'Yey'),
+	(19, 'SK', 15, 'Aldo', 'Baglio'),
+	(20, 'SK', 16, 'Hot', 'Dog'),
+	(21, 'SK', 17, 'Jin', 'Tonic'),
+	(22, 'SK', 18, 'Tom', 'Dropp'),
+	(23, 'SK', 19, 'Unni', 'pippotti'),
+	(24, 'SK', 20, 'Emma', 'Watson'),
+	(25, 'SK', 21, 'Vimo', 'Ciro'),
+	(26, 'SK', 22, 'Bollo', 'Tollo'),
+	(27, 'SK', 23, 'Kizzo', 'Sollo'),
+	(28, 'SK', 24, 'Giggio', 'Lillo'),
+	(29, 'SK', 25, 'Dire', 'Mai'),
+	(30, 'SK', 26, 'Selly', 'Gigi'),
+	(31, 'SK', 27, 'Monkas', 'Lele'),
+	(32, 'SK', 28, 'Fria', 'Riellu'),
+	(33, 'SK', 29, 'Martina', 'Droi'),
+	(34, 'SK', 30, 'Agata', 'Lore'),
+	(35, 'SK', 31, 'Lino', 'Banfi'),
+	(36, 'SK', 32, 'Mori', 'Moto'),
+	(37, 'SK', 33, 'Ricky', 'Kloster'),
+	(38, 'SK', 34, 'Marrali', 'Salvo'),
+	(39, 'SK', 35, 'Gabri', 'Ponte'),
+	(40, 'SK', 36, 'Pluto', 'Happy');
 /*!40000 ALTER TABLE `personale` ENABLE KEYS */;
 
 -- Dump della struttura di tabella charternautico.porti
@@ -360,7 +394,7 @@ CREATE TABLE IF NOT EXISTS `porti` (
   PRIMARY KEY (`iDPorto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.porti: ~0 rows (circa)
+-- Dump dei dati della tabella charternautico.porti: ~6 rows (circa)
 /*!40000 ALTER TABLE `porti` DISABLE KEYS */;
 INSERT INTO `porti` (`iDPorto`, `citta`, `nome`, `provincia`, `nTel`, `indirizzo`, `numeroCivico`) VALUES
 	(1, 'Napoli', 'Brilla', 'Napoli', '3337772727', 'Via Verdi', '27'),
@@ -381,6 +415,7 @@ CREATE TABLE IF NOT EXISTS `prenotazioninoleggi` (
   `fineNoleggio` date DEFAULT NULL,
   `caparra` varchar(4) DEFAULT NULL,
   `noleggiata` enum('SI','NO') DEFAULT NULL,
+  `ConPersonale` enum('SI','NO') DEFAULT NULL,
   PRIMARY KEY (`iDPrenotazione`),
   KEY `codDocumento` (`codDocumento`),
   KEY `iDImb` (`iDImb`),
@@ -388,12 +423,12 @@ CREATE TABLE IF NOT EXISTS `prenotazioninoleggi` (
   CONSTRAINT `prenotazioninoleggi_ibfk_2` FOREIGN KEY (`iDImb`) REFERENCES `imbarcazioni` (`iDImb`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.prenotazioninoleggi: ~0 rows (circa)
+-- Dump dei dati della tabella charternautico.prenotazioninoleggi: ~3 rows (circa)
 /*!40000 ALTER TABLE `prenotazioninoleggi` DISABLE KEYS */;
-INSERT INTO `prenotazioninoleggi` (`iDPrenotazione`, `codDocumento`, `iDImb`, `dataPrenotazione`, `inizioNoleggio`, `fineNoleggio`, `caparra`, `noleggiata`) VALUES
-	(1, '2727009', 1, '2021-05-01', '2021-05-13', '2021-05-23', '1000', 'SI'),
-	(2, 'AB1275467', 6, '2021-05-10', '2021-05-14', '2021-05-17', '500', 'NO'),
-	(3, 'HPFPYM47A27D408H', 2, '2021-04-30', '2021-05-10', '2021-05-12', '700', 'SI');
+INSERT INTO `prenotazioninoleggi` (`iDPrenotazione`, `codDocumento`, `iDImb`, `dataPrenotazione`, `inizioNoleggio`, `fineNoleggio`, `caparra`, `noleggiata`, `ConPersonale`) VALUES
+	(1, '2727009', 1, '2021-05-01', '2021-05-13', '2021-05-23', '1000', 'SI', 'NO'),
+	(2, 'AB1275467', 6, '2021-05-10', '2021-05-14', '2021-05-17', '500', 'NO', 'SI'),
+	(3, 'HPFPYM47A27D408H', 2, '2021-04-30', '2021-05-10', '2021-05-12', '700', 'SI', 'SI');
 /*!40000 ALTER TABLE `prenotazioninoleggi` ENABLE KEYS */;
 
 -- Dump della struttura di tabella charternautico.qualifiche
@@ -404,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `qualifiche` (
   PRIMARY KEY (`codice`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.qualifiche: ~0 rows (circa)
+-- Dump dei dati della tabella charternautico.qualifiche: ~3 rows (circa)
 /*!40000 ALTER TABLE `qualifiche` DISABLE KEYS */;
 INSERT INTO `qualifiche` (`codice`, `descrizione`, `stipendio`) VALUES
 	('SK', 'SKIPPER', '3500'),
@@ -413,6 +448,5 @@ INSERT INTO `qualifiche` (`codice`, `descrizione`, `stipendio`) VALUES
 /*!40000 ALTER TABLE `qualifiche` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
