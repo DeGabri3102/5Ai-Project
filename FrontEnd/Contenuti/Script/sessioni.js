@@ -195,7 +195,7 @@ function LogOut() {
 function LoadInformation() {
   if (sessionStorage.getItem("email") == null) {
     $(".desc").html(
-      '<h1>Devi accedere per vedere le informazioni.<br/><a href="index.html">Torna alla Home</a></h1>'
+      '<h1>Devi accedere per vedere le tue informazioni.<br/><a href="index.html">Torna alla Home</a></h1>'
     );
   } else {
     if (sessionStorage.getItem("admin")) {

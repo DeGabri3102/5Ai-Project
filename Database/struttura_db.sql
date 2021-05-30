@@ -73,12 +73,12 @@ CREATE TABLE IF NOT EXISTS `amministratori` (
 -- Dump dei dati della tabella charternautico.amministratori: ~6 rows (circa)
 /*!40000 ALTER TABLE `amministratori` DISABLE KEYS */;
 INSERT INTO `amministratori` (`iDAmministratore`, `nome`, `cognome`, `email`, `password`) VALUES
-	(1, 'Giovanni', 'Aleo', 'giovannialeo27@gmail.com', 'giovannialeo'),
-	(2, 'Roberto', 'Stella', 'robertostella@gmail.com', 'robertostella'),
-	(3, 'Antonio', 'Marca', 'antoniomarca@gmail.com', 'antoniomarca'),
-	(4, 'Riccardo', 'Chiesa', 'riccardochiesa@gmail.com', 'riccardochiesa'),
-	(5, 'Simone', 'Torrisi', 'simonetorrisi@gmail.com', 'simonetorrisi'),
-	(6, 'Salvo', 'Castagna', 'salvocastagna@gmail.com', 'salvocastagna');
+	(1, 'Giovanni', 'Aleo', 'giovannialeo27@bhor.it', 'giovannialeo'),
+	(2, 'Roberto', 'Stella', 'robertostella@bhor.it', 'robertostella'),
+	(3, 'Antonio', 'Marca', 'antoniomarca@bhor.it', 'antoniomarca'),
+	(4, 'Riccardo', 'Chiesa', 'riccardochiesa@bhor.it', 'riccardochiesa'),
+	(5, 'Simone', 'Torrisi', 'simonetorrisi@bhor.it', 'simonetorrisi'),
+	(6, 'Salvo', 'Castagna', 'salvocastagna@bhor.it', 'salvocastagna');
 /*!40000 ALTER TABLE `amministratori` ENABLE KEYS */;
 
 -- Dump della struttura di tabella charternautico.centraline
