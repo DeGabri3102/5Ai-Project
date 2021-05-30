@@ -308,13 +308,13 @@ function VisualizzaMonMari()
             $mari = array("Mar Tirreno", "Costiera Amalfitana", "Costa Smeralda");
             break;
         case 2:
-            $mari = array("Mar Ligure", "Parco delle cinque terre");
-            break;
-        case 3:
             $mari = array("Mar Ionio");
             break;
-        case 4:
+        case 3:
             $mari = array("Delta del Po");
+            break;
+        case 4:
+            $mari = array("Mar Ligure", "Parco delle cinque terre");
             break;
     }
 
@@ -327,9 +327,9 @@ function VisualizzaMonMari()
     $output = "";
     if ($info->num_rows) {
 
-        $output = "<h3 style='text-align:center;'>Dati sulla zona marina</h3>
+        $output = "<h3 style = 'text-align:center; color: white;'>Dati sulla zona marina</h3>
             <table class='tabMon' ><thead><tr>
-            <th>Nome ZOna</th>
+            <th>Nome Zona</th>
             <th>PH</th>
             <th>Temperatura</th>
             <th>Conducibilitá</th>
