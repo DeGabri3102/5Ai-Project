@@ -1,11 +1,4 @@
-// JavaScript Document
-
-// $(document).ready(function (){
-// 	$("Tirreno").style.display="none";
-// 	$("Ionio").style.display="none";
-// 	$("Adriatico").style.display="none";
-// 	$("Ligure").style.display="none";
-// })
+//script per la visualizzazione dei mari in monitoraggio
 function scegliMare(mare) {
   sessionStorage.setItem("mare", mare);
 }
