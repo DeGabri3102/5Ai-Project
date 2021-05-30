@@ -92,7 +92,7 @@ function AggiornaDate(nomeBarca) {
     },
   });
 }
-
+//Cerca se l'utente ha la patente e se puo guidare
 function ControlloPantente(nomebarca) {
   var patenteUser = sessionStorage.getItem("patentenautica");
   var codDocumento = sessionStorage.getItem("codDocumento");
