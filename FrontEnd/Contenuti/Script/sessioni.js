@@ -73,12 +73,13 @@ window.onclick = function (event) {
 function LogIn() {
   var email = $("#emailUtente").val();
   var password = $("#passwordUtente").val();
-  var funzione = 6;                                    //Il numero indica la funzione da richiamare nello script php
+  var funzione = 6; //Il numero indica la funzione da richiamare nello script php
 
   $.ajax({
     type: "POST",
-    url: "../BackEnd/insert.php",
-    data: {                                           //Dati da passare al php attraverso il post con ajax
+    url: "../BackEnd/querys_db.php",
+    data: {
+      //Dati da passare al php attraverso il post con ajax
       funzione,
       email,
       password,
@@ -139,7 +140,7 @@ function LogOn() {
 
     $.ajax({
       type: "POST",
-      url: "../BackEnd/insert.php",
+      url: "../BackEnd/querys_db.php",
       data: {
         funzione,
         email,
@@ -235,7 +236,7 @@ function InfoNoleggi() {
   var codDocumento = sessionStorage.getItem("codDocumento");
   var funzione = 8;
   $.ajax({
-    url: "../BackEnd/insert.php",
+    url: "../BackEnd/querys_db.php",
     method: "POST",
     data: {
       funzione,

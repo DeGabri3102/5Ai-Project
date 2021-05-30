@@ -35,7 +35,7 @@ switch ($scegliFunzione) {
 
 function InserisciNoleggio() //Inserimento noleggio nel database
 {
-    include_once("db_connect.php");
+    include_once("connect_db.php");
     $documento = $_POST['documento'];
     $dataNol = date("Y/m/d");
     $dataInizio = $_POST['dataInizio'];
@@ -73,7 +73,7 @@ function InserisciNoleggio() //Inserimento noleggio nel database
 
 function VisualizzaNavi()
 {
-    include_once("db_connect.php");
+    include_once("connect_db.php");
     $porto = $_POST['porto'];
     $sql = "SELECT imbarcazioni.nome,imbarcazioni.marca FROM imbarcazioni JOIN ormeggi on imbarcazioni.iDImb = ormeggi.IDImb JOIN porti on porti.iDPorto = ormeggi.iDPorto where porti.iDPorto = '$porto'";
     //$risultato = $conn->query($sql);
@@ -104,7 +104,7 @@ function VisualizzaNavi()
 
 function VisualizzaInfoNavi()
 {
-    include_once("db_connect.php");
+    include_once("connect_db.php");
     $nomeBarca = $_POST['nomeBarca'];
     $sql = "SELECT nome,marca,modello,prezzonoleggio_al_giorno,lunghezza,potenza_cv,nPostiLetto,obbligoPatenteNautica FROM imbarcazioni  where nome = '$nomeBarca'";
 
@@ -136,7 +136,7 @@ function VisualizzaInfoNavi()
 
 function LogIn()
 {
-    include_once("db_connect.php");
+    include_once("connect_db.php");
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -176,7 +176,7 @@ function LogIn()
 
 function DateNoleggio()
 {
-    include_once("db_connect.php");
+    include_once("connect_db.php");
     $nomeBarca = $_POST['nomeBarca'];
     $cercaIdBarca = "SELECT iDImb FROM imbarcazioni where nome = '$nomeBarca'";
     $idBarca = $conn->query($cercaIdBarca);
@@ -206,7 +206,7 @@ function DateNoleggio()
 
 function LogOn()
 {
-    include_once("db_connect.php");
+    include_once("connect_db.php");
 
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];
@@ -250,7 +250,7 @@ function ControllaPatente()
     $patenteUser = $_POST['patenteUser'];
     $codDocumento = $_POST['codDocumento'];
     $nomeBarca = $_POST['nomebarca'];
-    include_once("db_connect.php");
+    include_once("connect_db.php");
 
     $cercaPatente = "SELECT obbligoPatenteNautica FROM imbarcazioni where nome = '$nomeBarca'";
     $patente = $conn->query($cercaPatente);
@@ -259,13 +259,15 @@ function ControllaPatente()
 
     if ($row['obbligoPatenteNautica'] == "SI" && $patenteUser == "NO") {
         echo "Non puoi noleggiare questa barca";
+    } else {
+        echo "";
     }
 
     $conn->close();
 }
 function VisualizzaNolUser()
 {
-    include_once("db_connect.php");
+    include_once("connect_db.php");
     $codDocumento = $_POST['codDocumento'];
     $cercaNoleggi = "SELECT imbarcazioni.nome,dataPrenotazione,inizioNoleggio,fineNoleggio,caparra 
         FROM prenotazioninoleggi JOIN imbarcazioni ON imbarcazioni.iDImb = prenotazioninoleggi.iDImb WHERE codDocumento = '$codDocumento'";
@@ -297,34 +299,35 @@ function VisualizzaNolUser()
     $conn->close();
 }
 
-function VisualizzaMonMari(){
+function VisualizzaMonMari()
+{
     $zona = $_POST['zona'];
 
-    switch ($zona){
-        case 1: 
-            $mari = array("Mar Tirreno","Costiera Amalfitana","Costa Smeralda");
-        break;
+    switch ($zona) {
+        case 1:
+            $mari = array("Mar Tirreno", "Costiera Amalfitana", "Costa Smeralda");
+            break;
         case 2:
-            $mari = array("Mar Ligure","Parco delle cinque terre");
-        break;
+            $mari = array("Mar Ligure", "Parco delle cinque terre");
+            break;
         case 3:
             $mari = array("Mar Ionio");
-        break;
+            break;
         case 4:
             $mari = array("Delta del Po");
-        break;
+            break;
     }
 
-    $m = join("','",$mari);
-    include_once("db_connect.php");
-    $cercaMari = "SELECT nomeZona,ph,temperatura,conducibilita,redox,ossigeno,torbidita,d FROM monitoraggi
+    $m = join("','", $mari);
+    include_once("connect_db.php");
+    $cercaMari = "SELECT nomeZona,ph,temperatura,conducibilità,redox,ossigeno,torbidita,d FROM monitoraggi
     WHERE nomeZona in ('$m')";
     $info = $conn->query($cercaMari);
     $info->num_rows;
     $output = "";
-        if ($info->num_rows) {
+    if ($info->num_rows) {
 
-        $output = "<h3 style='text-align:center;'> Noleggi Effettuati</h3>
+        $output = "<h3 style='text-align:center;'>Dati sulla zona marina</h3>
             <table class='tabMon' ><thead><tr>
             <th>Nome ZOna</th>
             <th>PH</th>
@@ -340,7 +343,7 @@ function VisualizzaMonMari(){
             $output .= "<td>" . $row['nomeZona'] . "</td>";
             $output .= "<td>" . $row['ph'] . "</td>";
             $output .= "<td>" . $row['temperatura'] . "</td>";
-            $output .= "<td>" . $row['conducibilita'] . "</td>";
+            $output .= "<td>" . $row['conducibilità'] . "</td>";
             $output .= "<td>" . $row['redox'] . "</td>";
             $output .= "<td>" . $row['ossigeno'] . "</td>";
             $output .= "<td>" . $row['torbidita'] . "</td>";
