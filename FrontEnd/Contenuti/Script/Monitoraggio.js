@@ -17,6 +17,9 @@ function Mostra() {
     case "4":
       lig();
       break;
+    default:
+      tir();
+      break;
   }
 }
 function tir() {
