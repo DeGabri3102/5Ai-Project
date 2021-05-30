@@ -320,7 +320,7 @@ function VisualizzaMonMari()
 
     $m = join("','", $mari);
     include_once("connect_db.php");
-    $cercaMari = "SELECT nomeZona,ph,temperatura,conducibilità,redox,ossigeno,torbidita,d FROM monitoraggi
+    $cercaMari = "SELECT nomeZona,ph,temperatura,conducibilita,redox,ossigeno,torbidita,d FROM monitoraggi
     WHERE nomeZona in ('$m')";
     $info = $conn->query($cercaMari);
     $info->num_rows;
@@ -343,7 +343,7 @@ function VisualizzaMonMari()
             $output .= "<td>" . $row['nomeZona'] . "</td>";
             $output .= "<td>" . $row['ph'] . "</td>";
             $output .= "<td>" . $row['temperatura'] . "</td>";
-            $output .= "<td>" . $row['conducibilità'] . "</td>";
+            $output .= "<td>" . $row['conducibilita'] . "</td>";
             $output .= "<td>" . $row['redox'] . "</td>";
             $output .= "<td>" . $row['ossigeno'] . "</td>";
             $output .= "<td>" . $row['torbidita'] . "</td>";
