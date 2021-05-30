@@ -40,6 +40,7 @@ var getDates = function (startDate, endDate) {
   return arrString;
 };
 
+//disabilita le date non disponibili
 function DisableDates(date) {
   getDateArray = getDates(inizio, fine);
 
@@ -48,6 +49,7 @@ function DisableDates(date) {
   return [getDateArray.indexOf(string) == -1];
 }
 
+//aggiorna le date disponibili nel datepicker
 function Aggiorna(rangeDate) {
   inizio = [];
   fine = [];
