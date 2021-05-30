@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versione server:              10.1.37-MariaDB - mariadb.org binary distribution
--- S.O. server:                  Win32
+-- Versione server:              10.4.18-MariaDB - mariadb.org binary distribution
+-- S.O. server:                  Win64
 -- HeidiSQL Versione:            11.2.0.6213
 -- --------------------------------------------------------
 
@@ -281,9 +281,9 @@ CREATE TABLE IF NOT EXISTS `ormeggi` (
   KEY `iDImb` (`iDImb`),
   CONSTRAINT `ormeggi_ibfk_1` FOREIGN KEY (`iDPorto`) REFERENCES `porti` (`iDPorto`),
   CONSTRAINT `ormeggi_ibfk_2` FOREIGN KEY (`iDImb`) REFERENCES `imbarcazioni` (`iDImb`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.ormeggi: ~5 rows (circa)
+-- Dump dei dati della tabella charternautico.ormeggi: ~36 rows (circa)
 /*!40000 ALTER TABLE `ormeggi` DISABLE KEYS */;
 INSERT INTO `ormeggi` (`iDOrmeggio`, `iDPorto`, `iDImb`, `dataOrmeggio`) VALUES
 	(1, 6, 1, '2021-05-13 10:47:27'),
@@ -338,7 +338,7 @@ CREATE TABLE IF NOT EXISTS `personale` (
   CONSTRAINT `personale_ibfk_2` FOREIGN KEY (`iDImb`) REFERENCES `imbarcazioni` (`iDImb`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.personale: ~5 rows (circa)
+-- Dump dei dati della tabella charternautico.personale: ~0 rows (circa)
 /*!40000 ALTER TABLE `personale` DISABLE KEYS */;
 INSERT INTO `personale` (`iDPersonale`, `codice`, `iDImb`, `nome`, `cognome`) VALUES
 	(1, 'HO', 3, 'Laura', 'Camicia'),
@@ -360,7 +360,7 @@ CREATE TABLE IF NOT EXISTS `porti` (
   PRIMARY KEY (`iDPorto`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.porti: ~6 rows (circa)
+-- Dump dei dati della tabella charternautico.porti: ~0 rows (circa)
 /*!40000 ALTER TABLE `porti` DISABLE KEYS */;
 INSERT INTO `porti` (`iDPorto`, `citta`, `nome`, `provincia`, `nTel`, `indirizzo`, `numeroCivico`) VALUES
 	(1, 'Napoli', 'Brilla', 'Napoli', '3337772727', 'Via Verdi', '27'),
@@ -373,7 +373,7 @@ INSERT INTO `porti` (`iDPorto`, `citta`, `nome`, `provincia`, `nTel`, `indirizzo
 
 -- Dump della struttura di tabella charternautico.prenotazioninoleggi
 CREATE TABLE IF NOT EXISTS `prenotazioninoleggi` (
-  `iDPrenotazione` smallint NOT NULL AUTO_INCREMENT,
+  `iDPrenotazione` smallint(6) NOT NULL AUTO_INCREMENT,
   `codDocumento` varchar(16) DEFAULT NULL,
   `iDImb` tinyint(4) DEFAULT NULL,
   `dataPrenotazione` date DEFAULT NULL,
@@ -388,12 +388,12 @@ CREATE TABLE IF NOT EXISTS `prenotazioninoleggi` (
   CONSTRAINT `prenotazioninoleggi_ibfk_2` FOREIGN KEY (`iDImb`) REFERENCES `imbarcazioni` (`iDImb`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.prenotazioninoleggi: ~3 rows (circa)
+-- Dump dei dati della tabella charternautico.prenotazioninoleggi: ~0 rows (circa)
 /*!40000 ALTER TABLE `prenotazioninoleggi` DISABLE KEYS */;
 INSERT INTO `prenotazioninoleggi` (`iDPrenotazione`, `codDocumento`, `iDImb`, `dataPrenotazione`, `inizioNoleggio`, `fineNoleggio`, `caparra`, `noleggiata`) VALUES
-	(1, '2727009', 1, '2021-05-01 10:37:16', '2021-05-13 10:37:32', '2021-05-23 10:37:37', '1000', 'SI'),
-	(2, 'AB1275467', 6, '2021-05-10 10:39:36', '2021-05-14 10:39:31', '2021-05-17 10:38:24', '500', 'NO'),
-	(3, 'HPFPYM47A27D408H', 2, '2021-04-30 10:40:57', '2021-05-10 10:41:12', '2021-05-12 10:41:25', '700', 'SI');
+	(1, '2727009', 1, '2021-05-01', '2021-05-13', '2021-05-23', '1000', 'SI'),
+	(2, 'AB1275467', 6, '2021-05-10', '2021-05-14', '2021-05-17', '500', 'NO'),
+	(3, 'HPFPYM47A27D408H', 2, '2021-04-30', '2021-05-10', '2021-05-12', '700', 'SI');
 /*!40000 ALTER TABLE `prenotazioninoleggi` ENABLE KEYS */;
 
 -- Dump della struttura di tabella charternautico.qualifiche
@@ -404,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `qualifiche` (
   PRIMARY KEY (`codice`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dump dei dati della tabella charternautico.qualifiche: ~3 rows (circa)
+-- Dump dei dati della tabella charternautico.qualifiche: ~0 rows (circa)
 /*!40000 ALTER TABLE `qualifiche` DISABLE KEYS */;
 INSERT INTO `qualifiche` (`codice`, `descrizione`, `stipendio`) VALUES
 	('SK', 'SKIPPER', '3500'),
