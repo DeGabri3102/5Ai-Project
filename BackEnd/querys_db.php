@@ -273,6 +273,7 @@ function VisualizzaNolUser()
         FROM prenotazioninoleggi JOIN imbarcazioni ON imbarcazioni.iDImb = prenotazioninoleggi.iDImb WHERE codDocumento = '$codDocumento'";
     $nol = $conn->query($cercaNoleggi);
     $nol->num_rows;
+    $output = "";
     if ($nol->num_rows) {
 
         $output = "<h3 style='text-align:center;'> Noleggi Effettuati</h3>

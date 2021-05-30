@@ -27,6 +27,10 @@ function InserisciBarche() {
       alert(data);
     },
   });
+  document.getElementById("dataInizio").value = "";
+  document.getElementById("dataFine").value = "";
+  document.getElementById("caparra").value = "";
+  document.getElementById("informazioni").value = "";
 }
 function CercaBarche(porto) {
   //il valore della variabile funzione determina la funzione da usare nel file insert.php
