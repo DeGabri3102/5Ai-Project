@@ -51,7 +51,7 @@ var pNA = L.marker([40.843845137614984, 14.263327815339958], {
 pCT.on("mouseover", function (e) {
   pCT
     .bindPopup(
-      '<b> Porto di Catania </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=5913&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=FFFFFF&bgtab=FFFFFF&fglink=1773C2"></iframe>'
+      '<b> Porto di Catania </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=1832&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=000000&bgtab=FFFFFF&fglink=1773C2"></iframe>'
     )
     .openPopup();
 });
@@ -73,7 +73,7 @@ pCT.on("click", function (e) {
 pPA.on("mouseover", function (e) {
   pPA
     .bindPopup(
-      '<b> Porto di Palermo </b><br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=3088&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=FFFFFF&bgtab=FFFFFF&fglink=1773C2"></iframe>'
+      '<b> Porto di Palermo </b><br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=4937&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=000000&bgtab=FFFFFF&fglink=1773C2"></iframe>'
     )
     .openPopup();
 });
@@ -95,7 +95,7 @@ pPA.on("click", function (e) {
 pGE.on("mouseover", function (e) {
   pGE
     .bindPopup(
-      '<b> Porto di Genova </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=3088&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=FFFFFF&bgtab=FFFFFF&fglink=1773C2"></iframe>'
+      '<b> Porto di Genova </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=3088&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=000000&bgtab=FFFFFF&fglink=1773C2"></iframe>'
     )
     .openPopup();
 });
@@ -117,7 +117,7 @@ pGE.on("click", function (e) {
 pVE.on("mouseover", function (e) {
   pVE
     .bindPopup(
-      '<b> Porto di Venezia </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=7729&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=FFFFFF&bgtab=FFFFFF&fglink=1773C2"></iframe>'
+      '<b> Porto di Venezia </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=7729&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=000000&bgtab=FFFFFF&fglink=1773C2"></iframe>'
     )
     .openPopup();
 });
@@ -139,7 +139,7 @@ pVE.on("click", function (e) {
 pSS.on("mouseover", function (e) {
   pSS
     .bindPopup(
-      '<b> Porto cervo </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=8113&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=FFFFFF&bgtab=FFFFFF&fglink=1773C2"></iframe>'
+      '<b> Porto cervo </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=8113&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=000000&bgtab=FFFFFF&fglink=1773C2"></iframe>'
     )
     .openPopup();
 });
@@ -161,7 +161,7 @@ pSS.on("click", function (e) {
 pNA.on("mouseover", function (e) {
   pNA
     .bindPopup(
-      '<b> Porto di Napoli </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=4579&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=FFFFFF&bgtab=FFFFFF&fglink=1773C2"></iframe>'
+      '<b> Porto di Napoli </b> <br> <iframe width="200" height="123" scrolling="no" frameborder="no" noresize="noresize" src="https://www.ilmeteo.it/box/previsioni.php?citta=4579&type=real1&width=200&ico=1&lang=ita&days=6&font=Arial&fontsize=12&bg=FFFFFF&fg=000000&bgtitle=FFFFFF&fgtitle=000000&bgtab=FFFFFF&fglink=1773C2"></iframe>'
     )
     .openPopup();
 });
