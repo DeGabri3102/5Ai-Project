@@ -440,20 +440,18 @@ ol {
 
 .Tirreno {
   width: 100%;
-  height: 60vw;
+  height: auto;
   background-image: url("Contenuti/località_img/tirreno.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
   border: groove thin;
-}
-.Ti::after {
-  opacity: 1;
+	
 }
 
 .Adriatico {
   width: 100%;
-  height: 60vw;
+  height: auto;
   background-image: url("Contenuti/località_img/adriatico.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -463,7 +461,7 @@ ol {
 
 .Ionio {
   width: 100%;
-  height: 60vw;
+  height: auto;
   background-image: url("Contenuti/località_img/ionio.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -473,7 +471,7 @@ ol {
 
 .Ligure {
   width: 100%;
-  height: 60vw;
+  height: auto;
   background-image: url("Contenuti/località_img/CinqueTerre.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -550,7 +548,7 @@ ol {
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(173, 8, 8, 0.267);
-  z-index: 999;
+	
 }
 
 .tabMon thead tr {
