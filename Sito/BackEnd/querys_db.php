@@ -44,7 +44,9 @@ function InserisciNoleggio() //Inserimento noleggio nel database
     $dataFine = date("Y-m-d", strtotime($dataFine));
     $caparra = $_POST['caparra'];
     $nomeBarca = $_POST['nomeBarca'];
-    $checkSk = $_POST['checkSK'];if($checkSk) $checkSk = "SI"; else $checkSk = "NO";
+    $checkSk = $_POST['checkSK'];
+    if ($checkSk) $checkSk = "SI";
+    else $checkSk = "NO";
     //cerca id barca 
     $cercaIdBarca = "SELECT iDImb FROM imbarcazioni where nome = '$nomeBarca'";
     $idBarca = $conn->query($cercaIdBarca);
@@ -322,8 +324,8 @@ function VisualizzaMonMari()
 
     $m = join("','", $mari);
     include_once("connect_db.php");
-    $cercaMari = "SELECT nomeZona,ph,temperatura,conducibilita,redox,ossigeno,torbidita,d FROM monitoraggi
-    WHERE nomeZona in ('$m')";
+    $cercaMari = "SELECT nomeZona,ph,temperatura,conducibilita,redox,ossigeno,torbidita,d,centraline.x,centraline.y FROM monitoraggi JOIN centraline ON monitoraggi.iDMonitoraggio = centraline.iDCentralina
+    WHERE nomeZona IN ('$m')";
     $info = $conn->query($cercaMari);
     $info->num_rows;
     $output = "";
@@ -339,6 +341,8 @@ function VisualizzaMonMari()
             <th>Ossigeno</th>
             <th>Torbiditá </th>
             <th>Data Monitoraggio</th>
+            <th>X</th>
+            <th>Y</th>
             </tr></thead><tbody>";
         while ($row = $info->fetch_assoc()) {
             $output .= "<tr>";
@@ -350,6 +354,8 @@ function VisualizzaMonMari()
             $output .= "<td>" . $row['ossigeno'] . "</td>";
             $output .= "<td>" . $row['torbidita'] . "</td>";
             $output .= "<td>" . $row['d'] .  "</td>";
+            $output .= "<td>" . $row['x'] .  "</td>";
+            $output .= "<td>" . $row['y'] .  "</td>";
         }
         $output .= "</tbody></table>";
     } else {
