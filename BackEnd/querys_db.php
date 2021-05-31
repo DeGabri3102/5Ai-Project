@@ -295,7 +295,7 @@ function VisualizzaNolUser()
         }
         $output .= "</tbody></table>";
     } else {
-        $output .= 'Nessuna informazione trovata';
+        $output .= "<h3 style='text-align:center;'>Nessuna informazione trovata</h3>";
     }
     echo $output;
     $conn->close();

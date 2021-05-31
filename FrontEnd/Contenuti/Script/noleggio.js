@@ -1,7 +1,6 @@
 //$(document).ready(function () {
 //Funzione ricerca barche
 function InserisciBarche() {
-  
   var funzione = 1;
   var documento = sessionStorage.getItem("codDocumento");
   var dataInizio = $("#dataInizio").val();
@@ -9,7 +8,8 @@ function InserisciBarche() {
   var caparra = $("#caparra").val();
   var nomeBarca = $(".showBarche").val();
   var necPatente = sessionStorage.getItem("necessitaPatente");
-  if(necPatente == "true") necPatente = true; else necPatente = false;
+  if (necPatente == "true") necPatente = true;
+  else necPatente = false;
   var checkSK = document.getElementById("selSk").checked;
   nomeBarca += "";
   nomeBarca = nomeBarca.split("-");
@@ -44,6 +44,7 @@ else
 alert("Completare tutti i campi prima di provare a noleggiare");
  
 }
+
 function CercaBarche(porto) {
   //il valore della variabile funzione determina la funzione da usare nel file insert.php
   var funzione = 2;
@@ -124,20 +125,17 @@ function ControlloPantente(nomebarca) {
       nomebarca,
     },
     success: function (data) {
-      if(data == ""){
+      if (data == "") {
         document.getElementById("selSk").style.display = "none";
         document.getElementById("selSkLb").style.display = "none";
         var flag = false;
-        sessionStorage.setItem("necessitaPatente",flag);
-      }
-      else
-      {
+        sessionStorage.setItem("necessitaPatente", flag);
+      } else {
         document.getElementById("selSk").style.display = "block";
         document.getElementById("selSkLb").style.display = "block";
         var flag = true;
-        sessionStorage.setItem("necessitaPatente",flag);
+        sessionStorage.setItem("necessitaPatente", flag);
       }
-      
     },
   });
 }

@@ -1,8 +1,8 @@
 //elementi del popUp login/Registrazione
-var log = document.getElementById("logincon");
-var reg = document.getElementById("registrazione");
-var spanLog = document.getElementsByClassName("close")[0];
-var spanReg = document.getElementsByClassName("close")[1];
+var log;
+var reg;
+var spanLog;
+var spanReg;
 
 //Azioni da eseguire dopo aver caricato l'html
 $(document).ready(function () {
@@ -22,31 +22,50 @@ $(document).ready(function () {
       });
     });
   });
+  //elementi del popUp login/Registrazione
+  log = document.getElementById("logincon");
+  reg = document.getElementById("registrazione");
+  spanLog = document.getElementsByClassName("close")[0];
+  spanReg = document.getElementsByClassName("close")[1];
+
+  if (log != null && reg != null) {
+    //Eventi per la chiusura moduli accesso/registrazione
+    spanLog.onclick = function () {
+      log.style.display = "none";
+    };
+    spanReg.onclick = function () {
+      reg.style.display = "none";
+    };
+    window.onclick = function (event) {
+      if (event.target == log || event.target == reg) {
+        log.style.display = "none";
+        reg.style.display = "none";
+      }
+    };
+  }
 });
 
 //Permette di controllare se una sessione è aperta
 function checkSessione() {
   if (sessionStorage.getItem("email") != null) {
     $("#loginNav").html(
-      '<a class="Avatar" href="Profilo.html" class="dropbtn"><img src="Contenuti/avatar.png"></a><div class="dropdown-content"><a style="text-align:justify;padding-left: 1.7vw" href="index.html" onClick="LogOut()">Esci</a></div>'
+      '<a class="Avatar" href="Profilo.html" class="dropbtn"><img src="Contenuti/avatar.png"></a><div class="dropdown-content"><a style="cursor:pointer;text-align:justify;padding-left: 1.7vw" onClick="LogOut()">Esci</a></div>'
     );
-
-    log.style.display = "none";
-    reg.style.display = "none";
+    if (log != null && reg != null) {
+      log.style.display = "none";
+      reg.style.display = "none";
+    }
+  } else {
+    $("#formAccesso").html(
+      '<!--popup per il login--> <div id="logincon" class="logcont"> <div class="log"> <span class="close">&times;</span> <h1>Accedi</h1> <!--Inserimento email utente--> <label for="emailUtente" class="loglab">Email utente</label><br /> <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email utente" /><br /> <!--Inserimento password utente--> <div> <label for="passwordUtente" class="loglab">Password utente</label><br /> <input type="password" id="passwordUtente" class="Inslog" placeholder="Inserisci password" /> <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i> </div><br /><br /> <button id="confermaLog" class="Inslog" onclick="LogIn()">Accedi</button><br /> <a href="#" onclick="MostraRegistrazione()">Non hai un account? Creane uno subito!</a> </div> </div> <!--popUp per la registrazione--> <div id="registrazione" class="logcont"> <div class="log"> <span class="close">&times;</span> <h1>Registrati</h1> <div style="display: flex;"> <div> <!--Inserimento nome utente--> <label for="nomeUtente" class="loglab">Nome</label><br /> <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br /> <!--Inserimento cognome utente--> <label for="cognomeUtente" class="loglab">Cognome</label><br /> <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br /> <!--Inserimento tipoDocumento utente--> <label for="tipoDocumento" class="loglab">Tipo Documento</label><br /> <select name="Tipo Documento" id="tipoDocumento" class="Inslog"> <option value="Patente nautica">Patente nautica</option> <option value="Passaporto">Passaporto</option> <option value="Carta d identità">Carta d\'identità</option> </select><br /> <!--Inserimento codDocumento utente--> <label for="codDocumento" class="loglab">Codice Documento</label><br /> <input type="text" id="codDocumento" class="Inslog" placeholder="Codice Documento" /><br /> <!--Inserimento nascita utente--> <label for="nascita" class="loglab">Data di Nascita</label><br /> <input type="date" id="nascita" class="Inslog" placeholder="Data di Nascita" /><br /> <!--Inserimento nTel utente--> <label for="nTel" class="loglab">Numero di telefono</label><br /> <input type="text" id="nTel" class="Inslog" placeholder="Numero di telefono" /><br /> </div> <div style="margin-left: 15px;"> <!--Inserimento indirizzo utente--> <label for="indirizzo" class="loglab">Indirizzo</label><br /> <input type="text" id="indirizzo" class="Inslog" placeholder="Inserisci indirizzo" /><br /> <!--Inserimento numeroCivico utente--> <label for="numeroCivico" class="loglab">Numero civico</label><br /> <input type="text" id="numeroCivico" class="Inslog" placeholder="N°" /><br /> <!--Inserimento email utente--> <label for="emailUtenteReg" class="loglab">Email</label><br /> <input type="text" id="emailUtenteReg" class="Inslog" placeholder="Inserisci email" /><br /> <!--Inserimento password utente--> <div> <label for="passwordUtenteReg" class="loglab">Password</label><br /> <input type="password" id="passwordUtenteReg" class="Inslog" placeholder="Inserisci password" /> <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i> </div> <!--Reinserimento password utente--> <div> <label for="checkPUtente" class="loglab">Conferma password</label><br /> <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" /> <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i> </div> <br /> </div> </div><br /> <button id="ConfermaLog" class="Inslog" onclick="LogOn()">Crea</button><br /> <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a> </div> </div>'
+    );
   }
 }
 
 //Mostra modulo per l'accesso
 function MostraLogin() {
-  if (sessionStorage.getItem("email") != null) {
-    $("#testoLogin").html(
-      sessionStorage.getItem("nome") + " " + sessionStorage.getItem("cognome")
-    );
-    // LogOut();
-  } else {
-    log.style.display = "block";
-    reg.style.display = "none";
-  }
+  log.style.display = "block";
+  reg.style.display = "none";
 }
 
 //Mostra modulo per la registrazione
@@ -54,20 +73,6 @@ function MostraRegistrazione() {
   reg.style.display = "block";
   log.style.display = "none";
 }
-
-//Eventi per la chiusura moduli accesso/registrazione
-spanLog.onclick = function () {
-  log.style.display = "none";
-};
-spanReg.onclick = function () {
-  reg.style.display = "none";
-};
-window.onclick = function (event) {
-  if (event.target == log || event.target == reg) {
-    log.style.display = "none";
-    reg.style.display = "none";
-  }
-};
 
 //Funzione per accedere e impostare la sessione recuperando le info dal database
 function LogIn() {
@@ -106,7 +111,7 @@ function LogIn() {
           sessionStorage.setItem("admin", true);
         }
 
-        checkSessione();
+        location.reload();
       } else {
         alert(data.split("#")[0]); //Errore delle credenziali utente non combaciano
       }
@@ -157,7 +162,7 @@ function LogOn() {
       },
       success: function (data) {
         //Impostando la sessione dell'utente
-        if (data == "0" && data.email.split("@")[1] != "bhor.it") {
+        if (data == "0" && email.split("@")[1] != "bhor.it") {
           sessionStorage.setItem("nome", nome);
           sessionStorage.setItem("cognome", cognome);
           sessionStorage.setItem("email", email);
@@ -169,7 +174,7 @@ function LogOn() {
           sessionStorage.setItem("numeroCivico", numeroCivico);
           sessionStorage.setItem("patentenautica", patentenautica);
 
-          checkSessione();
+          location.reload();
         } else {
           alert("Errore: " + data);
         }
@@ -187,7 +192,7 @@ function LogOn() {
 function LogOut() {
   if (window.confirm("Vuoi davvero uscire?")) {
     sessionStorage.clear();
-    $("#testoLogin").html("Login");
+    location.reload();
   }
 }
 
@@ -195,7 +200,7 @@ function LogOut() {
 function LoadInformation() {
   if (sessionStorage.getItem("email") == null) {
     $(".desc").html(
-      '<h1>Devi accedere per vedere le tue informazioni.<br/><a href="index.html">Torna alla Home</a></h1>'
+      '<h1>Devi accedere per vedere le tue informazioni.<br/><a href="#" onclick="MostraLogin()">Login</a></h1>'
     );
   } else {
     if (sessionStorage.getItem("admin")) {
