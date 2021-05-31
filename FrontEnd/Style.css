@@ -446,9 +446,7 @@ ol {
   background-size: cover;
   display: none;
   border: groove thin;
-}
-.Ti::after {
-  opacity: 1;
+	
 }
 
 .Adriatico {
@@ -550,7 +548,7 @@ ol {
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(173, 8, 8, 0.267);
-  z-index: 999;
+	
 }
 
 .tabMon thead tr {
