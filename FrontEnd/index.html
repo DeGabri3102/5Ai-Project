@@ -49,13 +49,15 @@
   </header>
   <section>
     <div class="Sfondo">
-      
-      <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/h5eqaAzvpn8?autoplay=1" title="YouTube video player" 
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/h5eqaAzvpn8?autoplay=1"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
     </div>
 
-    
+
 
 
     <div class="Sedi">
@@ -81,108 +83,13 @@
       </div>
     </div>
 
-    <!--popup per il login-->
-    <div id="logincon" class="logcont">
-      <div class="log">
-        <span class="close">&times;</span>
-        <h1>Accedi</h1>
+    <div id="formAccesso"></div>
 
-        <!--Inserimento email utente-->
-        <label for="emailUtente" class="loglab">Email utente</label><br />
-        <input type="text" id="emailUtente" class="Inslog" placeholder="Inserisci email utente" /><br />
-
-        <!--Inserimento password utente-->
-        <div>
-          <label for="passwordUtente" class="loglab">Password utente</label><br />
-          <input type="password" id="passwordUtente" class="Inslog" placeholder="Inserisci password" />
-          <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
-        </div><br /><br />
-
-        <button id="confermaLog" class="Inslog" onclick="LogIn()">Accedi</button><br />
-        <a href="#" onclick="MostraRegistrazione()">Non hai un account? Creane uno subito!</a>
-      </div>
-    </div>
-
-    <!--popUp per la registrazione-->
-    <div id="registrazione" class="logcont">
-      <div class="log">
-        <span class="close">&times;</span>
-        <h1>Registrati</h1>
-        <div style="display: flex;">
-          <div>
-
-            <!--Inserimento nome utente-->
-            <label for="nomeUtente" class="loglab">Nome</label><br />
-            <input type="text" id="NomeUtente" class="Inslog" placeholder="Inserisci nome" /><br />
-
-            <!--Inserimento cognome utente-->
-            <label for="cognomeUtente" class="loglab">Cognome</label><br />
-            <input type="text" id="CognomeUtente" class="Inslog" placeholder="Inserisci cognome" /><br />
-
-            <!--Inserimento tipoDocumento utente-->
-            <label for="tipoDocumento" class="loglab">Tipo Documento</label><br />
-
-            <select name="Tipo Documento" id="tipoDocumento" class="Inslog">
-              <option value="Patente nautica">Patente nautica</option>
-              <option value="Passaporto">Passaporto</option>
-              <option value="Carta d identità">Carta d'identità</option>
-            </select><br />
-
-            <!--Inserimento codDocumento utente-->
-            <label for="codDocumento" class="loglab">Codice Documento</label><br />
-            <input type="text" id="codDocumento" class="Inslog" placeholder="Codice Documento" /><br />
-
-            <!--Inserimento nascita utente-->
-            <label for="nascita" class="loglab">Data di Nascita</label><br />
-            <input type="date" id="nascita" class="Inslog" placeholder="Data di Nascita" /><br />
-
-            <!--Inserimento nTel utente-->
-            <label for="nTel" class="loglab">Numero di telefono</label><br />
-            <input type="text" id="nTel" class="Inslog" placeholder="Numero di telefono" /><br />
-          </div>
-          <div style="margin-left: 15px;">
-
-            <!--Inserimento indirizzo utente-->
-            <label for="indirizzo" class="loglab">Indirizzo</label><br />
-            <input type="text" id="indirizzo" class="Inslog" placeholder="Inserisci indirizzo" /><br />
-
-            <!--Inserimento numeroCivico utente-->
-            <label for="numeroCivico" class="loglab">Numero civico</label><br />
-            <input type="text" id="numeroCivico" class="Inslog" placeholder="N°" /><br />
-
-            <!--Inserimento email utente-->
-            <label for="emailUtenteReg" class="loglab">Email</label><br />
-            <input type="text" id="emailUtenteReg" class="Inslog" placeholder="Inserisci email" /><br />
-
-            <!--Inserimento password utente-->
-            <div>
-              <label for="passwordUtenteReg" class="loglab">Password</label><br />
-              <input type="password" id="passwordUtenteReg" class="Inslog" placeholder="Inserisci password" />
-              <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
-            </div>
-
-            <!--Reinserimento password utente-->
-            <div>
-              <label for="checkPUtente" class="loglab">Conferma password</label><br />
-              <input type="password" id="checkPUtente" class="Inslog" placeholder="Reinserisci password" />
-              <i class="far fa-eye show-password-toggle icon-eye-close icon-align-confirm"></i>
-            </div>
-            <br />
-          </div>
-        </div><br />
-
-
-        <button id="ConfermaLog" class="Inslog" onclick="LogOn()">Crea</button><br />
-        <a href="#" onclick="MostraLogin()">Hai un account? Accedi subito!</a>
-      </div>
-
-    </div>
-	  
     <div class="Mappa">
       <div id="map"></div>
-      
+
     </div>
-	  <h1 style="text-align: center; position: relative;top: 1.3vw">Verifica il Meteo</h1>
+    <h1 style="text-align: center; position: relative;top: 1.3vw">Verifica il Meteo</h1>
     <div style="clear: both"></div>
   </section>
 
@@ -239,17 +146,19 @@
             class="icon mdi mdi-instagram"></span><span>Instagram</span></a></div>
 
       <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner"
-          href="https://twitter.com/BlueHor88020009" target="_blank"><span class="icon mdi mdi-twitter"></span><span>Twitter</span></a></div>
+          href="https://twitter.com/BlueHor88020009" target="_blank"><span
+            class="icon mdi mdi-twitter"></span><span>Twitter</span></a></div>
 
       <div style="float: left;width: 25%" class="col"><a style="text-decoration: none" class="social-inner"
-          href="https://www.youtube.com/channel/UCriUiLJjvqhQF3-HXbMuGkQ" target="_blank"><span class="icon mdi mdi-youtube-play"></span><span>Youtube</span></a>
+          href="https://www.youtube.com/channel/UCriUiLJjvqhQF3-HXbMuGkQ" target="_blank"><span
+            class="icon mdi mdi-youtube-play"></span><span>Youtube</span></a>
       </div>
       <div style=" clear: both"></div>
     </div>
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="Contenuti/Script/mappa.js"></script>
-  <script src="Contenuti/Script/sessioni.js"></script>
+  <script src="Contenuti/Script/sessione.js"></script>
 
   <script>
     var myIndex = 0;

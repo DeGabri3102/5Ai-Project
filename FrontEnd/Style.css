@@ -444,11 +444,10 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-	border: groove thin;
+  border: groove thin;
 }
-.Ti::after{
-	opacity: 1;
-	
+.Ti::after {
+  opacity: 1;
 }
 
 .Adriatico {
@@ -458,7 +457,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-	border: groove thin;
+  border: groove thin;
 }
 
 .Ionio {
@@ -468,7 +467,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-	border: groove thin;
+  border: groove thin;
 }
 
 .Ligure {
@@ -478,7 +477,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   display: none;
-	border: groove thin;
+  border: groove thin;
 }
 
 .avatar {
@@ -536,15 +535,15 @@ ol {
   color: #167db9c9;
 }
 
-#barche{
+#barche {
   margin: auto;
 }
 
-.showBarche{
+.showBarche {
   background-color: #167db9c9;
 }
 
-.tabMon{
+.tabMon {
   border-collapse: collapse;
   margin: auto;
   font-family: sans-serif;
@@ -585,7 +584,7 @@ ol {
   color: #167db9c9;
 }
 
-.video{
+.video {
   /* width: 560px;
   height: 315px; */
   padding-top: 3%;
@@ -593,10 +592,10 @@ ol {
   border-radius: 10px;
 }
 
-#selSk{
+#selSk {
   display: none;
 }
 
-#selSkLb{
+#selSkLb {
   display: none;
 }
