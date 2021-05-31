@@ -592,3 +592,11 @@ ol {
   padding-left: 10%;
   border-radius: 10px;
 }
+
+#selSk{
+  display: none;
+}
+
+#selSkLb{
+  display: none;
+}
