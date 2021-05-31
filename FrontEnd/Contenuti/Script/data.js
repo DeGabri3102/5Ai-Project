@@ -24,13 +24,18 @@ var getDates = function (startDate, endDate) {
   //sistemazione data
   var arrString = new Array();
   dates.forEach(function (data) {
-    if (data.getMonth() < 10) {
-      var mese = "0" + (data.getMonth() + 1).toString();
+    if (data.getMonth() <= 10) {
+      if(data.getMonth() + 1 < 10)
+      var mese =  "0" +(data.getMonth() + 1).toString();
+      else
+      var mese = (data.getMonth() + 1).toString();
     }
 
     if (data.getDate() < 10) {
-      var g = data.getDate().toString();
-    } else var g = data.getDate().toString();
+      
+      var g = "0" + data.getDate().toString();
+    } else 
+    var g = data.getDate().toString();
 
     var d = g + "/" + mese + "/" + data.getFullYear().toString();
     arrString.push(d);

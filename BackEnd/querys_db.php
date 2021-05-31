@@ -44,6 +44,7 @@ function InserisciNoleggio() //Inserimento noleggio nel database
     $dataFine = date("Y-m-d", strtotime($dataFine));
     $caparra = $_POST['caparra'];
     $nomeBarca = $_POST['nomeBarca'];
+    $checkSk = $_POST['checkSK'];if($checkSk) $checkSk = "SI"; else $checkSk = "NO";
     //cerca id barca 
     $cercaIdBarca = "SELECT iDImb FROM imbarcazioni where nome = '$nomeBarca'";
     $idBarca = $conn->query($cercaIdBarca);
@@ -58,9 +59,9 @@ function InserisciNoleggio() //Inserimento noleggio nel database
     $idpren = $conn->query($cercaIdPrenotazione);
     $idpren->num_rows;
 
-    $sql = "INSERT INTO prenotazioninoleggi (iDPrenotazione, codDocumento,iDImb, dataPrenotazione, inizioNoleggio, fineNoleggio, caparra,noleggiata) 
+    $sql = "INSERT INTO prenotazioninoleggi (iDPrenotazione, codDocumento,iDImb, dataPrenotazione, inizioNoleggio, fineNoleggio, caparra,noleggiata,ConPersonale) 
     VALUES 
-    (NULL, '$documento', '$idBarca','$dataNol', '$dataInizio', '$dataFine', '$caparra','SI')";
+    (NULL, '$documento', '$idBarca','$dataNol', '$dataInizio', '$dataFine', '$caparra','SI','$checkSk')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Noleggio effettuato";

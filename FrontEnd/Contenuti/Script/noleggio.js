@@ -25,6 +25,7 @@ if(dataInizio != "" && dataFine != "" && caparra != null && (checkSK == necPaten
       funzione,
       caparra,
       nomeBarca,
+      checkSK
     },
     success: function (data) {
       //$("#informazioni").append(data); //inserire i dati calcolati dentro insert.php dentro il div barche nella pagina noleggio
